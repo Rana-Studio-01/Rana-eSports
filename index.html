@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <meta name="theme-color" content="#0a0a0f" />
+
+  <!-- SEO Meta Tags -->
+  <title>Alisha eSports — #1 Free Fire Strategy App | Squad, Voice Chat & Map Planner</title>
+  <meta name="description" content="Alisha eSports is the ultimate Free Fire strategy app for serious gamers. Plan rotations, voice chat with squad, find teammates, and dominate every match. Download free APK now." />
+  <meta name="keywords" content="Free Fire, Alisha eSports, FF strategy app, squad finder, voice chat, free fire APK, free fire map, free fire tournament, gaming app, Garena Free Fire" />
+  <meta name="author" content="Alisha eSports" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Alisha eSports — Free Fire Strategy App" />
+  <meta property="og:description" content="Master every rotation. Dominate every match. The ultimate Free Fire strategy & squad app." />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=1280&auto=format&fit=crop" />
+  <meta property="og:url" content="https://alishaesports.gg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+
+  <!-- Preconnect Context For Faster Assets Processing -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+
+  <!-- Swiper CSS Core Bundle -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
+  <!-- FontAwesome Professional Icons Icons Grid -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <!-- Premium Typography Integration -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;800;900&family=Rajdhani:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Main System Stylesheet Link Context Reference -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ===== TOP ANNOUNCEMENT BAR ===== -->
+  <div class="top-bar" id="topBar">
+    <p>
+      <i class="fas fa-fire"></i>
+      <span>NEW UPDATE V1.0.9 IS LIVE — VOICE CALL + SCREEN SHARE NOW AVAILABLE!</span>
+      <i class="fas fa-fire"></i>
+    </p>
+  </div>
+
+  <!-- ===== NAVIGATION CONSOLE HEAD ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-left">
+      <button class="hamburger" id="hamburgerBtn" aria-label="Open Menu" aria-expanded="false" aria-controls="sidebar">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav-logo">
+      <a href="#home" aria-label="Alisha eSports Home">
+        <span class="logo-text">ALISHA <span class="logo-accent">eSPORTS</span></span>
+      </a>
+    </div>
+    <div class="nav-right">
+      <a
+        href="https://www.mediafire.com/file/4p0d81kynt7tzpx/Alisha_Esports_V1.0.8.apk/file"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="nav-download-btn-small"
+        aria-label="Download Alisha eSports APK"
+      >
+        <i class="fas fa-download"></i> APK
+      </a>
+      <a
+        href="https://www.instagram.com/alishaesports.gg"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="nav-insta"
+        aria-label="Instagram"
+      >
+        <i class="fab fa-instagram"></i>
+      </a>
+    </div>
+  </nav>
+
+  <!-- ===== HUD SIDEBAR ACCORDION MATRIX ===== -->
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+  <aside class="sidebar" id="sidebar" aria-hidden="true">
+    <div class="sidebar-header">
+      <span class="sidebar-logo">ALISHA <span>eSPORTS</span></span>
+      <button class="sidebar-close" id="sidebarClose" aria-label="Close Menu">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    <nav class="sidebar-nav" aria-label="Main Navigation">
+      <a href="#home" class="sidebar-link"><i class="fas fa-home"></i> Home</a>
+      <a href="#updates" class="sidebar-link"><i class="fas fa-newspaper"></i> Latest Updates</a>
+      <a href="#app-preview" class="sidebar-link"><i class="fas fa-mobile-alt"></i> App Preview</a>
+      <a href="#features" class="sidebar-link"><i class="fas fa-bolt"></i> Features</a>
+      <a href="#tutorials" class="sidebar-link"><i class="fab fa-youtube"></i> Tutorials</a>
+      <a href="#disclaimer" class="sidebar-link"><i class="fas fa-exclamation-triangle"></i> Disclaimer</a>
+      <a href="#privacy-policy" class="sidebar-link"><i class="fas fa-shield-alt"></i> Privacy Policy</a>
+      <a href="#terms" class="sidebar-link"><i class="fas fa-file-contract"></i> Terms &amp; Conditions</a>
+      <a href="#refund" class="sidebar-link"><i class="fas fa-undo"></i> Refund Policy</a>
+      <a href="#contact" class="sidebar-link"><i class="fas fa-envelope"></i> Contact Us</a>
+    </nav>
+    <div class="sidebar-footer">
+      <a href="https://www.instagram.com/alishaesports.gg" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-instagram"></i> @alishaesports.gg
+      </a>
+    </div>
+  </aside>
+
+  <!-- ===== HERO DISPLAY CONTROL NODE ===== -->
+  <section class="hero" id="home">
+    <div class="hero-bg-grid"></div>
+    <div class="hero-particles" id="particles"></div>
+    <div class="hero-content">
+      <div class="hero-badge">
+        <i class="fas fa-fire"></i> FREE FIRE STRATEGY PLATFORM
+      </div>
+      <h1 class="hero-title">
+        ALISHA<br />
+        <span class="hero-accent">eSPORTS</span>
+      </h1>
+      <p class="hero-subtitle">
+        Master every rotation. Dominate every match.<br />
+        The ultimate Free Fire strategy &amp; squad app built for pros.
+      </p>
+
+      <a
+        href="https://www.mediafire.com/file/4p0d81kynt7tzpx/Alisha_Esports_V1.0.8.apk/file"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="download-btn"
+        id="downloadBtn"
+        aria-label="Download Alisha eSports APK V1.0.8"
+      >
+        <i class="fas fa-download"></i>
+        <span>DOWNLOAD ALISHA ESPORTS APK</span>
+        <small>v1.0.9 • Free • Android</small>
+      </a>
+
+      <div class="hero-stats">
+        <div class="stat"><span class="stat-num">100%</span><span class="stat-label">Free</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><span class="stat-num">Android</span><span class="stat-label">Compatible</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><span class="stat-num">V1.0.9</span><span class="stat-label">Latest</span></div>
+      </div>
+    </div>
+    <a href="#updates" class="scroll-indicator" aria-label="Scroll Down">
+      <i class="fas fa-chevron-down"></i>
+    </a>
+  </section>
+
+  <!-- ===== SCREEN DIVISION: LATEST TIMELINE UPDATES ===== -->
+  <section class="update-slider-section" id="updates">
+    <div class="section-header">
+      <span class="section-eyebrow">What's New</span>
+      <h2 class="section-title">LATEST <span class="accent">UPDATES</span></h2>
+    </div>
+
+    <div class="swiper updateSwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="slide-image-container">
+            <img
+              src="https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=1280&auto=format&fit=crop"
+              alt="VIP Vault Update Banner"
+              loading="lazy"
+            />
+          </div>
+          <div class="slide-overlay">
+            <h3>NEW VIP VAULT OPEN!</h3>
+            <p>Unlock exclusive rewards every week.</p>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="slide-image-container">
+            <img
+              src="https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=1280&auto=format&fit=crop"
+              alt="Team Finder 2.0 Update Banner"
+              loading="lazy"
+            />
+          </div>
+          <div class="slide-overlay">
+            <h3>TEAM FINDER 2.0 LIVE</h3>
+            <p>Smarter matching. Stronger squads.</p>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="slide-image-container">
+            <img
+              src="https://images.unsplash.com/photo-1538481199705-c710c4e965fc?q=80&w=1280&auto=format&fit=crop"
+              alt="Voice Call Feature Banner"
+              loading="lazy"
+            />
+          </div>
+          <div class="slide-overlay">
+            <h3>VOICE + SCREEN SHARE</h3>
+            <p>Coordinate like a real pro team.</p>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-next" aria-label="Next slide"></div>
+      <div class="swiper-button-prev" aria-label="Previous slide"></div>
+    </div>
+  </section>
+
+  <!-- ===== MOBILE ORIENTATION SWIPER INTERACTION ===== -->
+  <section class="app-preview-section" id="app-preview">
+    <div class="section-header">
+      <span class="section-eyebrow">Inside The App</span>
+      <h2 class="section-title">APP <span class="accent">PREVIEW</span></h2>
+      <p class="section-desc">Swipe to explore the premium interface built for Free Fire warriors.</p>
+    </div>
+    <div class="swiper previewSwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img src="slider2-1.jpg" alt="Alisha eSports App Screenshot 1" loading="lazy" />
+        </div>
+        <div class="swiper-slide">
+          <img
+            src="slider2-2.jpg"
+            alt="Alisha eSports App Screenshot 2"
+            loading="lazy"
+          />
+        </div>
+        <div class="swiper-slide">
+          <img
+            src="slider 2-3.jpg"
+            alt="Alisha eSports App Screenshot 3"
+            loading="lazy"
+          />
+        </div>
+        <div class="swiper-slide">
+          <img
+            src="slider2-4.jpg"
+            alt="Alisha eSports App Screenshot 4"
+            loading="lazy"
+          />
+        </div>
+        <div class="swiper-slide">
+          <img
+            src="slider2-5.jpg"
+            alt="Alisha eSports App Screenshot 5"
+            loading="lazy"
+          />
+        </div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </section>
+
+  <!-- ===== MAIN MODULE DATA: STRATEGIC FEATURES GRID ===== -->
+  <section class="features-section" id="features">
+    <div class="section-header">
+      <span class="section-eyebrow">What You Get</span>
+      <h2 class="section-title">POWERFUL <span class="accent">FEATURES</span></h2>
+      <p class="section-desc">
+        Everything your squad needs to win — strategy, communication, and intelligence in one app.
+      </p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fas fa-map-marked-alt"></i></div>
+        <h3>Battle Strategy Planner</h3>
+        <p>Plan full match rotations, mark loot spots, pipe locations, and fallback zones on an interactive map with your squad.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fas fa-microphone"></i></div>
+        <h3>Voice Call &amp; Screen Share</h3>
+        <p>Talk and share your screen live with teammates. Coordinate during warm-ups and discuss tactics in real time.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fas fa-comments"></i></div>
+        <h3>Squad Chat Rooms</h3>
+        <p>Private discussion rooms for your team. Chat, plan strategies, and share game updates — all in one place.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fas fa-users"></i></div>
+        <h3>Team Finder</h3>
+        <p>Find new teammates by skill level, playstyle, and region. Build your perfect Free Fire squad from the community.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fas fa-rocket"></i></div>
+        <h3>Launchpad Range Calculator</h3>
+        <p>Calculate exact launchpad distances and landing zones. Master your aerial game with precision intelligence.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fas fa-satellite-dish"></i></div>
+        <h3>Drone Intel Spots</h3>
+        <p>Access all drone movie locations and vision zones. See what others can't and always stay one step ahead.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fas fa-trophy"></i></div>
+        <h3>Tournament Tracker</h3>
+        <p>Stay updated with upcoming tournaments, scrim schedules, and prize pools. Register your squad and compete.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fas fa-chart-line"></i></div>
+        <h3>Stats &amp; Performance</h3>
+        <p>Track your K/D, win rate, headshot percentage, and squad performance. Improve smarter, not harder.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== STREAM REPOSITORIES: VIDEO STREAM MATRICES ===== -->
+  <section class="tutorials-section" id="tutorials">
+    <div class="section-header">
+      <span class="section-eyebrow">Learn Fast</span>
+      <h2 class="section-title">TUTORIAL <span class="accent">VIDEOS</span></h2>
+      <p class="section-desc">Watch how to use Alisha eSports. Only one plays at a time.</p>
+    </div>
+    <div class="videos-grid">
+      <div class="video-card">
+        <div class="video-label">Tutorial 1</div>
+        <div class="video-wrapper">
+          <div id="player1"></div>
+        </div>
+      </div>
+      <div class="video-card">
+        <div class="video-label">Tutorial 2</div>
+        <div class="video-wrapper">
+          <div id="player2"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SYSTEM SAFEGUARD: ESCROW SYSTEM DISCLAIMER ===== -->
+  <section class="policy-section disclaimer-section" id="disclaimer">
+    <div class="policy-container">
+      <div class="policy-header disclaimer-header">
+        <div class="policy-icon disclaimer-icon"><i class="fas fa-exclamation-triangle"></i></div>
+        <span class="section-eyebrow">Important Notice</span>
+        <h2>DISCLAIMER</h2>
+        <p class="policy-subtitle">Please read carefully before using Alisha eSports</p>
+      </div>
+
+      <div class="policy-block">
+        <div class="disclaimer-card highlight-card">
+          <h3><i class="fas fa-shield-alt"></i> Not Affiliated with Garena</h3>
+          <p>
+            <strong>Alisha eSports is an independent, fan-made strategy application created by gamers, for gamers.</strong>
+            We are <strong>NOT</strong> officially affiliated with, endorsed by, sponsored by, or in any way connected to
+            <strong>Garena International Private Limited</strong>, <strong>111dots Studio</strong>, or any official
+            developer or publisher of <strong>Garena Free Fire</strong> and <strong>Free Fire MAX</strong>.
+          </p>
+        </div>
+
+        <div class="disclaimer-card">
+          <h3><i class="fas fa-images"></i> Game Imagery, Screenshots &amp; Trademarks</h3>
+          <p>
+            This website and the Alisha eSports application may contain in-game screenshots, character art, weapon visuals,
+            map imagery, logos, names, and other media related to <strong>Free Fire</strong>. All such content is the
+            <strong>intellectual property of Garena</strong> and is used here solely for the following purposes:
+          </p>
+          <ul class="disclaimer-list">
+            <li><i class="fas fa-check-circle"></i> <strong>Educational &amp; Tutorial Use</strong> — to teach players strategies, rotations, and game mechanics.</li>
+            <li><i class="fas fa-check-circle"></i> <strong>Reference &amp; Commentary</strong> — to discuss gameplay, maps, and tactics.</li>
+            <li><i class="fas fa-check-circle"></i> <strong>Non-Commercial Fair Use</strong> — under fair-use principles for a fan community app.</li>
+            <li><i class="fas fa-check-circle"></i> <strong>Community Building</strong> — to help Free Fire players connect and improve.</li>
+          </ul>
+          <p>
+            All trademarks, logos, and copyrights belong to their respective owners. No copyright infringement is
+            intended. If you are a rights holder and believe any content should be removed, please contact us
+            immediately at <a href="mailto:skrsameer0786@gmail.com">skrsameer0786@gmail.com</a> and we will take
+            prompt action.
+          </p>
+        </div>
+
+        <div class="disclaimer-card">
+          <h3><i class="fas fa-gamepad"></i> No Game Modification or Hacks</h3>
+          <p>
+            Alisha eSports is a <strong>100% legal companion app</strong>. We do <strong>NOT</strong> provide hacks,
+            cheats, mods, aimbots, ESP, wall hacks, auto-headshot scripts, injection tools, or any kind of unauthorized
+            modification to Free Fire. Using third-party cheats may result in a <strong>permanent ban</strong> from your
+            Free Fire account by Garena, and we strongly discourage it.
+          </p>
+        </div>
+
+        <div class="disclaimer-card">
+          <h3><i class="fas fa-user-shield"></i> Responsible Gaming</h3>
+          <p>
+            Free Fire is rated for players <strong>12+</strong>. We encourage healthy gaming habits — take regular breaks,
+            stay hydrated, and never let gaming interfere with your studies, work, sleep, or family time. Gaming should
+            stay fun, fair, and friendly.
+          </p>
+        </div>
+
+        <div class="disclaimer-card warning-card">
+          <h3><i class="fas fa-info-circle"></i> Use At Your Own Risk</h3>
+          <p>
+            Alisha eSports is provided <strong>"AS IS"</strong> without warranty of any kind. While we work hard to keep
+            the app safe and accurate, we are not liable for any in-game losses, account suspensions caused by misuse,
+            or device-related issues that may arise from using this companion app.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== LEGAL PROTOCOL: PRIVACY PROTECTION SCHEME ===== -->
+  <section class="policy-section" id="privacy-policy">
+    <div class="policy-container">
+      <div class="policy-header">
+        <div class="policy-icon"><i class="fas fa-shield-alt"></i></div>
+        <span class="section-eyebrow">Your Data, Your Control</span>
+        <h2>Privacy Policy</h2>
+        <p class="policy-subtitle">Last Updated: January 2026</p>
+      </div>
+
+      <div class="policy-block">
+        <p class="policy-intro">
+          At <strong>Alisha eSports</strong>, your privacy is our top priority. We are a strategy app built for Free Fire
+          gamers, and we believe great gaming starts with trust. This policy explains <strong>what data we collect, why we collect it,
+          and how we protect it</strong> — written in plain language, no legal jargon.
+        </p>
+
+        <div class="policy-card">
+          <h3><i class="fas fa-database"></i> 1. Information We Collect</h3>
+          <p>To give you the best squad experience, we collect only the bare minimum:</p>
+          <ul>
+            <li><strong>Account Info:</strong> Your in-game name (IGN), Free Fire ID (UID), region, and an optional profile picture.</li>
+            <li><strong>Squad &amp; Chat Data:</strong> Messages, voice room participation, and team-finder preferences.</li>
+            <li><strong>Device Info:</strong> Device model, OS version, and a unique app ID (used only for crash reports and security).</li>
+            <li><strong>Usage Data:</strong> Which features you use most often (helps us improve the app).</li>
+          </ul>
+          <p><strong>We do NOT collect:</strong> your Free Fire account password, payment details, contacts, SMS, or call logs.</p>
+        </div>
+
+        <div class="policy-card">
+          <h3><i class="fas fa-microphone-alt"></i> 2. Voice &amp; Screen Share</h3>
+          <p>
+            Voice calls and screen-sharing inside Alisha eSports are <strong>peer-to-peer / end-to-end</strong> whenever possible.
+            We do <strong>NOT</strong> record voice conversations or save screen-share streams on our servers. What's said in your
+            squad stays in your squad.
+          </p>
+        </div>
+
+        <div class="policy-card">
+          <h3><i class="fas fa-bullseye"></i> 3. How We Use Your Data</h3>
+          <ul>
+            <li>To match you with teammates and squads in Team Finder.</li>
+            <li>To deliver chat messages and voice calls to your squad.</li>
+            <li>To fix bugs, detect cheating/abuse, and improve app performance.</li>
+            <li>To send important updates about the app (you can opt out anytime).</li>
+          </ul>
+          <p><strong>We never sell, rent, or trade your personal data — period.</strong></p>
+        </div>
+
+        <div class="policy-card">
+          <h3><i class="fas fa-lock"></i> 4. Data Security</h3>
+          <p>
+            We use industry-standard encryption (HTTPS / TLS) for data in transit and encrypted storage for sensitive data
+            at rest. Although no online service is 100% secure, we work continuously to protect your information from
+            unauthorized access.
+          </p>
+        </div>
+
+        <div class="policy-card">
+          <h3><i class="fas fa-child"></i> 5. Children's Privacy</h3>
+          <p>
+            Alisha eSports is intended for users <strong>aged 13 and above</strong>. Players below 13 must use the app under
+            parental supervision. We do not knowingly collect data from children under 13.
+          </p>
+        </div>
+
+        <div class="policy-card">
+          <h3><i class="fas fa-cookie-bite"></i> 6. Cookies &amp; Analytics</h3>
+          <p>
+            Our website may use basic cookies and lightweight analytics (such as Google Analytics) to understand visitor
+            behavior. These help us improve the website — they do <strong>not</strong> personally identify you.
+          </p>
+        </div>
+
+        <div class="policy-card">
+          <h3><i class="fas fa-user-cog"></i> 7. Your Rights</h3>
+          <ul>
+            <li><strong>Access:</strong> Request a copy of your data anytime.</li>
+            <li><strong>Delete:</strong> Request full deletion of your account and data.</li>
+            <li><strong>Update:</strong> Edit your profile and preferences inside the app.</li>
+            <li><strong>Opt-out:</strong> Disable notifications, analytics, and marketing emails.</li>
+          </ul>
+          <p>To exercise any of these rights, simply email us at <a href="mailto:skrsameer0786@gmail.com">skrsameer0786@gmail.com</a>.</p>
+        </div>
+
+        <div class="policy-card">
+          <h3><i class="fas fa-sync-alt"></i> 8. Updates To This Policy</h3>
+          <p>
+            We may update this Privacy Policy from time to time. Any major change will be announced inside the app and on
+            this website. Continued use of Alisha eSports means you accept the latest version.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CORE RULES: TERMS OF ENGAGEMENT ENGINE ===== -->
+  <section class="policy-section policy-alt" id="terms">
+    <div class="policy-container">
+      <div class="policy-header">
+        <div class="policy-icon"><i class="fas fa-file-contract"></i></div>
+        <span class="section-eyebrow">The Rules of the Battlefield</span>
+        <h2>Terms &amp; Conditions</h2>
+        <p class="policy-subtitle">Last Updated: January 2026</p>
+      </div>
+
+      <div class="policy-block">
+        <p class="policy-intro">
+          Welcome, soldier! By downloading or using <strong>Alisha eSports</strong>, you agree to the following terms.
+          These rules keep our community fair, safe, and toxic-free — because every Free Fire squad deserves respect.
+        </p>
+
+        <div class="policy-card">
+          <h3><i class="fas fa-handshake"></i> 1. Acceptance of Terms</h3>
+          <p>
+            By creating an account, downloading the APK, or using any feature of Alisha eSports, you confirm that you have
+            read, understood, and agreed to these Terms &amp; Conditions, our Privacy Policy, and the Disclaimer above.
+          </p>
+        </div>
+
+        <div class="policy-card">
+          <h3><i class="fas fa-id-card"></i> 2. Eligibility</h3>
+          <p>
+            You must be at least <strong>13 years old</strong> to use Alisha eSports. If you are under 18, please use the app
+            under the guidance of a parent or guardian. Each player is allowed only <strong>one personal account</strong>.
+          </p>
+        </div>
+
+        <div class="policy-card">
+          <h3><i class="fas fa-user-secret"></i> 3. Account Security</h3>
+          <ul>
+            <li>Keep your login credentials private. Don't share OTPs, passwords, or in-game UIDs publicly.</li>
+            <li>You are responsible for everything that happens on your account.</li>
+            <li>Notify us immediately at <a href="mailto:skrsameer0786@gmail.com">skrsameer0786@gmail.com</a> if your account is compromised.</li>
+          </ul>
+        </div>
+
+        <div class="policy-card">
+          <h3><i class="fas fa-ban"></i> 4. Strictly Prohibited Behavior</h3>
+          <p>The following actions will result in an <strong>immediate and permanent ban</strong>:</p>
+          <ul>
+            <li>Use of hacks, cheats, scripts, modded APKs, panels, aimbots, or auto-headshot tools.</li>
+            <li>Harassment, hate speech, racism, sexism, or any form of bullying in chat or voice rooms.</li>
+            <li>Sharing sexually explicit, violent, or illegal content.</li>
+            <li>Spamming, advertising third-party services, scamming, or phishing.</li>
+            <li>Impersonating pro players, content creators, or Alisha eSports staff.</li>
+            <li>Buying, selling, or trading Free Fire accounts or in-game items through our platform.</li>
+            <li>Using the Team Finder for non-gaming purposes (dating, real-world contact harvesting, etc.).</li>
+          </ul>
+        </div>
+
+        <div class="policy-card">
+          <h3><i class="fas fa-microphone-slash"></i> 5. Voice Chat &amp; Communication Rules</h3>
+          <p>
+            Voice rooms and screen-share features are powerful — and powerful tools come with responsibility:
+          </p>
+          <ul>
+            <li>No screaming, ear-rape sounds, music spam, or background noise abuse.</li>
+            <li>No recording other players without their clear permission.</li>
+            <li>No sharing of inappropriate content via screen share.</li>
+            <li>Respect every teammate, even after a tough loss. GG everyone.</li>
+          </ul>
+        </div>
+
+        <div class="policy-card">
+          <h3><i class="fas fa-copyright"></i> 6. Intellectual Property</h3>
+          <p>
+            All original content inside Alisha eSports — including our logo, UI design, code, strategy guides, and tutorials —
+            belongs to <strong>Alisha eSports</strong>. You may not copy, modify, distribute, or sell any part of our app
+            without written permission. Free Fire-related trademarks and screenshots belong to <strong>Garena</strong>
+            (see Disclaimer).
+          </p>
+        </div>
+
+        <div class="policy-card">
+          <h3><i class="fas fa-gavel"></i> 7. Bans, Suspensions &amp; Appeals</h3>
+          <p>
+            Our moderation team may issue warnings, temporary mutes, temporary bans, or permanent bans depending on the
+            offense. If you believe a ban was a mistake, you can appeal by emailing
+            <a href="mailto:skrsameer0786@gmail.com">skrsameer0786@gmail.com</a> within <strong>7 days</strong>. Our decision is final.
+          </p>
+        </div>
+
+        <div class="policy-card">
+          <h3><i class="fas fa-tools"></i> 8. App Updates &amp; Availability</h3>
+          <p>
+            We may update, modify, suspend, or discontinue any feature at any time to improve security and performance.
+            We don't guarantee 100% uptime — but we do our best to keep the squad online.
+          </p>
+        </div>
+
+        <div class="policy-card">
+          <h3><i class="fas fa-balance-scale"></i> 9. Limitation of Liability</h3>
+          <p>
+            Alisha eSports is provided <strong>"AS IS"</strong>. We are not responsible for in-game losses, ranking drops,
+            account suspensions on Free Fire, lost rewards, or any indirect damages caused by using our app.
+          </p>
+        </div>
+
+        <div class="policy-card">
+          <h3><i class="fas fa-globe-asia"></i> 10. Governing Law</h3>
+          <p>
+            These terms are governed by the laws of <strong>India</strong>. Any disputes will be resolved through the
+            courts of the appropriate jurisdiction.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ESCROW POLICIES: REFUND LOGISTIC SYSTEM ===== -->
+  <section class="policy-section" id="refund">
+    <div class="policy-container">
+      <div class="policy-header">
+        <div class="policy-icon"><i class="fas fa-undo-alt"></i></div>
+        <span class="section-eyebrow">Fair &amp; Transparent</span>
+        <h2>Refund Policy</h2>
+        <p class="policy-subtitle">Last Updated: January 2026</p>
+      </div>
+
+      <div class="policy-block">
+        <p class="policy-intro">
+          Alisha eSports is currently <strong>100% FREE</strong> to download and use. This refund policy will apply
+          <strong>only if and when</strong> we launch premium features, VIP plans, or paid in-app items in the future.
+        </p>
+
+        <div class="policy-card">
+          <h3><i class="fas fa-gift"></i> 1. Free Features</h3>
+          <p>
+            All current features — Battle Strategy Planner, Voice Chat, Squad Rooms, Team Finder, Launchpad Calculator,
+            Drone Intel — are completely free. There is nothing to refund for free features.
+          </p>
+        </div>
+
+        <div class="policy-card">
+          <h3><i class="fas fa-credit-card"></i> 2. Future Premium Purchases</h3>
+          <p>If we launch any paid feature in the future:</p>
+          <ul>
+            <li>You may request a refund <strong>within 7 days</strong> of purchase.</li>
+            <li>The premium feature must be <strong>completely unused</strong>.</li>
+            <li>Refunds are processed to the <strong>original payment method</strong> only.</li>
+            <li>Processing time: <strong>5–10 business days</strong>.</li>
+          </ul>
+        </div>
+
+        <div class="policy-card">
+          <h3><i class="fas fa-times-circle"></i> 3. Non-Refundable Cases</h3>
+          <p>The following are <strong>NOT eligible</strong> for refund:</p>
+          <ul>
+            <li>Premium features that have already been used or activated.</li>
+            <li>Tournament entry fees once a tournament has started.</li>
+            <li>Accounts banned for violating Terms &amp; Conditions.</li>
+            <li>Donation or "tip the developer" payments.</li>
+            <li>Requests made after the 7-day refund window.</li>
+          </ul>
+        </div>
+
+        <div class="policy-card">
+          <h3><i class="fas fa-paper-plane"></i> 4. How To Request A Refund</h3>
+          <p>To request a refund, email us at <a href="mailto:skrsameer0786@gmail.com">skrsameer0786@gmail.com</a> with the following:</p>
+          <ul>
+            <li>Your registered email or in-game UID.</li>
+            <li>Order ID or payment transaction reference.</li>
+            <li>Reason for the refund request.</li>
+          </ul>
+          <p>We typically respond within <strong>48 hours</strong>.</p>
+        </div>
+
+        <div class="policy-card">
+          <h3><i class="fas fa-shield-virus"></i> 5. Chargebacks &amp; Fraud</h3>
+          <p>
+            Filing a chargeback or dispute with your bank without first contacting us may result in <strong>permanent
+            account suspension</strong>. Please reach out to our team first — we'll always try to make it right.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONNECT INTEGRATION: INBOX & COMMUNICATION ===== -->
+  <section class="contact-section" id="contact">
+    <div class="section-header">
+      <span class="section-eyebrow">Get In Touch</span>
+      <h2 class="section-title">CONTACT <span class="accent">US</span></h2>
+      <p class="section-desc">Got a bug, idea, or sponsorship offer? We'd love to hear from the squad.</p>
+    </div>
+    <div class="contact-grid">
+      <a href="mailto:skrsameer0786@gmail.com" class="contact-card">
+        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+        <h3>Email Us</h3>
+        <p>skrsameer0786@gmail.com</p>
+      </a>
+      <a
+        href="https://www.instagram.com/alishaesports.gg"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="contact-card"
+      >
+        <div class="contact-icon instagram-icon"><i class="fab fa-instagram"></i></div>
+        <h3>Instagram</h3>
+        <p>@alishaesports.gg</p>
+      </a>
+      <a
+        href="https://www.mediafire.com/file/4p0d81kynt7tzpx/Alisha_Esports_V1.0.8.apk/file"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="contact-card"
+      >
+        <div class="contact-icon"><i class="fas fa-download"></i></div>
+        <h3>Download APK</h3>
+        <p>v1.0.9 — Latest Build</p>
+      </a>
+    </div>
+  </section>
+
+  <!-- ===== HUD FOOTER SYSTEM SHELL ===== -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <span class="footer-logo">ALISHA <span class="accent">eSPORTS</span></span>
+        <p>The ultimate Free Fire strategy and squad app — built by gamers, for gamers.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#tutorials">Tutorials</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="#disclaimer">Disclaimer</a></li>
+          <li><a href="#privacy-policy">Privacy Policy</a></li>
+          <li><a href="#terms">Terms &amp; Conditions</a></li>
+          <li><a href="#refund">Refund Policy</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Follow Us</h4>
+        <div class="footer-socials">
+          <a href="https://www.instagram.com/alishaesports.gg" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="mailto:skrsameer0786@gmail.com" aria-label="Email">
+            <i class="fas fa-envelope"></i>
+          </a>
+          <a href="https://www.youtube.com/@triggercraftx" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+            <i class="fab fa-youtube"></i>
+          </a>
+          <a href="https://alishaesports.gg" target="_blank" rel="noopener noreferrer" aria-label="Discord">
+            <i class="fab fa-discord"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-disclaimer">
+      <p>
+        <i class="fas fa-info-circle"></i>
+        Alisha eSports is <strong>not affiliated with Garena</strong>. Free Fire and all related trademarks belong to
+        their respective owners. All in-game images are used for educational and fair-use purposes only.
+      </p>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2024–2026 Alisha eSports. All rights reserved. | Made with <i class="fas fa-heart"></i> for Free Fire warriors.</p>
+    </div>
+  </footer>
+
+  <!-- ===== TACTICAL BACK TO TOP MODULE ===== -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <!-- ===== SCRIPT DEFERMENTS ===== -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js" defer></script>
+  <script src="https://www.youtube.com/iframe_api"></script>
+  <script src="script.js" defer></script>
+</body>
+</html>
