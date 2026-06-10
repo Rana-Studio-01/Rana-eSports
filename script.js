@@ -344,7 +344,7 @@ window.onYouTubeIframeAPIReady = function() {
     }
     if (document.getElementById('player2')) {
       player2 = new YT.Player('player2', {
-        videoId: 'NHC_33pEUKQ',
+        videoId: 'Rg2jCzljzRE',
         events: { 'onStateChange': cascadePlayerStateMonitor }
       });
     }
