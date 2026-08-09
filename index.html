@@ -4,209 +4,226 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
-  <meta name="theme-color" content="#0a0a0f" />
+  <meta name="theme-color" content="#040407" />
 
   <!-- SEO Meta Tags -->
-  <title>Alisha eSports — #1 Free Fire Strategy App | Squad, Voice Chat & Map Planner</title>
-  <meta name="description" content="Alisha eSports is the ultimate Free Fire strategy app for serious gamers. Plan rotations, voice chat with squad, find teammates, and dominate every match. Download free APK now." />
-  <meta name="keywords" content="Free Fire, Alisha eSports, FF strategy app, squad finder, voice chat, free fire APK, free fire map, free fire tournament, gaming app, Garena Free Fire" />
-  <meta name="author" content="Alisha eSports" />
+  <title>Rana eSports — Free Fire Squad, Strategy & Team Finder App</title>
+  <meta name="description" content="Rana eSports is a fan-made Free Fire companion app — squad chat, voice & video calls, team finder, and tactical maps built for competitive players. Free APK download." />
+  <meta name="keywords" content="Rana Esports, Free Fire, FF strategy app, squad finder, voice chat, free fire APK, free fire map, free fire tournament, gaming app" />
+  <meta name="author" content="Rana eSports" />
   <meta name="robots" content="index, follow" />
 
   <!-- Open Graph / Social Sharing -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Alisha eSports — Free Fire Strategy App" />
-  <meta property="og:description" content="Master every rotation. Dominate every match. The ultimate Free Fire strategy & squad app." />
+  <meta property="og:title" content="Rana eSports — Free Fire Squad & Strategy App" />
+  <meta property="og:description" content="Squad chat, voice calls, team finder, and tactical maps — the ultimate Free Fire companion app." />
   <meta property="og:image" content="https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=1280&auto=format&fit=crop" />
-  <meta property="og:url" content="https://alishaesports.gg" />
+  <!-- TODO: update to your real domain once live -->
+  <meta property="og:url" content="https://ranaesports.online" />
   <meta name="twitter:card" content="summary_large_image" />
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="favicon.png" />
   <link rel="apple-touch-icon" href="apple-touch-icon.png" />
 
-  <!-- Preconnect Context For Faster Assets Processing -->
+  <!-- Preconnect -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preconnect" href="https://cdn.jsdelivr.net" />
   <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
 
-  <!-- Swiper CSS Core Bundle -->
+  <!-- Swiper CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
 
-  <!-- FontAwesome Professional Icons Icons Grid -->
+  <!-- FontAwesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
-  <!-- Premium Typography Integration -->
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;800;900&family=Rajdhani:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <!-- Typography -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;800;900&family=Rajdhani:wght@400;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
 
-  <!-- Main System Stylesheet Link Context Reference -->
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-  <!-- ===== TOP ANNOUNCEMENT BAR ===== -->
-  <div class="top-bar" id="topBar">
-    <p>
-      <i class="fas fa-fire"></i>
-      <span>NEW UPDATE V1.0.9 IS LIVE — VOICE CALL + SCREEN SHARE NOW AVAILABLE!</span>
-      <i class="fas fa-fire"></i>
-    </p>
-  </div>
-
-  <!-- ===== NAVIGATION CONSOLE HEAD ===== -->
+  <!-- ===== NAVIGATION ===== -->
   <nav class="navbar" id="navbar">
     <div class="nav-left">
-      <button class="hamburger" id="hamburgerBtn" aria-label="Open Menu" aria-expanded="false" aria-controls="sidebar">
+      <button class="hamburger" id="hamburgerBtn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="sidebar">
         <span></span><span></span><span></span>
       </button>
     </div>
     <div class="nav-logo">
-      <a href="#home" aria-label="Alisha eSports Home">
-        <span class="logo-text">ALISHA <span class="logo-accent">eSPORTS</span></span>
+      <a href="#home" aria-label="Rana eSports home">
+        <span class="logo-text">RANA <span class="logo-accent">eSPORTS</span></span>
       </a>
     </div>
     <div class="nav-right">
+      <!-- Desktop-only quick links -->
+      <div class="nav-quicklinks">
+        <a href="#ratings">Reviews</a>
+        <a href="#tutorials">Tutorials</a>
+      </div>
+      <!-- TODO: replace with your actual APK release link -->
       <a
-        href="https://github.com/skrsameer/Alisha-eSports/releases/download/v1.0.8/AlishaeSportsv1.0.8.apk"
-  target="_self"
-  download="Alisha_Esports_V1.0.8.apk"
+        href="https://github.com/skrsameer/Rana-eSports/releases/latest/download/RanaEsports.apk"
+        target="_self"
+        download="Rana_Esports.apk"
         rel="noopener noreferrer"
         class="nav-download-btn-small"
-        aria-label="Download Alisha eSports APK"
+        data-download-track
+        aria-label="Download Rana eSports APK"
       >
-        <i class="fas fa-download"></i> APK
+        <i class="fas fa-download" aria-hidden="true"></i> APK
       </a>
-      <a
-        href="https://www.instagram.com/alishaesports.gg"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="nav-insta"
-        aria-label="Instagram"
-      >
-        <i class="fab fa-instagram"></i>
+      <a href="https://www.instagram.com/rana_esports_official" target="_blank" rel="noopener noreferrer" class="nav-insta" aria-label="Rana eSports on Instagram">
+        <i class="fab fa-instagram" aria-hidden="true"></i>
       </a>
     </div>
   </nav>
 
-  <!-- ===== HUD SIDEBAR ACCORDION MATRIX ===== -->
+  <!-- ===== SIDEBAR ===== -->
   <div class="sidebar-overlay" id="sidebarOverlay"></div>
   <aside class="sidebar" id="sidebar" aria-hidden="true">
     <div class="sidebar-header">
-      <span class="sidebar-logo">ALISHA <span>eSPORTS</span></span>
-      <button class="sidebar-close" id="sidebarClose" aria-label="Close Menu">
-        <i class="fas fa-times"></i>
+      <span class="sidebar-logo">RANA <span>eSPORTS</span></span>
+      <button class="sidebar-close" id="sidebarClose" type="button" aria-label="Close menu">
+        <i class="fas fa-times" aria-hidden="true"></i>
       </button>
     </div>
-    <nav class="sidebar-nav" aria-label="Main Navigation">
-      <a href="#home" class="sidebar-link"><i class="fas fa-home"></i> Home</a>
-      <a href="#updates" class="sidebar-link"><i class="fas fa-newspaper"></i> Latest Updates</a>
-      <a href="#app-preview" class="sidebar-link"><i class="fas fa-mobile-alt"></i> App Preview</a>
-      <a href="#features" class="sidebar-link"><i class="fas fa-bolt"></i> Features</a>
-      <a href="#tutorials" class="sidebar-link"><i class="fab fa-youtube"></i> Tutorials</a>
-      <a href="#disclaimer" class="sidebar-link"><i class="fas fa-exclamation-triangle"></i> Disclaimer</a>
-      <a href="#privacy-policy" class="sidebar-link"><i class="fas fa-shield-alt"></i> Privacy Policy</a>
-      <a href="#terms" class="sidebar-link"><i class="fas fa-file-contract"></i> Terms &amp; Conditions</a>
-      <a href="#refund" class="sidebar-link"><i class="fas fa-undo"></i> Refund Policy</a>
-      <a href="#contact" class="sidebar-link"><i class="fas fa-envelope"></i> Contact Us</a>
+    <nav class="sidebar-nav" aria-label="Main navigation">
+      <span class="sidebar-group-label">Dashboard</span>
+      <a href="#home" class="sidebar-link"><i class="fas fa-house" aria-hidden="true"></i> Home</a>
+      <a href="#stats" class="sidebar-link"><i class="fas fa-chart-simple" aria-hidden="true"></i> Live Status</a>
+      <a href="#updates" class="sidebar-link"><i class="fas fa-newspaper" aria-hidden="true"></i> Latest Updates</a>
+      <a href="#app-preview" class="sidebar-link"><i class="fas fa-mobile-screen" aria-hidden="true"></i> App Preview</a>
+      <a href="#ratings" class="sidebar-link"><i class="fas fa-star" aria-hidden="true"></i> Ratings &amp; Reviews</a>
+      <a href="#tutorials" class="sidebar-link"><i class="fab fa-youtube" aria-hidden="true"></i> Tutorials</a>
+
+      <span class="sidebar-group-label">Legal &amp; Support</span>
+      <button type="button" class="sidebar-link" data-legal-open="disclaimer"><i class="fas fa-triangle-exclamation" aria-hidden="true"></i> Disclaimer</button>
+      <button type="button" class="sidebar-link" data-legal-open="privacy-policy"><i class="fas fa-shield-halved" aria-hidden="true"></i> Privacy Policy</button>
+      <button type="button" class="sidebar-link" data-legal-open="data-deletion"><i class="fas fa-user-slash" aria-hidden="true"></i> Account &amp; Data Deletion</button>
+      <button type="button" class="sidebar-link" data-legal-open="terms"><i class="fas fa-file-contract" aria-hidden="true"></i> Terms &amp; Conditions</button>
+      <button type="button" class="sidebar-link" data-legal-open="refund"><i class="fas fa-rotate-left" aria-hidden="true"></i> Refund Policy</button>
+      <a href="#contact" class="sidebar-link"><i class="fas fa-envelope" aria-hidden="true"></i> Contact Us</a>
     </nav>
     <div class="sidebar-footer">
-      <a href="https://www.instagram.com/alishaesports.gg" target="_blank" rel="noopener noreferrer">
-        <i class="fab fa-instagram"></i> @alishaesports.gg
+      <a href="https://www.instagram.com/rana_esports_official" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-instagram" aria-hidden="true"></i> @rana_esports_official
       </a>
     </div>
   </aside>
 
-  <!-- ===== HERO DISPLAY CONTROL NODE ===== -->
+  <!-- ===== HERO ===== -->
   <section class="hero" id="home">
     <div class="hero-bg-grid"></div>
     <div class="hero-particles" id="particles"></div>
     <div class="hero-content">
-      <div class="hero-badge">
-        <i class="fas fa-fire"></i> FREE FIRE STRATEGY PLATFORM
+      <div class="hero-text">
+        <div class="hero-badge"><i class="fas fa-fire" aria-hidden="true"></i> FREE FIRE SQUAD &amp; STRATEGY PLATFORM</div>
+        <h1 class="hero-title">RANA<br /><span class="hero-accent">eSPORTS</span></h1>
+        <p class="hero-subtitle">
+          Chat with your squad, call your team, find new teammates, and plan every drop —
+          the companion app built for competitive Free Fire players.
+        </p>
+
+        <!-- TODO: replace with your actual APK release link -->
+        <a
+          href="https://github.com/skrsameer/Rana-eSports/releases/latest/download/RanaEsports.apk"
+          target="_self"
+          download="Rana_Esports.apk"
+          rel="noopener noreferrer"
+          class="download-btn"
+          id="downloadBtn"
+          data-download-track
+          aria-label="Download Rana eSports APK"
+        >
+          <i class="fas fa-download" aria-hidden="true"></i>
+          <span>DOWNLOAD RANA eSPORTS</span>
+          <small>Free • Only for Android v1.1.9</small>
+        </a>
+
+        <div class="hero-stats">
+          <div class="stat"><span class="stat-num">100%</span><span class="stat-label">Free to Start</span></div>
+          <div class="stat-divider"></div>
+          <div class="stat"><span class="stat-num">Android</span><span class="stat-label">Compatible</span></div>
+          <div class="stat-divider"></div>
+          <div class="stat"><span class="stat-num" data-rana-stat="downloads">—</span><span class="stat-label">Downloads</span></div>
+        </div>
       </div>
-      <h1 class="hero-title">
-        ALISHA<br />
-        <span class="hero-accent">eSPORTS</span>
-      </h1>
-      <p class="hero-subtitle">
-        Master every rotation. Dominate every match.<br />
-        The ultimate Free Fire strategy &amp; squad app built for pros.
-      </p>
 
-      <a
-        href="https://github.com/skrsameer/Alisha-eSports/releases/download/v1.0.8/AlishaeSportsv1.0.8.apk"
-target="_self"
-download="Alisha_Esports_V1.0.8.apk"
-        rel="noopener noreferrer"
-        class="download-btn"
-        id="downloadBtn"
-        aria-label="Download Alisha eSports APK V1.0.8"
-      >
-        <i class="fas fa-download"></i>
-        <span>DOWNLOAD ALISHA ESPORTS APK</span>
-        <small>v1.0.9 • Free • Android</small>
-      </a>
-
-      <div class="hero-stats">
-        <div class="stat"><span class="stat-num">100%</span><span class="stat-label">Free</span></div>
-        <div class="stat-divider"></div>
-        <div class="stat"><span class="stat-num">Android</span><span class="stat-label">Compatible</span></div>
-        <div class="stat-divider"></div>
-        <div class="stat"><span class="stat-num">V1.0.9</span><span class="stat-label">Latest</span></div>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="hero-phone-frame">
+          <div class="hero-phone-glow"></div>
+          <img class="hero-phone-img" src="preview_1.jpeg" alt="" loading="lazy" />
+        </div>
       </div>
     </div>
-    <a href="#updates" class="scroll-indicator" aria-label="Scroll Down">
-      <i class="fas fa-chevron-down"></i>
-    </a>
+    <a href="#stats" class="scroll-indicator" aria-label="Scroll down"><i class="fas fa-chevron-down" aria-hidden="true"></i></a>
   </section>
 
-  <!-- ===== SCREEN DIVISION: LATEST TIMELINE UPDATES ===== -->
+  <!-- ===== LIVE STATS (Firebase) ===== -->
+  <section class="stats-section" id="stats">
+    <div class="section-header">
+      <h2 class="section-title">Live <span class="accent">Status</span></h2>
+    </div>
+    <div class="stats-grid">
+      <div class="stat-block">
+        <i class="fas fa-download" aria-hidden="true"></i>
+        <span class="stat-block-num" data-rana-stat="downloads">0</span>
+        <span class="stat-block-label">App Downloads</span>
+      </div>
+      <div class="stat-block">
+        <i class="fas fa-eye" aria-hidden="true"></i>
+        <span class="stat-block-num" data-rana-stat="visitors">0</span>
+        <span class="stat-block-label">Website Visitors</span>
+      </div>
+      <div class="stat-block">
+        <i class="fas fa-star" aria-hidden="true"></i>
+        <span class="stat-block-num" id="ranaAvgRatingStat">0.0</span>
+        <span class="stat-block-label">Average Rating</span>
+      </div>
+      <div class="stat-block">
+        <i class="fas fa-comment-dots" aria-hidden="true"></i>
+        <span class="stat-block-num" id="ranaTotalRatingsStat">0</span>
+        <span class="stat-block-label">Total Ratings</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== LATEST UPDATES ===== -->
   <section class="update-slider-section" id="updates">
     <div class="section-header">
       <span class="section-eyebrow">What's New</span>
       <h2 class="section-title">LATEST <span class="accent">UPDATES</span></h2>
     </div>
-
     <div class="swiper updateSwiper">
       <div class="swiper-wrapper">
         <div class="swiper-slide">
           <div class="slide-image-container">
-            <img
-              src="https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=1280&auto=format&fit=crop"
-              alt="VIP Vault Update Banner"
-              loading="lazy"
-            />
+            <img src="update_1.png" alt="Team Finder update banner" loading="lazy" />
           </div>
           <div class="slide-overlay">
-            <h3>NEW VIP VAULT OPEN!</h3>
-            <p>Unlock exclusive rewards every week.</p>
+            <h3>Strategy & Fight Zone PDFs</h3>
+            <p>Access detailed strategies and maps for better gameplay.</p>
           </div>
         </div>
         <div class="swiper-slide">
           <div class="slide-image-container">
-            <img
-              src="https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=1280&auto=format&fit=crop"
-              alt="Team Finder 2.0 Update Banner"
-              loading="lazy"
-            />
+            <img src="update_2.png" alt="Squad voice and video call banner" loading="lazy" />
           </div>
           <div class="slide-overlay">
-            <h3>TEAM FINDER 2.0 LIVE</h3>
-            <p>Smarter matching. Stronger squads.</p>
+            <h3>All Drone view & Drawing tools</h3>
+            <p>Mark drop points and plan rotations with your team.</p>
           </div>
         </div>
         <div class="swiper-slide">
           <div class="slide-image-container">
-            <img
-              src="https://images.unsplash.com/photo-1538481199705-c710c4e965fc?q=80&w=1280&auto=format&fit=crop"
-              alt="Voice Call Feature Banner"
-              loading="lazy"
-            />
+            <img src="update_3.png" alt="Tactical maps banner" loading="lazy" />
           </div>
           <div class="slide-overlay">
-            <h3>VOICE + SCREEN SHARE</h3>
-            <p>Coordinate like a real pro team.</p>
+            <h3>One Team / One Dream</h3>
+            <p>Unite your squad and chase the same goal together.</p>
           </div>
         </div>
       </div>
@@ -216,581 +233,516 @@ download="Alisha_Esports_V1.0.8.apk"
     </div>
   </section>
 
-  <!-- ===== MOBILE ORIENTATION SWIPER INTERACTION ===== -->
+  <!-- ===== APP PREVIEW ===== -->
   <section class="app-preview-section" id="app-preview">
     <div class="section-header">
       <span class="section-eyebrow">Inside The App</span>
       <h2 class="section-title">APP <span class="accent">PREVIEW</span></h2>
-      <p class="section-desc">Swipe to explore the premium interface built for Free Fire warriors.</p>
     </div>
     <div class="swiper previewSwiper">
       <div class="swiper-wrapper">
-        <div class="swiper-slide">
-          <img src="slider2-1.jpg" alt="Alisha eSports App Screenshot 1" loading="lazy" />
-        </div>
-        <div class="swiper-slide">
-          <img
-            src="slider2-2.jpg"
-            alt="Alisha eSports App Screenshot 2"
-            loading="lazy"
-          />
-        </div>
-        <div class="swiper-slide">
-          <img
-            src="slider 2-3.jpg"
-            alt="Alisha eSports App Screenshot 3"
-            loading="lazy"
-          />
-        </div>
-        <div class="swiper-slide">
-          <img
-            src="slider2-4.jpg"
-            alt="Alisha eSports App Screenshot 4"
-            loading="lazy"
-          />
-        </div>
-        <div class="swiper-slide">
-          <img
-            src="slider2-5.jpg"
-            alt="Alisha eSports App Screenshot 5"
-            loading="lazy"
-          />
-        </div>
+        <div class="swiper-slide"><img src="preview_1.jpeg" alt="Rana eSports app screenshot 1" loading="lazy" /></div>
+        <div class="swiper-slide"><img src="preview_2.jpeg" alt="Rana eSports app screenshot 2" loading="lazy" /></div>
+        <div class="swiper-slide"><img src="preview_3.jpeg" alt="Rana eSports app screenshot 3" loading="lazy" /></div>
+        <div class="swiper-slide"><img src="preview_4.jpeg" alt="Rana eSports app screenshot 4" loading="lazy" /></div>
+        <div class="swiper-slide"><img src="preview_5.jpeg" alt="Rana eSports app screenshot 5" loading="lazy" /></div>
+        <div class="swiper-slide"><img src="preview_6.jpeg" alt="Rana eSports app screenshot 6" loading="lazy" /></div>
+        <div class="swiper-slide"><img src="preview_7.jpeg" alt="Rana eSports app screenshot 7" loading="lazy" /></div>
       </div>
       <div class="swiper-pagination"></div>
     </div>
   </section>
 
-  <!-- ===== MAIN MODULE DATA: STRATEGIC FEATURES GRID ===== -->
-  <section class="features-section" id="features">
+  <!-- ===== RATE & REVIEW (Firebase) ===== -->
+  <section class="rating-section" id="ratings">
     <div class="section-header">
-      <span class="section-eyebrow">What You Get</span>
-      <h2 class="section-title">POWERFUL <span class="accent">FEATURES</span></h2>
-      <p class="section-desc">
-        Everything your squad needs to win — strategy, communication, and intelligence in one app.
-      </p>
+      <span class="section-eyebrow">Community Voice</span>
+      <h2 class="section-title">RATINGS <span class="accent">&amp; REVIEWS</span></h2>
+      <p class="section-desc">Real feedback from real players.</p>
     </div>
-    <div class="features-grid">
-      <div class="feature-card">
-        <div class="feature-icon"><i class="fas fa-map-marked-alt"></i></div>
-        <h3>Battle Strategy Planner</h3>
-        <p>Plan full match rotations, mark loot spots, pipe locations, and fallback zones on an interactive map with your squad.</p>
+
+    <div class="rating-summary">
+      <div class="rating-summary-left">
+        <span class="avg-number" id="ranaAvgRating">0.0</span>
+        <div class="avg-stars" id="ranaAvgStars"></div>
+        <div class="avg-count" id="ranaRatingCount">No reviews yet</div>
       </div>
-      <div class="feature-card">
-        <div class="feature-icon"><i class="fas fa-microphone"></i></div>
-        <h3>Voice Call &amp; Screen Share</h3>
-        <p>Talk and share your screen live with teammates. Coordinate during warm-ups and discuss tactics in real time.</p>
+      <button type="button" class="btn-rate-us" id="openReviewModalBtn">
+        <i class="fas fa-star" aria-hidden="true"></i> Rate Rana eSports
+      </button>
+    </div>
+
+    <div class="review-list-wrap">
+      <div class="review-list" id="ranaReviewList">
+        <p class="review-empty">Loading reviews…</p>
       </div>
-      <div class="feature-card">
-        <div class="feature-icon"><i class="fas fa-comments"></i></div>
-        <h3>Squad Chat Rooms</h3>
-        <p>Private discussion rooms for your team. Chat, plan strategies, and share game updates — all in one place.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon"><i class="fas fa-users"></i></div>
-        <h3>Team Finder</h3>
-        <p>Find new teammates by skill level, playstyle, and region. Build your perfect Free Fire squad from the community.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon"><i class="fas fa-rocket"></i></div>
-        <h3>Launchpad Range Calculator</h3>
-        <p>Calculate exact launchpad distances and landing zones. Master your aerial game with precision intelligence.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon"><i class="fas fa-satellite-dish"></i></div>
-        <h3>Drone Intel Spots</h3>
-        <p>Access all drone movie locations and vision zones. See what others can't and always stay one step ahead.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon"><i class="fas fa-trophy"></i></div>
-        <h3>Tournament Tracker</h3>
-        <p>Stay updated with upcoming tournaments, scrim schedules, and prize pools. Register your squad and compete.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon"><i class="fas fa-chart-line"></i></div>
-        <h3>Stats &amp; Performance</h3>
-        <p>Track your K/D, win rate, headshot percentage, and squad performance. Improve smarter, not harder.</p>
-      </div>
+      <button type="button" class="review-readmore" id="reviewReadMoreBtn" hidden>
+        <span>Read More Reviews</span> <i class="fas fa-chevron-down" aria-hidden="true"></i>
+      </button>
     </div>
   </section>
 
-  <!-- ===== STREAM REPOSITORIES: VIDEO STREAM MATRICES ===== -->
+  <!-- ===== TUTORIALS ===== -->
   <section class="tutorials-section" id="tutorials">
     <div class="section-header">
-      <span class="section-eyebrow">Learn Fast</span>
       <h2 class="section-title">TUTORIAL <span class="accent">VIDEOS</span></h2>
-      <p class="section-desc">Watch how to use Alisha eSports. Only one plays at a time.</p>
+      <p class="section-desc">Learn how to use Rana eSports.</p>
     </div>
-    <div class="videos-grid">
+    <!-- Video Language Tabs -->
+    <div class="video-tabs" aria-label="Video Language">
+      <button type="button" class="video-tab active" data-vid-tab="english">English Video</button>
+      <button type="button" class="video-tab" data-vid-tab="hindi">Hindi Video</button>
+    </div>
+
+    <!-- English Videos (Default Show) -->
+    <div class="videos-grid" id="englishVideos">
       <div class="video-card">
-        <div class="video-label">Tutorial 1</div>
-        <div class="video-wrapper">
-          <div id="player1"></div>
-        </div>
+        <div class="video-label">Eng 1: How to create account</div>
+        <div class="video-wrapper"><div id="playerEng1"></div></div>
       </div>
       <div class="video-card">
-        <div class="video-label">Tutorial 2</div>
-        <div class="video-wrapper">
-          <div id="player2"></div>
-        </div>
+        <div class="video-label">Eng 2: Getting Started</div>
+        <div class="video-wrapper"><div id="playerEng2"></div></div>
+      </div>
+      <div class="video-card">
+        <div class="video-label">Eng 3: Pro Tips</div>
+        <div class="video-wrapper"><div id="playerEng3"></div></div>
+      </div>
+    </div>
+
+    <!-- Hindi Videos (Default Hidden) -->
+    <div class="videos-grid" id="hindiVideos" style="display: none;">
+      <div class="video-card">
+        <div class="video-label">Hin 1: How to create account</div>
+        <div class="video-wrapper"><div id="playerHin1"></div></div>
+      </div>
+      <div class="video-card">
+        <div class="video-label">Hin 2: Getting Started</div>
+        <div class="video-wrapper"><div id="playerHin2"></div></div>
+      </div>
+      <div class="video-card">
+        <div class="video-label">Hin 3: Pro Tips</div>
+        <div class="video-wrapper"><div id="playerHin3"></div></div>
       </div>
     </div>
   </section>
 
-  <!-- ===== SYSTEM SAFEGUARD: ESCROW SYSTEM DISCLAIMER ===== -->
-  <section class="policy-section disclaimer-section" id="disclaimer">
-    <div class="policy-container">
-      <div class="policy-header disclaimer-header">
-        <div class="policy-icon disclaimer-icon"><i class="fas fa-exclamation-triangle"></i></div>
-        <span class="section-eyebrow">Important Notice</span>
-        <h2>DISCLAIMER</h2>
-        <p class="policy-subtitle">Please read carefully before using Alisha eSports</p>
-      </div>
-
-      <div class="policy-block">
-        <div class="disclaimer-card highlight-card">
-          <h3><i class="fas fa-shield-alt"></i> Not Affiliated with Garena</h3>
-          <p>
-            <strong>Alisha eSports is an independent, fan-made strategy application created by gamers, for gamers.</strong>
-            We are <strong>NOT</strong> officially affiliated with, endorsed by, sponsored by, or in any way connected to
-            <strong>Garena International Private Limited</strong>, <strong>111dots Studio</strong>, or any official
-            developer or publisher of <strong>Garena Free Fire</strong> and <strong>Free Fire MAX</strong>.
-          </p>
-        </div>
-
-        <div class="disclaimer-card">
-          <h3><i class="fas fa-images"></i> Game Imagery, Screenshots &amp; Trademarks</h3>
-          <p>
-            This website and the Alisha eSports application may contain in-game screenshots, character art, weapon visuals,
-            map imagery, logos, names, and other media related to <strong>Free Fire</strong>. All such content is the
-            <strong>intellectual property of Garena</strong> and is used here solely for the following purposes:
-          </p>
-          <ul class="disclaimer-list">
-            <li><i class="fas fa-check-circle"></i> <strong>Educational &amp; Tutorial Use</strong> — to teach players strategies, rotations, and game mechanics.</li>
-            <li><i class="fas fa-check-circle"></i> <strong>Reference &amp; Commentary</strong> — to discuss gameplay, maps, and tactics.</li>
-            <li><i class="fas fa-check-circle"></i> <strong>Non-Commercial Fair Use</strong> — under fair-use principles for a fan community app.</li>
-            <li><i class="fas fa-check-circle"></i> <strong>Community Building</strong> — to help Free Fire players connect and improve.</li>
-          </ul>
-          <p>
-            All trademarks, logos, and copyrights belong to their respective owners. No copyright infringement is
-            intended. If you are a rights holder and believe any content should be removed, please contact us
-            immediately at <a href="mailto:skrsameer0786@gmail.com">skrsameer0786@gmail.com</a> and we will take
-            prompt action.
-          </p>
-        </div>
-
-        <div class="disclaimer-card">
-          <h3><i class="fas fa-gamepad"></i> No Game Modification or Hacks</h3>
-          <p>
-            Alisha eSports is a <strong>100% legal companion app</strong>. We do <strong>NOT</strong> provide hacks,
-            cheats, mods, aimbots, ESP, wall hacks, auto-headshot scripts, injection tools, or any kind of unauthorized
-            modification to Free Fire. Using third-party cheats may result in a <strong>permanent ban</strong> from your
-            Free Fire account by Garena, and we strongly discourage it.
-          </p>
-        </div>
-
-        <div class="disclaimer-card">
-          <h3><i class="fas fa-user-shield"></i> Responsible Gaming</h3>
-          <p>
-            Free Fire is rated for players <strong>12+</strong>. We encourage healthy gaming habits — take regular breaks,
-            stay hydrated, and never let gaming interfere with your studies, work, sleep, or family time. Gaming should
-            stay fun, fair, and friendly.
-          </p>
-        </div>
-
-        <div class="disclaimer-card warning-card">
-          <h3><i class="fas fa-info-circle"></i> Use At Your Own Risk</h3>
-          <p>
-            Alisha eSports is provided <strong>"AS IS"</strong> without warranty of any kind. While we work hard to keep
-            the app safe and accurate, we are not liable for any in-game losses, account suspensions caused by misuse,
-            or device-related issues that may arise from using this companion app.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== LEGAL PROTOCOL: PRIVACY PROTECTION SCHEME ===== -->
-  <section class="policy-section" id="privacy-policy">
-    <div class="policy-container">
-      <div class="policy-header">
-        <div class="policy-icon"><i class="fas fa-shield-alt"></i></div>
-        <span class="section-eyebrow">Your Data, Your Control</span>
-        <h2>Privacy Policy</h2>
-        <p class="policy-subtitle">Last Updated: January 2026</p>
-      </div>
-
-      <div class="policy-block">
-        <p class="policy-intro">
-          At <strong>Alisha eSports</strong>, your privacy is our top priority. We are a strategy app built for Free Fire
-          gamers, and we believe great gaming starts with trust. This policy explains <strong>what data we collect, why we collect it,
-          and how we protect it</strong> — written in plain language, no legal jargon.
-        </p>
-
-        <div class="policy-card">
-          <h3><i class="fas fa-database"></i> 1. Information We Collect</h3>
-          <p>To give you the best squad experience, we collect only the bare minimum:</p>
-          <ul>
-            <li><strong>Account Info:</strong> Your in-game name (IGN), Free Fire ID (UID), region, and an optional profile picture.</li>
-            <li><strong>Squad &amp; Chat Data:</strong> Messages, voice room participation, and team-finder preferences.</li>
-            <li><strong>Device Info:</strong> Device model, OS version, and a unique app ID (used only for crash reports and security).</li>
-            <li><strong>Usage Data:</strong> Which features you use most often (helps us improve the app).</li>
-          </ul>
-          <p><strong>We do NOT collect:</strong> your Free Fire account password, payment details, contacts, SMS, or call logs.</p>
-        </div>
-
-        <div class="policy-card">
-          <h3><i class="fas fa-microphone-alt"></i> 2. Voice &amp; Screen Share</h3>
-          <p>
-            Voice calls and screen-sharing inside Alisha eSports are <strong>peer-to-peer / end-to-end</strong> whenever possible.
-            We do <strong>NOT</strong> record voice conversations or save screen-share streams on our servers. What's said in your
-            squad stays in your squad.
-          </p>
-        </div>
-
-        <div class="policy-card">
-          <h3><i class="fas fa-bullseye"></i> 3. How We Use Your Data</h3>
-          <ul>
-            <li>To match you with teammates and squads in Team Finder.</li>
-            <li>To deliver chat messages and voice calls to your squad.</li>
-            <li>To fix bugs, detect cheating/abuse, and improve app performance.</li>
-            <li>To send important updates about the app (you can opt out anytime).</li>
-          </ul>
-          <p><strong>We never sell, rent, or trade your personal data — period.</strong></p>
-        </div>
-
-        <div class="policy-card">
-          <h3><i class="fas fa-lock"></i> 4. Data Security</h3>
-          <p>
-            We use industry-standard encryption (HTTPS / TLS) for data in transit and encrypted storage for sensitive data
-            at rest. Although no online service is 100% secure, we work continuously to protect your information from
-            unauthorized access.
-          </p>
-        </div>
-
-        <div class="policy-card">
-          <h3><i class="fas fa-child"></i> 5. Children's Privacy</h3>
-          <p>
-            Alisha eSports is intended for users <strong>aged 13 and above</strong>. Players below 13 must use the app under
-            parental supervision. We do not knowingly collect data from children under 13.
-          </p>
-        </div>
-
-        <div class="policy-card">
-          <h3><i class="fas fa-cookie-bite"></i> 6. Cookies &amp; Analytics</h3>
-          <p>
-            Our website may use basic cookies and lightweight analytics (such as Google Analytics) to understand visitor
-            behavior. These help us improve the website — they do <strong>not</strong> personally identify you.
-          </p>
-        </div>
-
-        <div class="policy-card">
-          <h3><i class="fas fa-user-cog"></i> 7. Your Rights</h3>
-          <ul>
-            <li><strong>Access:</strong> Request a copy of your data anytime.</li>
-            <li><strong>Delete:</strong> Request full deletion of your account and data.</li>
-            <li><strong>Update:</strong> Edit your profile and preferences inside the app.</li>
-            <li><strong>Opt-out:</strong> Disable notifications, analytics, and marketing emails.</li>
-          </ul>
-          <p>To exercise any of these rights, simply email us at <a href="mailto:skrsameer0786@gmail.com">skrsameer0786@gmail.com</a>.</p>
-        </div>
-
-        <div class="policy-card">
-          <h3><i class="fas fa-sync-alt"></i> 8. Updates To This Policy</h3>
-          <p>
-            We may update this Privacy Policy from time to time. Any major change will be announced inside the app and on
-            this website. Continued use of Alisha eSports means you accept the latest version.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== CORE RULES: TERMS OF ENGAGEMENT ENGINE ===== -->
-  <section class="policy-section policy-alt" id="terms">
-    <div class="policy-container">
-      <div class="policy-header">
-        <div class="policy-icon"><i class="fas fa-file-contract"></i></div>
-        <span class="section-eyebrow">The Rules of the Battlefield</span>
-        <h2>Terms &amp; Conditions</h2>
-        <p class="policy-subtitle">Last Updated: January 2026</p>
-      </div>
-
-      <div class="policy-block">
-        <p class="policy-intro">
-          Welcome, soldier! By downloading or using <strong>Alisha eSports</strong>, you agree to the following terms.
-          These rules keep our community fair, safe, and toxic-free — because every Free Fire squad deserves respect.
-        </p>
-
-        <div class="policy-card">
-          <h3><i class="fas fa-handshake"></i> 1. Acceptance of Terms</h3>
-          <p>
-            By creating an account, downloading the APK, or using any feature of Alisha eSports, you confirm that you have
-            read, understood, and agreed to these Terms &amp; Conditions, our Privacy Policy, and the Disclaimer above.
-          </p>
-        </div>
-
-        <div class="policy-card">
-          <h3><i class="fas fa-id-card"></i> 2. Eligibility</h3>
-          <p>
-            You must be at least <strong>13 years old</strong> to use Alisha eSports. If you are under 18, please use the app
-            under the guidance of a parent or guardian. Each player is allowed only <strong>one personal account</strong>.
-          </p>
-        </div>
-
-        <div class="policy-card">
-          <h3><i class="fas fa-user-secret"></i> 3. Account Security</h3>
-          <ul>
-            <li>Keep your login credentials private. Don't share OTPs, passwords, or in-game UIDs publicly.</li>
-            <li>You are responsible for everything that happens on your account.</li>
-            <li>Notify us immediately at <a href="mailto:skrsameer0786@gmail.com">skrsameer0786@gmail.com</a> if your account is compromised.</li>
-          </ul>
-        </div>
-
-        <div class="policy-card">
-          <h3><i class="fas fa-ban"></i> 4. Strictly Prohibited Behavior</h3>
-          <p>The following actions will result in an <strong>immediate and permanent ban</strong>:</p>
-          <ul>
-            <li>Use of hacks, cheats, scripts, modded APKs, panels, aimbots, or auto-headshot tools.</li>
-            <li>Harassment, hate speech, racism, sexism, or any form of bullying in chat or voice rooms.</li>
-            <li>Sharing sexually explicit, violent, or illegal content.</li>
-            <li>Spamming, advertising third-party services, scamming, or phishing.</li>
-            <li>Impersonating pro players, content creators, or Alisha eSports staff.</li>
-            <li>Buying, selling, or trading Free Fire accounts or in-game items through our platform.</li>
-            <li>Using the Team Finder for non-gaming purposes (dating, real-world contact harvesting, etc.).</li>
-          </ul>
-        </div>
-
-        <div class="policy-card">
-          <h3><i class="fas fa-microphone-slash"></i> 5. Voice Chat &amp; Communication Rules</h3>
-          <p>
-            Voice rooms and screen-share features are powerful — and powerful tools come with responsibility:
-          </p>
-          <ul>
-            <li>No screaming, ear-rape sounds, music spam, or background noise abuse.</li>
-            <li>No recording other players without their clear permission.</li>
-            <li>No sharing of inappropriate content via screen share.</li>
-            <li>Respect every teammate, even after a tough loss. GG everyone.</li>
-          </ul>
-        </div>
-
-        <div class="policy-card">
-          <h3><i class="fas fa-copyright"></i> 6. Intellectual Property</h3>
-          <p>
-            All original content inside Alisha eSports — including our logo, UI design, code, strategy guides, and tutorials —
-            belongs to <strong>Alisha eSports</strong>. You may not copy, modify, distribute, or sell any part of our app
-            without written permission. Free Fire-related trademarks and screenshots belong to <strong>Garena</strong>
-            (see Disclaimer).
-          </p>
-        </div>
-
-        <div class="policy-card">
-          <h3><i class="fas fa-gavel"></i> 7. Bans, Suspensions &amp; Appeals</h3>
-          <p>
-            Our moderation team may issue warnings, temporary mutes, temporary bans, or permanent bans depending on the
-            offense. If you believe a ban was a mistake, you can appeal by emailing
-            <a href="mailto:skrsameer0786@gmail.com">skrsameer0786@gmail.com</a> within <strong>7 days</strong>. Our decision is final.
-          </p>
-        </div>
-
-        <div class="policy-card">
-          <h3><i class="fas fa-tools"></i> 8. App Updates &amp; Availability</h3>
-          <p>
-            We may update, modify, suspend, or discontinue any feature at any time to improve security and performance.
-            We don't guarantee 100% uptime — but we do our best to keep the squad online.
-          </p>
-        </div>
-
-        <div class="policy-card">
-          <h3><i class="fas fa-balance-scale"></i> 9. Limitation of Liability</h3>
-          <p>
-            Alisha eSports is provided <strong>"AS IS"</strong>. We are not responsible for in-game losses, ranking drops,
-            account suspensions on Free Fire, lost rewards, or any indirect damages caused by using our app.
-          </p>
-        </div>
-
-        <div class="policy-card">
-          <h3><i class="fas fa-globe-asia"></i> 10. Governing Law</h3>
-          <p>
-            These terms are governed by the laws of <strong>India</strong>. Any disputes will be resolved through the
-            courts of the appropriate jurisdiction.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== ESCROW POLICIES: REFUND LOGISTIC SYSTEM ===== -->
-  <section class="policy-section" id="refund">
-    <div class="policy-container">
-      <div class="policy-header">
-        <div class="policy-icon"><i class="fas fa-undo-alt"></i></div>
-        <span class="section-eyebrow">Fair &amp; Transparent</span>
-        <h2>Refund Policy</h2>
-        <p class="policy-subtitle">Last Updated: January 2026</p>
-      </div>
-
-      <div class="policy-block">
-        <p class="policy-intro">
-          Alisha eSports is currently <strong>100% FREE</strong> to download and use. This refund policy will apply
-          <strong>only if and when</strong> we launch premium features, VIP plans, or paid in-app items in the future.
-        </p>
-
-        <div class="policy-card">
-          <h3><i class="fas fa-gift"></i> 1. Free Features</h3>
-          <p>
-            All current features — Battle Strategy Planner, Voice Chat, Squad Rooms, Team Finder, Launchpad Calculator,
-            Drone Intel — are completely free. There is nothing to refund for free features.
-          </p>
-        </div>
-
-        <div class="policy-card">
-          <h3><i class="fas fa-credit-card"></i> 2. Future Premium Purchases</h3>
-          <p>If we launch any paid feature in the future:</p>
-          <ul>
-            <li>You may request a refund <strong>within 7 days</strong> of purchase.</li>
-            <li>The premium feature must be <strong>completely unused</strong>.</li>
-            <li>Refunds are processed to the <strong>original payment method</strong> only.</li>
-            <li>Processing time: <strong>5–10 business days</strong>.</li>
-          </ul>
-        </div>
-
-        <div class="policy-card">
-          <h3><i class="fas fa-times-circle"></i> 3. Non-Refundable Cases</h3>
-          <p>The following are <strong>NOT eligible</strong> for refund:</p>
-          <ul>
-            <li>Premium features that have already been used or activated.</li>
-            <li>Tournament entry fees once a tournament has started.</li>
-            <li>Accounts banned for violating Terms &amp; Conditions.</li>
-            <li>Donation or "tip the developer" payments.</li>
-            <li>Requests made after the 7-day refund window.</li>
-          </ul>
-        </div>
-
-        <div class="policy-card">
-          <h3><i class="fas fa-paper-plane"></i> 4. How To Request A Refund</h3>
-          <p>To request a refund, email us at <a href="mailto:skrsameer0786@gmail.com">skrsameer0786@gmail.com</a> with the following:</p>
-          <ul>
-            <li>Your registered email or in-game UID.</li>
-            <li>Order ID or payment transaction reference.</li>
-            <li>Reason for the refund request.</li>
-          </ul>
-          <p>We typically respond within <strong>48 hours</strong>.</p>
-        </div>
-
-        <div class="policy-card">
-          <h3><i class="fas fa-shield-virus"></i> 5. Chargebacks &amp; Fraud</h3>
-          <p>
-            Filing a chargeback or dispute with your bank without first contacting us may result in <strong>permanent
-            account suspension</strong>. Please reach out to our team first — we'll always try to make it right.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== CONNECT INTEGRATION: INBOX & COMMUNICATION ===== -->
+  <!-- ===== CONTACT ===== -->
   <section class="contact-section" id="contact">
     <div class="section-header">
-      <span class="section-eyebrow">Get In Touch</span>
       <h2 class="section-title">CONTACT <span class="accent">US</span></h2>
-      <p class="section-desc">Got a bug, idea, or sponsorship offer? We'd love to hear from the squad.</p>
     </div>
     <div class="contact-grid">
-      <a href="mailto:skrsameer0786@gmail.com" class="contact-card">
-        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+      <a href="mailto:rana.esports.help@gmail.com" class="contact-card">
+        <div class="contact-icon"><i class="fas fa-envelope" aria-hidden="true"></i></div>
         <h3>Email Us</h3>
-        <p>skrsameer0786@gmail.com</p>
+        <p>rana.esports.help@gmail.com</p>
       </a>
-      <a
-        href="https://www.instagram.com/alishaesports.gg"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="contact-card"
-      >
-        <div class="contact-icon instagram-icon"><i class="fab fa-instagram"></i></div>
+      <a href="https://www.instagram.com/rana_esports_official" target="_blank" rel="noopener noreferrer" class="contact-card">
+        <div class="contact-icon instagram-icon"><i class="fab fa-instagram" aria-hidden="true"></i></div>
         <h3>Instagram</h3>
-        <p>@alishaesports.gg</p>
+        <p>@rana_esports_official</p>
       </a>
-      <a
-        href="https://github.com/skrsameer/Alisha-eSports/releases/download/v1.0.8/AlishaeSportsv1.0.8.apk"
-target="_self"
-download="Alisha_Esports_V1.0.8.apk"
-        rel="noopener noreferrer"
-        class="contact-card"
-      >
-        <div class="contact-icon"><i class="fas fa-download"></i></div>
+      <!-- TODO: replace with your actual APK release link -->
+      <a href="https://github.com/skrsameer/Rana-eSports/releases/latest/download/RanaEsports.apk" target="_self" download="Rana_Esports.apk" rel="noopener noreferrer" class="contact-card" data-download-track>
+        <div class="contact-icon"><i class="fas fa-download" aria-hidden="true"></i></div>
         <h3>Download APK</h3>
-        <p>v1.0.9 — Latest Build</p>
+        <p>Latest v1.1.9</p>
       </a>
     </div>
   </section>
 
-  <!-- ===== HUD FOOTER SYSTEM SHELL ===== -->
+  <!-- ===== FOOTER (short — legal docs open in the drawer, not inline) ===== -->
   <footer class="footer">
     <div class="footer-top">
       <div class="footer-brand">
-        <span class="footer-logo">ALISHA <span class="accent">eSPORTS</span></span>
-        <p>The ultimate Free Fire strategy and squad app — built by gamers, for gamers.</p>
-      </div>
-      <div class="footer-links">
-        <h4>Quick Links</h4>
-        <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#features">Features</a></li>
-          <li><a href="#tutorials">Tutorials</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
+        <span class="footer-logo">RANA <span class="accent">eSPORTS</span></span>
       </div>
       <div class="footer-links">
         <h4>Legal</h4>
         <ul>
-          <li><a href="#disclaimer">Disclaimer</a></li>
-          <li><a href="#privacy-policy">Privacy Policy</a></li>
-          <li><a href="#terms">Terms &amp; Conditions</a></li>
-          <li><a href="#refund">Refund Policy</a></li>
+          <li><button type="button" class="footer-legal-btn" data-legal-open="disclaimer">Disclaimer</button></li>
+          <li><button type="button" class="footer-legal-btn" data-legal-open="privacy-policy">Privacy Policy</button></li>
+          <li><button type="button" class="footer-legal-btn" data-legal-open="data-deletion">Data Deletion</button></li>
+          <li><button type="button" class="footer-legal-btn" data-legal-open="terms">Terms &amp; Conditions</button></li>
+          <li><button type="button" class="footer-legal-btn" data-legal-open="refund">Refund Policy</button></li>
         </ul>
       </div>
       <div class="footer-links">
         <h4>Follow Us</h4>
         <div class="footer-socials">
-          <a href="https://www.instagram.com/alishaesports.gg" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-            <i class="fab fa-instagram"></i>
-          </a>
-          <a href="mailto:skrsameer0786@gmail.com" aria-label="Email">
-            <i class="fas fa-envelope"></i>
-          </a>
-          <a href="https://www.youtube.com/@triggercraftx" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
-            <i class="fab fa-youtube"></i>
-          </a>
-          <a href="https://alishaesports.gg" target="_blank" rel="noopener noreferrer" aria-label="Discord">
-            <i class="fab fa-discord"></i>
-          </a>
+          <a href="https://www.instagram.com/rana_esports_official" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+          <a href="mailto:rana.esports.help@gmail.com" aria-label="Email"><i class="fas fa-envelope" aria-hidden="true"></i></a>
+          <a href="https://www.youtube.com/@triggercraftx" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fab fa-youtube" aria-hidden="true"></i></a>
         </div>
       </div>
     </div>
 
     <div class="footer-disclaimer">
-      <p>
-        <i class="fas fa-info-circle"></i>
-        Alisha eSports is <strong>not affiliated with Garena</strong>. Free Fire and all related trademarks belong to
-        their respective owners. All in-game images are used for educational and fair-use purposes only.
-      </p>
+      <p><i class="fas fa-circle-info" aria-hidden="true"></i> Rana eSports is a fan-made app and is <strong>not affiliated with Garena</strong>. Free Fire and all related trademarks belong to their respective owners.</p>
     </div>
 
     <div class="footer-bottom">
-      <p>&copy; 2024–2026 Alisha eSports. All rights reserved. | Made with <i class="fas fa-heart"></i> for Free Fire warriors.</p>
+      <p>&copy; 2025-2026 Rana eSports. All rights reserved. | Made with <i class="fas fa-heart" aria-hidden="true"></i> for Free Fire Esports warriors.</p>
     </div>
   </footer>
 
-  <!-- ===== TACTICAL BACK TO TOP MODULE ===== -->
-  <button class="back-to-top" id="backToTop" aria-label="Back to top">
-    <i class="fas fa-chevron-up"></i>
-  </button>
+  <button class="back-to-top" id="backToTop" type="button" aria-label="Back to top"><i class="fas fa-chevron-up" aria-hidden="true"></i></button>
 
-  <!-- ===== SCRIPT DEFERMENTS ===== -->
+  <!-- ===================================================================
+       LEGAL DRAWER — hidden by default. Opens only when a legal link is
+       clicked (sidebar or footer). Keeps the main page short.
+       =================================================================== -->
+  <div class="legal-overlay" id="legalOverlay"></div>
+  <aside class="legal-drawer" id="legalDrawer" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="legalDrawerTitle">
+    <div class="legal-drawer-header">
+      <h2 id="legalDrawerTitle">Legal Center</h2>
+      <button type="button" class="legal-close" id="legalClose" aria-label="Close">
+        <i class="fas fa-times" aria-hidden="true"></i>
+      </button>
+    </div>
+
+    <nav class="legal-tabs" aria-label="Legal documents">
+      <button type="button" class="legal-tab" data-legal-tab="disclaimer">Disclaimer</button>
+      <button type="button" class="legal-tab" data-legal-tab="privacy-policy">Privacy Policy</button>
+      <button type="button" class="legal-tab" data-legal-tab="data-deletion">Data Deletion</button>
+      <button type="button" class="legal-tab" data-legal-tab="terms">Terms &amp; Conditions</button>
+      <button type="button" class="legal-tab" data-legal-tab="refund">Refund Policy</button>
+    </nav>
+
+    <div class="legal-body" id="legalBody">
+
+      <!-- DISCLAIMER -->
+      <div class="legal-panel" data-legal-panel="disclaimer">
+        <p class="legal-updated">Last updated: August 2026</p>
+
+        <div class="legal-block legal-highlight">
+          <h3><i class="fas fa-shield-halved" aria-hidden="true"></i> Independent, Fan-Made Project</h3>
+          <p>Rana eSports is an independent companion app created by a Free Fire player, for Free Fire players. It is <strong>not made, reviewed, endorsed, sponsored, or officially supported by Garena International Private Limited, 111dots Studio, or any official publisher of Garena Free Fire / Free Fire MAX.</strong> All Free Fire trademarks, names, and imagery remain the property of their respective owners.</p>
+        </div>
+
+        <div class="legal-block">
+          <h3><i class="fas fa-images" aria-hidden="true"></i> Use of Free Fire Names &amp; Imagery</h3>
+          <p>Some screens reference in-game names, terminology, or edited screenshots from Free Fire. These are used only to help players learn — for example, to label a map, explain a rotation, or illustrate a loadout. We rely on the standard fair-use factors for this kind of reference:</p>
+          <ul class="legal-list">
+            <li><i class="fas fa-circle-check" aria-hidden="true"></i> <strong>Purpose:</strong> purely educational and instructional — coaching players on strategy, positioning, and coordination.</li>
+            <li><i class="fas fa-circle-check" aria-hidden="true"></i> <strong>Nature:</strong> commentary and reference, not a copy of the game or its assets for redistribution.</li>
+            <li><i class="fas fa-circle-check" aria-hidden="true"></i> <strong>Amount:</strong> we use only what's needed to make a tip understandable, not full game content.</li>
+            <li><i class="fas fa-circle-check" aria-hidden="true"></i> <strong>Effect:</strong> Rana eSports doesn't compete with or replace Free Fire in any way.</li>
+          </ul>
+          <p>Fair use is a legal defence, not a guarantee — it's assessed case by case, and we can't promise it will apply to every image in every jurisdiction. If a rights holder believes any content should come down, we will act on it promptly: email <a href="mailto:rana.esports.help@gmail.com">rana.esports.help@gmail.com</a>.</p>
+        </div>
+
+        <div class="legal-block">
+          <h3><i class="fas fa-gamepad" aria-hidden="true"></i> No Hacks, Cheats, or Modifications</h3>
+          <p>Rana eSports does not create, distribute, or link to hacks, cheats, mods, aimbots, ESP, wallhacks, injectors, or any tool that modifies Free Fire or gives an unfair advantage. Every feature is a companion tool that runs alongside the official game — chat, voice, team-finding, and strategy planning. Using third-party cheats in Free Fire itself can get your account permanently banned by Garena; we strongly advise against it.</p>
+          <p>Rana eSports is built by an active competitive Free Fire player, not by strangers. We have zero tolerance for hack creators and hack sellers — our goal is to help genuine players learn the game the right way: map awareness, rotations, positioning, and squad coordination.</p>
+        </div>
+
+        <div class="legal-block legal-highlight">
+          <h3><i class="fas fa-id-badge" aria-hidden="true"></i> Your Free Fire ID Is 100% Safe</h3>
+          <p>During sign-up we ask for your Free Fire in-game name (IGN) and UID. These are used <strong>only</strong> to display your identity to other players inside Team Finder and squad features — so teammates know who they're playing with. We never use your IGN or UID to log in to, access, modify, or interact with your Free Fire account in any way, and we never share or sell this information to anyone. Adding your IGN/UID to Rana eSports has zero effect on your Free Fire account, your rank, or your standing with Garena.</p>
+        </div>
+
+        <div class="legal-block">
+          <h3><i class="fas fa-user-shield" aria-hidden="true"></i> Responsible Gaming</h3>
+          <p>Free Fire is rated for players aged 12 and above. We encourage healthy habits — take breaks, stay hydrated, and keep gaming from crowding out school, work, sleep, or family time.</p>
+        </div>
+
+        <div class="legal-block legal-warning">
+          <h3><i class="fas fa-circle-info" aria-hidden="true"></i> Provided As Is</h3>
+          <p>Rana eSports is provided "as is," without warranty of any kind. We work to keep it accurate and safe, but we're not liable for in-game losses, account actions taken by Garena, or device issues arising from use of this companion app.</p>
+        </div>
+      </div>
+
+      <!-- PRIVACY POLICY -->
+      <div class="legal-panel" data-legal-panel="privacy-policy">
+        <p class="legal-updated">Last updated: August 2026</p>
+        <p class="legal-intro">This policy explains what data Rana eSports collects, why, and how it's protected — in plain language.</p>
+
+        <div class="legal-block">
+          <h3><i class="fas fa-database" aria-hidden="true"></i> 1. Information We Collect</h3>
+          <ul class="legal-list">
+            <li><strong>Account info:</strong> mobile number, username, real name, in-game name (IGN), Free Fire UID, role, bio, and an optional avatar.</li>
+            <li><strong>Squad &amp; chat data:</strong> messages, team membership, voice/video call participation, and team-finder cards.</li>
+            <li><strong>Subscription info:</strong> which plan you're on and its expiry date. Card/bank details are handled entirely by our payment gateway — we never see or store them.</li>
+            <li><strong>Device info:</strong> device model, OS version, and a push-notification token (used for alerts and crash diagnostics).</li>
+            <li><strong>Usage &amp; website data:</strong> which features you use most, plus anonymous site analytics (visits, downloads, ratings).</li>
+          </ul>
+          <p><strong>We never collect your Free Fire account password, full payment card details, or your device contacts/call logs.</strong></p>
+          <p>Your in-game name (IGN) and Free Fire UID are used only to show your identity to other players inside Team Finder and squad features, so genuine teammates can find and recognize you. We never use this information to log in to, modify, or take any action on your Free Fire account, and we never sell or share it with advertisers or unrelated third parties.</p>
+        </div>
+
+        <div class="legal-block">
+          <h3><i class="fas fa-shield-cat" aria-hidden="true"></i> 2. Permissions We Request &amp; Why</h3>
+          <ul class="legal-list">
+            <li><i class="fas fa-bell" aria-hidden="true"></i> <strong>Notifications</strong> — messages, calls, and plan updates.</li>
+            <li><i class="fas fa-camera" aria-hidden="true"></i> <strong>Camera</strong> — profile photo and video calls.</li>
+            <li><i class="fas fa-microphone" aria-hidden="true"></i> <strong>Microphone</strong> — voice and video calls with your squad.</li>
+            <li><i class="fas fa-display" aria-hidden="true"></i> <strong>Screen share</strong> — only while you're actively sharing in a call.</li>
+            <li><i class="fas fa-images" aria-hidden="true"></i> <strong>Gallery / photos</strong> — avatar and saved assets (plan-dependent).</li>
+          </ul>
+          <p>Every permission is requested only when needed, with an on-screen explanation first. Denying one never crashes the app — it only locks that single feature.</p>
+        </div>
+
+        <div class="legal-block">
+          <h3><i class="fas fa-microphone-lines" aria-hidden="true"></i> 3. Voice &amp; Screen Share</h3>
+          <p>Voice calls and screen sharing run through our real-time communication provider and are not recorded or stored on our servers.</p>
+        </div>
+
+        <div class="legal-block">
+          <h3><i class="fas fa-people-arrows" aria-hidden="true"></i> 4. Isolation Between Users</h3>
+          <p>Every account's chat, notifications, saved team-finder cards, and search history are private and enforced both in the app and on our servers. Only what you choose to make public — username, avatar, IGN, role, and bio — is visible to others via profile search.</p>
+        </div>
+
+        <div class="legal-block">
+          <h3><i class="fas fa-server" aria-hidden="true"></i> 5. Infrastructure We Rely On</h3>
+          <p>Rana eSports runs on secure, industry-standard cloud infrastructure for core functions such as account login, real-time messaging, media storage, voice/video calls, and payment processing. Each service only receives the minimum data it needs to perform that one function, under its own strict data-protection terms, and none of them are permitted to use your data for advertising or resell it.</p>
+          <p><strong>We never sell, rent, or trade your personal data.</strong></p>
+        </div>
+
+        <div class="legal-block">
+          <h3><i class="fas fa-table-list" aria-hidden="true"></i> 6. Data Safety Summary</h3>
+          <table class="legal-table">
+            <tr><th>Data type</th><th>Collected?</th><th>Shared outside Rana eSports?</th></tr>
+            <tr><td>Name / Username / IGN</td><td>Yes</td><td>No</td></tr>
+            <tr><td>Phone number</td><td>Yes</td><td>No</td></tr>
+            <tr><td>Photos (avatar/uploads)</td><td>Yes</td><td>No — securely stored only</td></tr>
+            <tr><td>Messages</td><td>Yes</td><td>No</td></tr>
+            <tr><td>Voice/video call data</td><td>Not stored</td><td>No — live transit only, never recorded</td></tr>
+            <tr><td>Payment details</td><td>No — handled securely outside our systems</td><td>No</td></tr>
+            <tr><td>Device / crash data</td><td>Yes</td><td>No</td></tr>
+          </table>
+        </div>
+
+        <div class="legal-block">
+          <h3><i class="fas fa-lock" aria-hidden="true"></i> 7. Data Security</h3>
+          <p>We use HTTPS/TLS encryption for data in transit and access-controlled cloud storage at rest. No online service is 100% secure, but we work continuously to protect your information.</p>
+        </div>
+
+        <div class="legal-block">
+          <h3><i class="fas fa-child-reaching" aria-hidden="true"></i> 8. Children's Privacy</h3>
+          <p>Rana eSports is intended for users aged 13 and above. Players between 13 and 15 should use the app with a parent or guardian's permission; players aged 16 and above may use it independently. We do not knowingly create accounts for anyone below our platform's minimum age.</p>
+        </div>
+
+        <div class="legal-block">
+          <h3><i class="fas fa-user-gear" aria-hidden="true"></i> 9. Your Rights</h3>
+          <ul class="legal-list">
+            <li><strong>Access:</strong> request a copy of your data anytime.</li>
+            <li><strong>Delete:</strong> request full deletion of your account and data — see "Account &amp; Data Deletion".</li>
+            <li><strong>Update:</strong> edit your profile and preferences directly inside the app.</li>
+            <li><strong>Opt-out:</strong> disable notifications from device settings anytime.</li>
+          </ul>
+          <p>To exercise any of these rights, email <a href="mailto:rana.esports.help@gmail.com">rana.esports.help@gmail.com</a>.</p>
+        </div>
+
+        <div class="legal-block">
+          <h3><i class="fas fa-rotate" aria-hidden="true"></i> 10. Updates To This Policy</h3>
+          <p>We may update this policy from time to time. Major changes will be announced inside the app and on this page. Continued use of Rana eSports means you accept the latest version.</p>
+        </div>
+      </div>
+
+      <!-- DATA DELETION -->
+      <div class="legal-panel" data-legal-panel="data-deletion">
+        <p class="legal-updated">Last updated: August 2026</p>
+
+        <div class="legal-block legal-info">
+          <h3><i class="fas fa-circle-info" aria-hidden="true"></i> How To Request Deletion</h3>
+          <p>You can request permanent deletion of your Rana eSports account and all associated data without reinstalling the app. Email <a href="mailto:rana.esports.help@gmail.com">rana.esports.help@gmail.com</a> from your registered contact with:</p>
+          <ul class="legal-list">
+            <li><i class="fas fa-chevron-right" aria-hidden="true"></i> Your registered mobile number</li>
+            <li><i class="fas fa-chevron-right" aria-hidden="true"></i> Your username</li>
+            <li><i class="fas fa-chevron-right" aria-hidden="true"></i> The subject line "Account Deletion Request"</li>
+          </ul>
+        </div>
+        <div class="legal-block">
+          <h3><i class="fas fa-list-check" aria-hidden="true"></i> What Gets Deleted</h3>
+          <p>Once verified, we permanently delete your profile (name, username, IGN, UID, role, bio, avatar), your chat and team messages, your team-finder cards, your notifications, and your subscription history.</p>
+        </div>
+        <div class="legal-block">
+          <h3><i class="fas fa-hourglass-half" aria-hidden="true"></i> Timeline &amp; Exceptions</h3>
+          <p>Deletion completes within 30 days of a verified request. We may retain minimal transaction records where required by law (for example, billing records for tax purposes) for the legally required period, after which they too are deleted.</p>
+        </div>
+      </div>
+
+      <!-- TERMS -->
+      <div class="legal-panel" data-legal-panel="terms">
+        <p class="legal-updated">Last updated: August 2026</p>
+        <p class="legal-intro">By downloading or using Rana eSports, you agree to these terms. They exist to keep the community fair, safe, and toxic-free.</p>
+
+        <div class="legal-block">
+          <h3><i class="fas fa-handshake" aria-hidden="true"></i> 1. Acceptance of Terms</h3>
+          <p>By creating an account, downloading the APK, or using any feature of Rana eSports, you confirm you've read and agreed to these Terms, our Privacy Policy, and our Disclaimer.</p>
+        </div>
+        <div class="legal-block">
+          <h3><i class="fas fa-id-card" aria-hidden="true"></i> 2. Eligibility &amp; One Account Per Person</h3>
+          <p>You must be at least 13 years old to use Rana eSports. If you're between 13 and 15, please use it with a parent or guardian's permission; if you're 16 or above, you may use it independently. Each mobile number and username may only be used for one personal account.</p>
+        </div>
+        <div class="legal-block">
+          <h3><i class="fas fa-user-lock" aria-hidden="true"></i> 3. Account Security</h3>
+          <ul class="legal-list">
+            <li>Keep your password private — never share it with anyone, including admins.</li>
+            <li>Your mobile number is permanently tied to your account and can't be changed by you or by us.</li>
+            <li>You're responsible for everything that happens on your account.</li>
+            <li>Notify us immediately at <a href="mailto:rana.esports.help@gmail.com">rana.esports.help@gmail.com</a> if your account is compromised.</li>
+          </ul>
+        </div>
+        <div class="legal-block">
+          <h3><i class="fas fa-headset" aria-hidden="true"></i> 4. Support &amp; Response Times</h3>
+          <p>Need your account deleted, your password reset, help cancelling a membership, or a refund? You can reach us two ways:</p>
+          <ul class="legal-list">
+            <li><i class="fas fa-envelope" aria-hidden="true"></i> Email <a href="mailto:rana.esports.help@gmail.com">rana.esports.help@gmail.com</a></li>
+            <li><i class="fas fa-comment-dots" aria-hidden="true"></i> The in-app Help Desk, where you can chat directly with our admin team</li>
+          </ul>
+          <p>We aim to send a first reply within <strong>5 hours</strong> and fully resolve most requests within <strong>24 hours</strong>.</p>
+        </div>
+
+        <div class="legal-block">
+          <h3><i class="fas fa-crown" aria-hidden="true"></i> 5. Subscription Plans &amp; Billing</h3>
+          <ul class="legal-list">
+            <li>Every new account starts on the free Basic plan for life.</li>
+            <li>Standard, Premium, and Ultra Pro are paid, recurring plans billed through our payment gateway.</li>
+            <li>Plans renew automatically at the end of each billing period unless cancelled before renewal.</li>
+            <li>Cancel anytime — your plan stays active until the period you've paid for ends, then reverts to Basic.</li>
+          </ul>
+        </div>
+        <div class="legal-block">
+          <h3><i class="fas fa-ban" aria-hidden="true"></i> 6. Strictly Prohibited Behaviour</h3>
+          <p>These result in an immediate, permanent account ban:</p>
+          <ul class="legal-list">
+            <li>Hacks, cheats, scripts, modded APKs, aimbots, or auto-headshot tools.</li>
+            <li>Harassment, hate speech, or bullying in chat or voice rooms.</li>
+            <li>Sharing sexually explicit, violent, or illegal content.</li>
+            <li>Spamming, scamming, phishing, or advertising unrelated services.</li>
+            <li>Impersonating pro players, creators, or Rana eSports staff.</li>
+            <li>Buying, selling, or trading Free Fire accounts or in-game items through our platform.</li>
+            <li>Using Team Finder for anything other than finding teammates.</li>
+          </ul>
+        </div>
+        <div class="legal-block">
+          <h3><i class="fas fa-microphone-slash" aria-hidden="true"></i> 7. Voice Chat Rules</h3>
+          <p>No ear-splitting sounds or spam, no recording others without permission, no inappropriate content over screen share. Respect every teammate, even after a tough loss.</p>
+        </div>
+        <div class="legal-block">
+          <h3><i class="fas fa-user-shield" aria-hidden="true"></i> 8. Moderation Rights</h3>
+          <p>Our team may warn, mute, restrict, or disable an account for violating these terms. Admin announcements are official and can't be edited or deleted by users.</p>
+        </div>
+        <div class="legal-block">
+          <h3><i class="fas fa-copyright" aria-hidden="true"></i> 9. Intellectual Property</h3>
+          <p>Original content inside Rana eSports — logo, UI design, code, guides, tutorials — belongs to Rana eSports. You may not copy, modify, or redistribute it without written permission. Free Fire-related trademarks belong to Garena (see Disclaimer).</p>
+        </div>
+        <div class="legal-block">
+          <h3><i class="fas fa-gavel" aria-hidden="true"></i> 10. Bans, Suspensions &amp; Appeals</h3>
+          <p>If you believe a ban was a mistake, appeal within 7 days at <a href="mailto:rana.esports.help@gmail.com">rana.esports.help@gmail.com</a>. Our decision is final.</p>
+        </div>
+        <div class="legal-block">
+          <h3><i class="fas fa-tools" aria-hidden="true"></i> 11. App Updates &amp; Availability</h3>
+          <p>We may update, modify, or discontinue any feature to improve security and performance. We don't guarantee 100% uptime, but we aim to keep the squad online.</p>
+        </div>
+        <div class="legal-block">
+          <h3><i class="fas fa-balance-scale" aria-hidden="true"></i> 12. Limitation of Liability</h3>
+          <p>Rana eSports is provided "as is." We're not responsible for in-game losses, ranking changes, account actions on Free Fire, or indirect damages from using our app.</p>
+        </div>
+        <div class="legal-block">
+          <h3><i class="fas fa-earth-asia" aria-hidden="true"></i> 13. Governing Law</h3>
+          <p>These terms are governed by the laws of India. Disputes are resolved through the courts of the appropriate jurisdiction.</p>
+        </div>
+      </div>
+
+      <!-- REFUND -->
+      <div class="legal-panel" data-legal-panel="refund">
+        <p class="legal-updated">Last updated: August 2026</p>
+        <p class="legal-intro">The Basic plan and core features of Rana eSports are completely free. This policy covers our paid Standard, Premium, and Ultra Pro subscriptions.</p>
+
+        <div class="legal-block">
+          <h3><i class="fas fa-gift" aria-hidden="true"></i> 1. Free Features</h3>
+          <p>Chat, Team Chat, Team Finder (general), and the Help Desk are free on the Basic plan — there's nothing to refund for free features.</p>
+        </div>
+        <div class="legal-block">
+          <h3><i class="fas fa-credit-card" aria-hidden="true"></i> 2. Subscription Purchases</h3>
+          <ul class="legal-list">
+            <li>You may request a refund within 3 days of purchase.</li>
+            <li>The plan's paid features must be largely unused during that window.</li>
+            <li>Refunds are processed to the original payment method only.</li>
+            <li>Processing time: 5–10 business days after approval.</li>
+            <li>Subscriptions auto-renew — cancel before the renewal date to avoid the next charge; cancelling alone doesn't refund the current period.</li>
+          </ul>
+        </div>
+        <div class="legal-block">
+          <h3><i class="fas fa-circle-xmark" aria-hidden="true"></i> 3. Non-Refundable Cases</h3>
+          <ul class="legal-list">
+            <li>Plans that have already been meaningfully used.</li>
+            <li>Accounts disabled for violating the Terms &amp; Conditions.</li>
+            <li>Requests made after the 3-day window.</li>
+          </ul>
+        </div>
+        <div class="legal-block">
+          <h3><i class="fas fa-paper-plane" aria-hidden="true"></i> 4. How To Request A Refund</h3>
+          <p>Email <a href="mailto:rana.esports.help@gmail.com">rana.esports.help@gmail.com</a>, or use the in-app Help Desk, with your registered mobile number, username, payment reference, and reason. We aim to send a first reply within 5 hours and resolve most requests within 24 hours.</p>
+        </div>
+        <div class="legal-block">
+          <h3><i class="fas fa-shield-virus" aria-hidden="true"></i> 5. Chargebacks &amp; Fraud</h3>
+          <p>Filing a chargeback without contacting us first may result in account suspension. Please reach out to our team first — we'll always try to make it right.</p>
+        </div>
+      </div>
+
+    </div>
+  </aside>
+
+  <!-- ===================================================================
+       REVIEW MODAL — hidden by default, opens from the "Rate Rana eSports"
+       button only.
+       =================================================================== -->
+  <div class="review-modal-overlay" id="reviewModalOverlay"></div>
+  <div class="review-modal" id="reviewModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="reviewModalTitle">
+    <div class="review-modal-header">
+      <h3 id="reviewModalTitle"><i class="fas fa-star" aria-hidden="true"></i> Rate Rana eSports</h3>
+      <button type="button" class="review-modal-close" id="reviewModalClose" aria-label="Close">
+        <i class="fas fa-times" aria-hidden="true"></i>
+      </button>
+    </div>
+    <form class="review-form" id="ranaReviewForm">
+      <label>Your rating</label>
+      <div class="star-picker" id="ranaStarPicker" data-selected="0">
+        <i class="far fa-star" data-value="1"></i>
+        <i class="far fa-star" data-value="2"></i>
+        <i class="far fa-star" data-value="3"></i>
+        <i class="far fa-star" data-value="4"></i>
+        <i class="far fa-star" data-value="5"></i>
+      </div>
+
+      <label for="ranaReviewEmail">Your Email (Required)</label>
+      <input type="email" id="ranaReviewEmail" maxlength="60" placeholder="Enter your email" required autocomplete="email" />
+
+      <label for="ranaReviewRole">Your role (optional)</label>
+<select id="ranaReviewRole">
+  <option value="">Select role</option>
+  <option value="P. Rusher">P. Rusher</option>
+  <option value="Sec. Rusher">Sec. Rusher</option>
+  <option value="Sniper">Sniper</option>
+  <option value="Supporter">Supporter</option>
+  <option value="IGL">IGL</option>
+  <option value="Bomber">Bomber</option>
+  <option value="All-Rounder">All-Rounder</option>
+</select>
+
+      <label for="ranaReviewText">Your review (optional)</label>
+      <textarea id="ranaReviewText" maxlength="300" rows="4" placeholder="Share your experience with Rana eSports..."></textarea>
+
+      <button type="submit" class="btn-secondary">Submit Review</button>
+      <p class="review-status" id="ranaReviewStatus" role="status"></p>
+    </form>
+  </div>
+
+  <!-- ===== SCRIPTS ===== -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js" defer></script>
   <script src="https://www.youtube.com/iframe_api"></script>
-  <script src="script.js" defer></script>
+
+  <!-- Firebase (compat SDK, Realtime Database — see firebase-config.js for setup) -->
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js" defer></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js" defer></script>
+  <script src="firebase-config.js?v=2" defer></script>
+
+  <script src="script.js?v=2" defer></script>
 </body>
 </html>
