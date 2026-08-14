@@ -600,3 +600,52 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 }
 .video-tab:hover { color: var(--text-pure); border-color: rgba(255,215,0,0.3); }
 .video-tab.active { background: var(--gold-gradient); color: #000; border-color: transparent; }
+/* ===== PRICING SECTION VIP STYLES ===== */
+.pricing-section { padding: 80px 20px; background: var(--bg-pitch); width: 100%; border-top: var(--border-dim); }
+.pricing-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 24px; max-width: 1200px; margin: 0 auto; }
+.pricing-card { position: relative; background: var(--bg-card); border: 1.5px solid var(--border-dim); border-radius: 28px; padding: 32px 24px; width: 280px; transition: var(--transition-normal); }
+.pricing-card:hover { transform: translateY(-8px); }
+.card-badge-icon { position: absolute; top: 20px; right: 20px; font-size: 1.4rem; }
+.pricing-card h3 { font-family: var(--font-display); font-size: 1.2rem; color: var(--text-pure); margin-bottom: 8px; letter-spacing: 1px; }
+.pricing-card .price { font-size: 2.2rem; font-weight: 900; color: var(--text-pure); display: flex; align-items: baseline; gap: 4px; }
+.pricing-card .price span { font-size: 0.85rem; color: var(--text-mid); font-weight: 600; }
+.pricing-divider { height: 2px; border-radius: 2px; margin: 20px 0; opacity: 0.8; }
+.pricing-card ul { list-style: none; }
+.pricing-card ul li { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; font-size: 0.9rem; color: var(--text-high); font-weight: 600; }
+.pricing-card ul li i { font-size: 1.1rem; }
+
+/* Plan Accents (Matching React Native code) */
+.card-basic { border-color: #1E1E24; }
+.card-basic .card-badge-icon { color: #FF4D67; }
+.card-basic .pricing-divider { background: #FF4D67; }
+
+.card-standard { border-color: rgba(255, 79, 192, 0.4); }
+.card-standard:hover { border-color: #FF4FC0; box-shadow: 0 10px 30px rgba(255, 79, 192, 0.15); }
+.card-standard .card-badge-icon { color: #FF4FC0; }
+.card-standard .price { color: #FF4FC0; }
+.card-standard .pricing-divider { background: #FF4FC0; }
+
+.card-premium { border-color: rgba(63, 169, 255, 0.4); }
+.card-premium:hover { border-color: #3FA9FF; box-shadow: 0 10px 30px rgba(63, 169, 255, 0.15); }
+.card-premium .card-badge-icon { color: #3FA9FF; }
+.card-premium .price { color: #3FA9FF; }
+.card-premium .pricing-divider { background: #3FA9FF; }
+
+.card-ultra { border-color: #FFC61A; background: linear-gradient(180deg, #11111F 0%, #1A1705 100%); }
+.card-ultra:hover { box-shadow: 0 15px 40px rgba(255, 198, 26, 0.2); }
+.card-ultra .card-badge-icon { color: #2ED679; }
+.card-ultra .price { color: #FFC61A; }
+.card-ultra .pricing-divider { background: #FFC61A; }
+.ultra-tag { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: #FFC61A; color: #000; font-family: var(--font-nav); font-weight: 800; font-size: 0.75rem; padding: 4px 14px; border-radius: 20px; letter-spacing: 1px; box-shadow: 0 4px 10px rgba(255,198,26,0.4); }
+
+/* ===== 10 SEC VIDEO AD OVERLAY (YouTube Shorts Style) ===== */
+.video-ad-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.95); backdrop-filter: blur(10px); z-index: 9999; display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transition: opacity 0.3s ease; }
+.video-ad-overlay.active { opacity: 1; pointer-events: all; }
+.video-ad-content { position: relative; width: 100%; max-width: 400px; height: 100vh; max-height: 800px; background: #000; display: flex; flex-direction: column; justify-content: center; }
+@media(min-width: 600px) { .video-ad-content { height: 80vh; border-radius: 16px; overflow: hidden; border: 1px solid #333; } }
+.video-ad-header { position: absolute; top: 20px; left: 20px; right: 20px; display: flex; justify-content: space-between; align-items: center; z-index: 10; }
+.ad-badge { background: rgba(0,0,0,0.6); color: #FFF; font-size: 0.75rem; padding: 4px 10px; border-radius: 4px; border: 1px solid #FFD700; }
+.ad-timer { background: #FFD700; color: #000; font-family: var(--font-nav); font-weight: 800; padding: 6px 14px; border-radius: 20px; font-size: 0.9rem; }
+#adVideoPlayer { width: 100%; height: 100%; object-fit: cover; }
+.ad-progress-bar { position: absolute; bottom: 0; left: 0; width: 100%; height: 4px; background: rgba(255,255,255,0.2); }
+.ad-progress-fill { height: 100%; width: 0%; background: #FFD700; transition: width 1s linear; }
