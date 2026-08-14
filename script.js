@@ -401,13 +401,85 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ===== 15. READ MORE REVIEWS =====
+    // ===== 15. READ MORE REVIEWS =====
   const readMoreBtn = document.getElementById('reviewReadMoreBtn');
   readMoreBtn?.addEventListener('click', () => {
     if (typeof ranaToggleReviewView === 'function') ranaToggleReviewView();
   });
 
-});
+  // ===== 16. APK DOWNLOAD VIDEO INTERCEPT (10 SECONDS AD) =====
+  const downloadLinks = document.querySelectorAll('a[href$=".apk"]');
+  const videoAdOverlay = document.getElementById('videoAdOverlay');
+  const adVideoPlayer = document.getElementById('adVideoPlayer');
+  const adSecondsText = document.getElementById('adSeconds');
+  const adProgressFill = document.getElementById('adProgressFill');
+  
+  let targetApkUrl = '';
+  let adInterval;
+
+  if(downloadLinks.length > 0 && videoAdOverlay) {
+    downloadLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault(); // तुरंत डाउनलोड होने से रोको
+        targetApkUrl = link.getAttribute('href');
+        
+        // पुरानी टाइमिंग को रिसेट करो
+        if(adInterval) clearInterval(adInterval);
+
+        // Video Overlay दिखाओ और बैकग्राउंड स्क्रॉल बंद करो
+        videoAdOverlay.classList.add('active');
+        document.body.classList.add('no-scroll');
+        
+        // आवाज़ चालू करो (Sound ON)
+        adVideoPlayer.muted = false; 
+
+        // Video स्टार्ट करो
+        adVideoPlayer.currentTime = 0;
+        adVideoPlayer.play().catch(err => {
+            console.log("Autoplay error:", err);
+            // अगर ब्राउज़र आवाज़ के साथ ऑटोप्ले रोके, तो म्यूट करके चलाओ
+            adVideoPlayer.muted = true; 
+            adVideoPlayer.play();
+        });
+
+        let timeLeft = 10;
+        adSecondsText.textContent = timeLeft;
+        adProgressFill.style.width = '0%';
+
+        // 10 सेकंड का काउंटडाउन टाइमर
+        adInterval = setInterval(() => {
+          timeLeft--;
+          adSecondsText.textContent = timeLeft;
+          adProgressFill.style.width = `${((10 - timeLeft) / 10) * 100}%`;
+
+          // 10 सेकंड पूरे होने पर
+          if (timeLeft <= 0) {
+            clearInterval(adInterval);
+            finishAdAndDownload();
+          }
+        }, 1000);
+      });
+    });
+  }
+
+  // जब 10 सेकंड खत्म हो जाएं, तब ये फंक्शन चलेगा
+  function finishAdAndDownload() {
+    videoAdOverlay.classList.remove('active');
+    document.body.classList.remove('no-scroll');
+    adVideoPlayer.pause();
+    
+    // Automatic APK Download (यूज़र वेबसाइट पर ही रहेगा)
+    if (targetApkUrl) {
+      const tempLink = document.createElement('a');
+      tempLink.href = targetApkUrl;
+      tempLink.setAttribute('download', ''); // डाउनलोड ट्रिगर
+      document.body.appendChild(tempLink);
+      tempLink.click();
+      document.body.removeChild(tempLink);
+    }
+  }
+
+}); // <--- DOMContentLoaded यहाँ खत्म होता है (इसे मत हटाना)
 
 /* ==========================================================================
    VIDEO TABS SWITCHER
@@ -416,23 +488,22 @@ const videoTabs = document.querySelectorAll('.video-tab');
 const engVideos = document.getElementById('englishVideos');
 const hinVideos = document.getElementById('hindiVideos');
 
-videoTabs.forEach(tab => {
-  tab.addEventListener('click', () => {
-    // Sabhi tabs se active class hatao
-    videoTabs.forEach(t => t.classList.remove('active'));
-    // Clicked tab par active lagao
-    tab.classList.add('active');
-    
-    // Check karo konsa tab click hua hai
-    if (tab.dataset.vidTab === 'hindi') {
-      engVideos.style.display = 'none';
-      hinVideos.style.display = 'grid';
-    } else {
-      engVideos.style.display = 'grid';
-      hinVideos.style.display = 'none';
-    }
+if (videoTabs.length > 0) {
+  videoTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      videoTabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      
+      if (tab.dataset.vidTab === 'hindi') {
+        engVideos.style.display = 'none';
+        hinVideos.style.display = 'grid';
+      } else {
+        engVideos.style.display = 'grid';
+        hinVideos.style.display = 'none';
+      }
+    });
   });
-});
+}
 
 /* ==========================================================================
    ASYNC YOUTUBE FRAME INTEGRATION
@@ -442,13 +513,11 @@ let ytPlayers = [];
 window.onYouTubeIframeAPIReady = function () {
   'use strict';
   try {
-    // English Video IDs (Aap inki jagah apni original YouTube IDs daal sakte hain)
     const engVids = [
       { id: 'playerEng1', vid: '5F9_qyL2ngA' },
       { id: 'playerEng2', vid: 'Rg2jCzljzRE' },
       { id: 'playerEng3', vid: '5F9_qyL2ngA' }
     ];
-    // Hindi Video IDs (Aap yahan Hindi videos ki IDs daal sakte hain)
     const hinVids = [
       { id: 'playerHin1', vid: 'Rg2jCzljzRE' },
       { id: 'playerHin2', vid: '5F9_qyL2ngA' },
@@ -465,7 +534,7 @@ window.onYouTubeIframeAPIReady = function () {
       }
     });
   } catch (error) {
-    console.warn('YouTube API handshake dropped or delayed:', error);
+    console.warn('YouTube API error:', error);
   }
 };
 
