@@ -107,23 +107,6 @@ document.addEventListener('DOMContentLoaded', () => {
   legalClose?.addEventListener('click', closeLegalDrawer);
   legalOverlay?.addEventListener('click', closeLegalDrawer);
 
-// ===== 3B. URL HASH -> AUTO OPEN LEGAL PANEL / SCROLL (payment gateway KYC links) =====
-  (function handleLegalHashOnLoad() {
-    const hash = window.location.hash.replace('#', '');
-    if (!hash) return;
-    if (LEGAL_TITLES[hash]) {
-      openLegalDrawer(hash);
-    } else if (hash === 'contactUs') {
-      const contactSection = document.getElementById('contact');
-      if (contactSection) {
-        setTimeout(() => {
-          const offset = window.innerWidth < 640 ? 64 : 80;
-          const destY = contactSection.getBoundingClientRect().top + window.scrollY - offset;
-          window.scrollTo({ top: destY, behavior: 'smooth' });
-        }, 300);
-      }
-    }
-  })();
 
   // ===== 4. REVIEW MODAL =====
   const openReviewModalBtn = document.getElementById('openReviewModalBtn');
@@ -162,6 +145,24 @@ document.addEventListener('DOMContentLoaded', () => {
     else if (legalDrawer?.classList.contains('open')) closeLegalDrawer();
     else if (sidebar?.classList.contains('open')) closeSidebar();
   });
+
+// ===== 3B. URL HASH -> AUTO OPEN LEGAL PANEL / SCROLL (payment gateway KYC links) =====
+  (function handleLegalHashOnLoad() {
+    const hash = window.location.hash.replace('#', '');
+    if (!hash) return;
+    if (LEGAL_TITLES[hash]) {
+      openLegalDrawer(hash);
+    } else if (hash === 'contactUs') {
+      const contactSection = document.getElementById('contact');
+      if (contactSection) {
+        setTimeout(() => {
+          const offset = window.innerWidth < 640 ? 64 : 80;
+          const destY = contactSection.getBoundingClientRect().top + window.scrollY - offset;
+          window.scrollTo({ top: destY, behavior: 'smooth' });
+        }, 300);
+      }
+    }
+  })();
 
   // ===== 5. UPDATE BANNER SWIPER =====
   if (document.querySelector('.updateSwiper') && window.Swiper) {
