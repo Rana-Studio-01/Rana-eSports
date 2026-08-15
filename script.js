@@ -107,6 +107,24 @@ document.addEventListener('DOMContentLoaded', () => {
   legalClose?.addEventListener('click', closeLegalDrawer);
   legalOverlay?.addEventListener('click', closeLegalDrawer);
 
+// ===== 3B. URL HASH -> AUTO OPEN LEGAL PANEL / SCROLL (payment gateway KYC links) =====
+  (function handleLegalHashOnLoad() {
+    const hash = window.location.hash.replace('#', '');
+    if (!hash) return;
+    if (LEGAL_TITLES[hash]) {
+      openLegalDrawer(hash);
+    } else if (hash === 'contactUs') {
+      const contactSection = document.getElementById('contact');
+      if (contactSection) {
+        setTimeout(() => {
+          const offset = window.innerWidth < 640 ? 64 : 80;
+          const destY = contactSection.getBoundingClientRect().top + window.scrollY - offset;
+          window.scrollTo({ top: destY, behavior: 'smooth' });
+        }, 300);
+      }
+    }
+  })();
+
   // ===== 4. REVIEW MODAL =====
   const openReviewModalBtn = document.getElementById('openReviewModalBtn');
   const reviewModal = document.getElementById('reviewModal');
