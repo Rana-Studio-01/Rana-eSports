@@ -53,62 +53,11 @@ document.addEventListener('DOMContentLoaded', () => {
   hamburgerBtn?.addEventListener('click', openSidebar);
   sidebarClose?.addEventListener('click', closeSidebar);
   sidebarOverlay?.addEventListener('click', closeSidebar);
-  // Only plain in-page anchor links close the sidebar on click.
-  // Legal buttons are handled separately below (they open the drawer instead).
+  // In-page anchor links (and the legal page links, which now navigate
+  // away to their own .html files) close the sidebar on click.
   document.querySelectorAll('.sidebar-link[href]').forEach((link) => link.addEventListener('click', closeSidebar));
 
-  // ===== 3. LEGAL DRAWER (Disclaimer / Privacy / Data Deletion / Terms / Refund) =====
-  const legalOverlay = document.getElementById('legalOverlay');
-  const legalDrawer = document.getElementById('legalDrawer');
-  const legalClose = document.getElementById('legalClose');
-  const legalTabs = Array.from(document.querySelectorAll('.legal-tab'));
-  const legalPanels = Array.from(document.querySelectorAll('.legal-panel'));
-  const legalBody = document.getElementById('legalBody');
-  const legalDrawerTitle = document.getElementById('legalDrawerTitle');
-
-  const LEGAL_TITLES = {
-    'disclaimer': 'Disclaimer',
-    'privacy-policy': 'Privacy Policy',
-    'data-deletion': 'Account & Data Deletion',
-    'terms': 'Terms & Conditions',
-    'refund': 'Refund Policy'
-  };
-
-  function showLegalTab(key) {
-    legalTabs.forEach((tab) => tab.classList.toggle('active', tab.dataset.legalTab === key));
-    legalPanels.forEach((panel) => panel.classList.toggle('active', panel.dataset.legalPanel === key));
-    if (legalDrawerTitle) legalDrawerTitle.textContent = LEGAL_TITLES[key] || 'Legal Center';
-    if (legalBody) legalBody.scrollTop = 0;
-  }
-
-  function openLegalDrawer(key) {
-    closeSidebar();
-    closeReviewModal();
-    showLegalTab(key || 'disclaimer');
-    legalDrawer?.classList.add('open');
-    legalOverlay?.classList.add('active');
-    legalDrawer?.setAttribute('aria-hidden', 'false');
-    document.body.classList.add('no-scroll');
-  }
-  function closeLegalDrawer() {
-    legalDrawer?.classList.remove('open');
-    legalOverlay?.classList.remove('active');
-    legalDrawer?.setAttribute('aria-hidden', 'true');
-    if (!isAnyOverlayOpen()) document.body.classList.remove('no-scroll');
-  }
-
-  document.querySelectorAll('[data-legal-open]').forEach((btn) => {
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      openLegalDrawer(btn.dataset.legalOpen);
-    });
-  });
-  legalTabs.forEach((tab) => tab.addEventListener('click', () => showLegalTab(tab.dataset.legalTab)));
-  legalClose?.addEventListener('click', closeLegalDrawer);
-  legalOverlay?.addEventListener('click', closeLegalDrawer);
-
-
-  // ===== 4. REVIEW MODAL =====
+  // ===== 3. REVIEW MODAL =====
   const openReviewModalBtn = document.getElementById('openReviewModalBtn');
   const reviewModal = document.getElementById('reviewModal');
   const reviewModalOverlay = document.getElementById('reviewModalOverlay');
@@ -116,7 +65,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function openReviewModal() {
     closeSidebar();
-    closeLegalDrawer();
     reviewModal?.classList.add('open');
     reviewModalOverlay?.classList.add('active');
     reviewModal?.setAttribute('aria-hidden', 'false');
@@ -135,23 +83,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function isAnyOverlayOpen() {
     return sidebar?.classList.contains('open') ||
-           legalDrawer?.classList.contains('open') ||
            reviewModal?.classList.contains('open');
   }
 
   document.addEventListener('keydown', (e) => {
     if (e.key !== 'Escape') return;
     if (reviewModal?.classList.contains('open')) closeReviewModal();
-    else if (legalDrawer?.classList.contains('open')) closeLegalDrawer();
     else if (sidebar?.classList.contains('open')) closeSidebar();
   });
 
-// ===== 3B. URL HASH -> AUTO OPEN LEGAL PANEL / SCROLL (payment gateway KYC links) =====
+  // ===== 3B. URL HASH -> REDIRECT OLD LEGAL-DRAWER LINKS (payment gateway
+  // KYC links used to point at #disclaimer, #privacy-policy, etc. Those
+  // sections now live on their own pages, so forward old links there
+  // automatically instead of 404-ing or doing nothing.) =====
   (function handleLegalHashOnLoad() {
+    const LEGAL_PAGE_MAP = {
+      'disclaimer': 'disclaimer.html',
+      'privacy-policy': 'privacy-policy.html',
+      'data-deletion': 'data-deletion.html',
+      'terms': 'terms.html',
+      'refund': 'refund.html'
+    };
     const hash = window.location.hash.replace('#', '');
     if (!hash) return;
-    if (LEGAL_TITLES[hash]) {
-      openLegalDrawer(hash);
+    if (LEGAL_PAGE_MAP[hash]) {
+      window.location.replace(LEGAL_PAGE_MAP[hash]);
     } else if (hash === 'contactUs') {
       const contactSection = document.getElementById('contact');
       if (contactSection) {
@@ -331,7 +287,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { passive: true });
   }
 
-  // ===== 12. SMOOTH ANCHOR SCROLL (dashboard sections only — legal links are excluded above) =====
+  // ===== 12. SMOOTH ANCHOR SCROLL (in-page section links only — legal
+  // links and contact.html link now navigate as normal hrefs) =====
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener('click', function (e) {
       const targetSelector = this.getAttribute('href');
@@ -432,32 +389,27 @@ document.addEventListener('DOMContentLoaded', () => {
   const adVideoPlayer = document.getElementById('adVideoPlayer');
   const adSecondsText = document.getElementById('adSeconds');
   const adProgressFill = document.getElementById('adProgressFill');
-  
+
   let targetApkUrl = '';
   let adInterval;
 
-  if(downloadLinks.length > 0 && videoAdOverlay) {
+  if (downloadLinks.length > 0 && videoAdOverlay) {
     downloadLinks.forEach(link => {
       link.addEventListener('click', (e) => {
-        e.preventDefault(); // तुरंत डाउनलोड होने से रोको
+        e.preventDefault();
         targetApkUrl = link.getAttribute('href');
-        
-        // पुरानी टाइमिंग को रिसेट करो
-        if(adInterval) clearInterval(adInterval);
 
-        // Video Overlay दिखाओ और बैकग्राउंड स्क्रॉल बंद करो
+        if (adInterval) clearInterval(adInterval);
+
         videoAdOverlay.classList.add('active');
         document.body.classList.add('no-scroll');
-        
-        // आवाज़ चालू करो (Sound ON)
-        adVideoPlayer.muted = false; 
 
-        // Video स्टार्ट करो
+        adVideoPlayer.muted = false;
+
         adVideoPlayer.currentTime = 0;
         adVideoPlayer.play().catch(err => {
             console.log("Autoplay error:", err);
-            // अगर ब्राउज़र आवाज़ के साथ ऑटोप्ले रोके, तो म्यूट करके चलाओ
-            adVideoPlayer.muted = true; 
+            adVideoPlayer.muted = true;
             adVideoPlayer.play();
         });
 
@@ -465,13 +417,11 @@ document.addEventListener('DOMContentLoaded', () => {
         adSecondsText.textContent = timeLeft;
         adProgressFill.style.width = '0%';
 
-        // 10 सेकंड का काउंटडाउन टाइमर
         adInterval = setInterval(() => {
           timeLeft--;
           adSecondsText.textContent = timeLeft;
           adProgressFill.style.width = `${((10 - timeLeft) / 10) * 100}%`;
 
-          // 10 सेकंड पूरे होने पर
           if (timeLeft <= 0) {
             clearInterval(adInterval);
             finishAdAndDownload();
@@ -481,21 +431,100 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // जब 10 सेकंड खत्म हो जाएं, तब ये फंक्शन चलेगा
   function finishAdAndDownload() {
     videoAdOverlay.classList.remove('active');
     document.body.classList.remove('no-scroll');
     adVideoPlayer.pause();
-    
-    // Automatic APK Download (यूज़र वेबसाइट पर ही रहेगा)
+
     if (targetApkUrl) {
       const tempLink = document.createElement('a');
       tempLink.href = targetApkUrl;
-      tempLink.setAttribute('download', ''); // डाउनलोड ट्रिगर
+      tempLink.setAttribute('download', '');
       document.body.appendChild(tempLink);
       tempLink.click();
       document.body.removeChild(tempLink);
     }
+  }
+
+  // ===== 17. COPY-TO-CLIPBOARD BUTTONS =====
+  // Used on data-deletion.html and refund.html so users can copy the
+  // ready-made request message with one tap and paste it into the Help
+  // Desk chat or an email to the admin.
+  document.querySelectorAll('[data-copy-target]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const target = document.getElementById(btn.dataset.copyTarget);
+      if (!target) return;
+      const text = target.innerText.trim();
+
+      const markCopied = () => {
+        const original = btn.innerHTML;
+        btn.innerHTML = '<i class="fas fa-check" aria-hidden="true"></i> Copied!';
+        btn.classList.add('copied');
+        btn.disabled = true;
+        setTimeout(() => {
+          btn.innerHTML = original;
+          btn.classList.remove('copied');
+          btn.disabled = false;
+        }, 2200);
+      };
+
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(markCopied).catch(() => {
+          fallbackCopy(target, markCopied);
+        });
+      } else {
+        fallbackCopy(target, markCopied);
+      }
+    });
+  });
+
+  function fallbackCopy(target, onDone) {
+    try {
+      const range = document.createRange();
+      range.selectNodeContents(target);
+      const selection = window.getSelection();
+      selection.removeAllRanges();
+      selection.addRange(range);
+      document.execCommand('copy');
+      selection.removeAllRanges();
+      if (onDone) onDone();
+    } catch (err) {
+      console.warn('Rana Esports: copy fallback failed', err);
+    }
+  }
+
+  // ===== 18. PRICING CARD CAROUSELS (India ₹ / Other Countries $) =====
+  // Auto-scrolls right-to-left, holds each card ~1s, loops endlessly,
+  // and stays fully swipeable by finger/mouse (pauses autoplay briefly
+  // on interaction, then resumes).
+  if (document.querySelector('.pricingSwiperIndia') && window.Swiper) {
+    new Swiper('.pricingSwiperIndia', {
+      effect: 'coverflow',
+      grabCursor: true,
+      centeredSlides: true,
+      slidesPerView: 'auto',
+      spaceBetween: 20,
+      speed: 650,
+      loop: true,
+      coverflowEffect: { rotate: 8, stretch: -6, depth: 90, modifier: 1, slideShadows: false },
+      autoplay: { delay: 1000, disableOnInteraction: false, pauseOnMouseEnter: true },
+      pagination: { el: '.pricingSwiperIndia .swiper-pagination', clickable: true }
+    });
+  }
+
+  if (document.querySelector('.pricingSwiperGlobal') && window.Swiper) {
+    new Swiper('.pricingSwiperGlobal', {
+      effect: 'coverflow',
+      grabCursor: true,
+      centeredSlides: true,
+      slidesPerView: 'auto',
+      spaceBetween: 20,
+      speed: 650,
+      loop: true,
+      coverflowEffect: { rotate: 8, stretch: -6, depth: 90, modifier: 1, slideShadows: false },
+      autoplay: { delay: 1000, disableOnInteraction: false, pauseOnMouseEnter: true },
+      pagination: { el: '.pricingSwiperGlobal .swiper-pagination', clickable: true }
+    });
   }
 
 }); // <--- DOMContentLoaded यहाँ खत्म होता है (इसे मत हटाना)
@@ -512,7 +541,7 @@ if (videoTabs.length > 0) {
     tab.addEventListener('click', () => {
       videoTabs.forEach(t => t.classList.remove('active'));
       tab.classList.add('active');
-      
+
       if (tab.dataset.vidTab === 'hindi') {
         engVideos.style.display = 'none';
         hinVideos.style.display = 'grid';
@@ -545,9 +574,9 @@ window.onYouTubeIframeAPIReady = function () {
 
     [...engVids, ...hinVids].forEach(video => {
       if (document.getElementById(video.id)) {
-        let player = new YT.Player(video.id, { 
-          videoId: video.vid, 
-          events: { onStateChange: cascadePlayerStateMonitor } 
+        let player = new YT.Player(video.id, {
+          videoId: video.vid,
+          events: { onStateChange: cascadePlayerStateMonitor }
         });
         ytPlayers.push(player);
       }
