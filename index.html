@@ -41,7 +41,7 @@
   <!-- Typography -->
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;800;900&family=Rajdhani:wght@400;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css?v=2" />
 </head>
 <body>
 
@@ -100,12 +100,12 @@
       <a href="#tutorials" class="sidebar-link"><i class="fab fa-youtube" aria-hidden="true"></i> Tutorials</a>
 
       <span class="sidebar-group-label">Legal &amp; Support</span>
-      <button type="button" class="sidebar-link" data-legal-open="disclaimer"><i class="fas fa-triangle-exclamation" aria-hidden="true"></i> Disclaimer</button>
-      <button type="button" class="sidebar-link" data-legal-open="privacy-policy"><i class="fas fa-shield-halved" aria-hidden="true"></i> Privacy Policy</button>
-      <button type="button" class="sidebar-link" data-legal-open="data-deletion"><i class="fas fa-user-slash" aria-hidden="true"></i> Account &amp; Data Deletion</button>
-      <button type="button" class="sidebar-link" data-legal-open="terms"><i class="fas fa-file-contract" aria-hidden="true"></i> Terms &amp; Conditions</button>
-      <button type="button" class="sidebar-link" data-legal-open="refund"><i class="fas fa-rotate-left" aria-hidden="true"></i> Refund Policy</button>
-      <a href="#contact" class="sidebar-link"><i class="fas fa-envelope" aria-hidden="true"></i> Contact Us</a>
+      <a href="disclaimer.html" class="sidebar-link"><i class="fas fa-triangle-exclamation" aria-hidden="true"></i> Disclaimer</a>
+      <a href="privacy-policy.html" class="sidebar-link"><i class="fas fa-shield-halved" aria-hidden="true"></i> Privacy Policy</a>
+      <a href="data-deletion.html" class="sidebar-link"><i class="fas fa-user-slash" aria-hidden="true"></i> Account &amp; Data Deletion</a>
+      <a href="terms.html" class="sidebar-link"><i class="fas fa-file-contract" aria-hidden="true"></i> Terms &amp; Conditions</a>
+      <a href="refund.html" class="sidebar-link"><i class="fas fa-rotate-left" aria-hidden="true"></i> Refund Policy</a>
+      <a href="contact.html" class="sidebar-link"><i class="fas fa-envelope" aria-hidden="true"></i> Contact Us (Full Page)</a>
     </nav>
     <div class="sidebar-footer">
       <a href="https://www.instagram.com/rana_esports_official" target="_blank" rel="noopener noreferrer">
@@ -257,67 +257,140 @@
   <section class="pricing-section" id="pricing">
     <div class="section-header">
       <h2 class="section-title">VIP <span class="accent">PLANS</span></h2>
-      <p class="section-desc">Unlock advanced tools. No auto-renewal, pay safely for a 30-day pass.</p>
+      <p class="section-desc">Unlock advanced tools. No auto-renewal, pay safely for a 30-day pass. Refundable within 24 hours — see our <a href="refund.html" style="color: var(--gold-primary);">Refund Policy</a>.</p>
     </div>
-    
-    <div class="pricing-grid">
-      <!-- Basic -->
-      <div class="pricing-card card-basic">
-        <div class="card-badge-icon"><i class="fas fa-times-circle"></i></div>
-        <h3>BASIC</h3>
-        <div class="price">Free<span>/ Lifetime</span></div>
-        <div class="pricing-divider"></div>
-        <ul>
-          <li><i class="fas fa-check-circle" style="color: #6B6B75;"></i> Team find</li>
-          <li><i class="fas fa-check-circle" style="color: #FF4FC0;"></i> Limited Chat</li>
-          <li><i class="fas fa-check-circle" style="color: #22D67B;"></i> Ads included</li>
-        </ul>
-      </div>
 
-      <!-- Standard -->
-      <div class="pricing-card card-standard">
-        <div class="card-badge-icon"><i class="fas fa-check-circle"></i></div>
-        <h3>STANDARD</h3>
-        <div class="price">₹11<span>/ 30 Days</span></div>
-        <div class="pricing-divider"></div>
-        <ul>
-          <li><i class="fas fa-check-circle" style="color: #6B6B75;"></i> Team find</li>
-          <li><i class="fas fa-check-circle" style="color: #3FA9FF;"></i> Limited Chat</li>
-          <li><i class="fas fa-check-circle" style="color: #22D67B;"></i> Reels Feed & Full Maps</li>
-          <li><i class="fas fa-check-circle" style="color: #22D67B;"></i> Drawing Tools</li>
-          <li><i class="fas fa-check-circle" style="color: #22D67B;"></i> Ads included</li>
-        </ul>
+    <!-- INDIA (₹) PLANS — auto-scrolling, swipeable carousel -->
+    <div class="pricing-currency-label"><i class="fas fa-location-dot" aria-hidden="true"></i> India Plans <span class="accent">(₹)</span></div>
+    <div class="swiper pricingSwiperIndia">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="pricing-card card-basic">
+            <div class="card-badge-icon"><i class="fas fa-times-circle"></i></div>
+            <h3>BASIC</h3>
+            <div class="price">Free<span>/ Lifetime</span></div>
+            <div class="pricing-divider"></div>
+            <ul>
+              <li><i class="fas fa-check-circle" style="color: #6B6B75;"></i> Team find</li>
+              <li><i class="fas fa-check-circle" style="color: #FF4FC0;"></i> Limited Chat</li>
+              <li><i class="fas fa-check-circle" style="color: #22D67B;"></i> Ads included</li>
+            </ul>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="pricing-card card-standard">
+            <div class="card-badge-icon"><i class="fas fa-check-circle"></i></div>
+            <h3>STANDARD</h3>
+            <div class="price">₹11<span>/ 30 Days</span></div>
+            <div class="pricing-divider"></div>
+            <ul>
+              <li><i class="fas fa-check-circle" style="color: #6B6B75;"></i> Team find</li>
+              <li><i class="fas fa-check-circle" style="color: #3FA9FF;"></i> Limited Chat</li>
+              <li><i class="fas fa-check-circle" style="color: #22D67B;"></i> Reels Feed & Full Maps</li>
+              <li><i class="fas fa-check-circle" style="color: #22D67B;"></i> Drawing Tools</li>
+              <li><i class="fas fa-check-circle" style="color: #22D67B;"></i> Ads included</li>
+            </ul>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="pricing-card card-premium">
+            <div class="card-badge-icon"><i class="fas fa-check-circle"></i></div>
+            <h3>PREMIUM</h3>
+            <div class="price">₹29<span>/ 30 Days</span></div>
+            <div class="pricing-divider"></div>
+            <ul>
+              <li><i class="fas fa-check-circle" style="color: #22D67B;"></i> Unlimited Chat & Maps</li>
+              <li><i class="fas fa-check-circle" style="color: #22D67B;"></i> Drawing & Drop Points</li>
+              <li><i class="fas fa-check-circle" style="color: #22D67B;"></i> Assets and PDFs</li>
+              <li><i class="fas fa-times-circle" style="color: #FF4D67;"></i> No Ads</li>
+            </ul>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="pricing-card card-ultra">
+            <div class="ultra-tag">BEST VALUE</div>
+            <div class="card-badge-icon"><i class="fas fa-check-circle"></i></div>
+            <h3>ULTRA PRO</h3>
+            <div class="price">₹39<span>/ 30 Days</span></div>
+            <div class="pricing-divider"></div>
+            <ul>
+              <li><i class="fas fa-check-circle" style="color: #22D67B;"></i> All Premium Features</li>
+              <li><i class="fas fa-check-circle" style="color: #22D67B;"></i> Strategy Save & Import</li>
+              <li><i class="fas fa-check-circle" style="color: #22D67B;"></i> PDF/Image/Video Download</li>
+              <li><i class="fas fa-times-circle" style="color: #FF4D67;"></i> No Ads</li>
+            </ul>
+          </div>
+        </div>
       </div>
-
-      <!-- Premium -->
-      <div class="pricing-card card-premium">
-        <div class="card-badge-icon"><i class="fas fa-check-circle"></i></div>
-        <h3>PREMIUM</h3>
-        <div class="price">₹29<span>/ 30 Days</span></div>
-        <div class="pricing-divider"></div>
-        <ul>
-          <li><i class="fas fa-check-circle" style="color: #22D67B;"></i> Unlimited Chat & Maps</li>
-          <li><i class="fas fa-check-circle" style="color: #22D67B;"></i> Drawing & Drop Points</li>
-          <li><i class="fas fa-check-circle" style="color: #22D67B;"></i> Assets and PDFs</li>
-          <li><i class="fas fa-times-circle" style="color: #FF4D67;"></i> No Ads</li>
-        </ul>
-      </div>
-
-      <!-- Ultra Pro -->
-      <div class="pricing-card card-ultra">
-        <div class="ultra-tag">BEST VALUE</div>
-        <div class="card-badge-icon"><i class="fas fa-check-circle"></i></div>
-        <h3>ULTRA PRO</h3>
-        <div class="price">₹39<span>/ 30 Days</span></div>
-        <div class="pricing-divider"></div>
-        <ul>
-          <li><i class="fas fa-check-circle" style="color: #22D67B;"></i> All Premium Features</li>
-          <li><i class="fas fa-check-circle" style="color: #22D67B;"></i> Strategy Save & Import</li>
-          <li><i class="fas fa-check-circle" style="color: #22D67B;"></i> PDF/Image/Video Download</li>
-          <li><i class="fas fa-times-circle" style="color: #FF4D67;"></i> No Ads</li>
-        </ul>
-      </div>
+      <div class="swiper-pagination"></div>
     </div>
+
+    <!-- OTHER COUNTRIES (US$) PLANS — auto-scrolling, swipeable carousel -->
+    <div class="pricing-currency-label"><i class="fas fa-earth-americas" aria-hidden="true"></i> Other Countries <span class="accent">(US$)</span></div>
+    <div class="swiper pricingSwiperGlobal">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="pricing-card card-basic">
+            <div class="card-badge-icon"><i class="fas fa-times-circle"></i></div>
+            <h3>BASIC</h3>
+            <div class="price">Free<span>/ Lifetime</span></div>
+            <div class="pricing-divider"></div>
+            <ul>
+              <li><i class="fas fa-check-circle" style="color: #6B6B75;"></i> Team find</li>
+              <li><i class="fas fa-check-circle" style="color: #FF4FC0;"></i> Limited Chat</li>
+              <li><i class="fas fa-check-circle" style="color: #22D67B;"></i> Ads included</li>
+            </ul>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="pricing-card card-standard">
+            <div class="card-badge-icon"><i class="fas fa-check-circle"></i></div>
+            <h3>STANDARD</h3>
+            <div class="price">US$0.99<span>/ 30 Days</span></div>
+            <div class="pricing-divider"></div>
+            <ul>
+              <li><i class="fas fa-check-circle" style="color: #6B6B75;"></i> Team find</li>
+              <li><i class="fas fa-check-circle" style="color: #3FA9FF;"></i> Limited Chat</li>
+              <li><i class="fas fa-check-circle" style="color: #22D67B;"></i> Reels Feed & Full Maps</li>
+              <li><i class="fas fa-check-circle" style="color: #22D67B;"></i> Drawing Tools</li>
+              <li><i class="fas fa-check-circle" style="color: #22D67B;"></i> Ads included</li>
+            </ul>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="pricing-card card-premium">
+            <div class="card-badge-icon"><i class="fas fa-check-circle"></i></div>
+            <h3>PREMIUM</h3>
+            <div class="price">US$1.29<span>/ 30 Days</span></div>
+            <div class="pricing-divider"></div>
+            <ul>
+              <li><i class="fas fa-check-circle" style="color: #22D67B;"></i> Unlimited Chat & Maps</li>
+              <li><i class="fas fa-check-circle" style="color: #22D67B;"></i> Drawing & Drop Points</li>
+              <li><i class="fas fa-check-circle" style="color: #22D67B;"></i> Assets and PDFs</li>
+              <li><i class="fas fa-times-circle" style="color: #FF4D67;"></i> No Ads</li>
+            </ul>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="pricing-card card-ultra">
+            <div class="ultra-tag">BEST VALUE</div>
+            <div class="card-badge-icon"><i class="fas fa-check-circle"></i></div>
+            <h3>ULTRA PRO</h3>
+            <div class="price">US$1.49<span>/ 30 Days</span></div>
+            <div class="pricing-divider"></div>
+            <ul>
+              <li><i class="fas fa-check-circle" style="color: #22D67B;"></i> All Premium Features</li>
+              <li><i class="fas fa-check-circle" style="color: #22D67B;"></i> Strategy Save & Import</li>
+              <li><i class="fas fa-check-circle" style="color: #22D67B;"></i> PDF/Image/Video Download</li>
+              <li><i class="fas fa-times-circle" style="color: #FF4D67;"></i> No Ads</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+
+    <p class="currency-note"><i class="fas fa-circle-info" aria-hidden="true"></i> Prices shown are billed in the currency matching your payment method — Indian Rupees (₹) for users in India, US Dollars (US$) for users in other countries. All paid plans run for 30 days and do not auto-renew. See our <a href="refund.html" style="color: var(--gold-primary);">Refund Policy</a> for the 24-hour refund window.</p>
   </section>
 
   <!-- ===== RATE & REVIEW (Firebase) ===== -->
@@ -419,7 +492,7 @@
     </div>
   </section>
 
-  <!-- ===== FOOTER (short — legal docs open in the drawer, not inline) ===== -->
+  <!-- ===== FOOTER (short — legal docs now live on their own pages) ===== -->
   <footer class="footer">
     <div class="footer-top">
       <div class="footer-brand">
@@ -428,11 +501,11 @@
       <div class="footer-links">
         <h4>Legal</h4>
         <ul>
-          <li><button type="button" class="footer-legal-btn" data-legal-open="disclaimer">Disclaimer</button></li>
-          <li><button type="button" class="footer-legal-btn" data-legal-open="privacy-policy">Privacy Policy</button></li>
-          <li><button type="button" class="footer-legal-btn" data-legal-open="data-deletion">Data Deletion</button></li>
-          <li><button type="button" class="footer-legal-btn" data-legal-open="terms">Terms &amp; Conditions</button></li>
-          <li><button type="button" class="footer-legal-btn" data-legal-open="refund">Refund Policy</button></li>
+          <li><a class="footer-legal-btn" href="disclaimer.html">Disclaimer</a></li>
+          <li><a class="footer-legal-btn" href="privacy-policy.html">Privacy Policy</a></li>
+          <li><a class="footer-legal-btn" href="data-deletion.html">Data Deletion</a></li>
+          <li><a class="footer-legal-btn" href="terms.html">Terms &amp; Conditions</a></li>
+          <li><a class="footer-legal-btn" href="refund.html">Refund Policy</a></li>
         </ul>
       </div>
       <div class="footer-links">
@@ -459,306 +532,6 @@
   </footer>
 
   <button class="back-to-top" id="backToTop" type="button" aria-label="Back to top"><i class="fas fa-chevron-up" aria-hidden="true"></i></button>
-
-  <!-- ===================================================================
-       LEGAL DRAWER — hidden by default. Opens only when a legal link is
-       clicked (sidebar or footer). Keeps the main page short.
-       =================================================================== -->
-  <div class="legal-overlay" id="legalOverlay"></div>
-  <aside class="legal-drawer" id="legalDrawer" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="legalDrawerTitle">
-    <div class="legal-drawer-header">
-      <h2 id="legalDrawerTitle">Legal Center</h2>
-      <button type="button" class="legal-close" id="legalClose" aria-label="Close">
-        <i class="fas fa-times" aria-hidden="true"></i>
-      </button>
-    </div>
-
-    <nav class="legal-tabs" aria-label="Legal documents">
-      <button type="button" class="legal-tab" data-legal-tab="disclaimer">Disclaimer</button>
-      <button type="button" class="legal-tab" data-legal-tab="privacy-policy">Privacy Policy</button>
-      <button type="button" class="legal-tab" data-legal-tab="data-deletion">Data Deletion</button>
-      <button type="button" class="legal-tab" data-legal-tab="terms">Terms &amp; Conditions</button>
-      <button type="button" class="legal-tab" data-legal-tab="refund">Refund Policy</button>
-    </nav>
-
-    <div class="legal-body" id="legalBody">
-
-      <!-- DISCLAIMER -->
-      <div class="legal-panel" data-legal-panel="disclaimer">
-        <p class="legal-updated">Last updated: August 2026</p>
-
-        <div class="legal-block legal-highlight">
-          <h3><i class="fas fa-shield-halved" aria-hidden="true"></i> Independent, Fan-Made Project</h3>
-          <p>Rana eSports is an independent companion app created by a Free Fire player, for Free Fire players. It is <strong>not made, reviewed, endorsed, sponsored, or officially supported by Garena International Private Limited, 111dots Studio, or any official publisher of Garena Free Fire / Free Fire MAX.</strong> All Free Fire trademarks, names, and imagery remain the property of their respective owners.</p>
-        </div>
-
-        <div class="legal-block">
-          <h3><i class="fas fa-images" aria-hidden="true"></i> Use of Free Fire Names &amp; Imagery</h3>
-          <p>Some screens reference in-game names, terminology, or edited screenshots from Free Fire. These are used only to help players learn — for example, to label a map, explain a rotation, or illustrate a loadout. We rely on the standard fair-use factors for this kind of reference:</p>
-          <ul class="legal-list">
-            <li><i class="fas fa-circle-check" aria-hidden="true"></i> <strong>Purpose:</strong> purely educational and instructional — coaching players on strategy, positioning, and coordination.</li>
-            <li><i class="fas fa-circle-check" aria-hidden="true"></i> <strong>Nature:</strong> commentary and reference, not a copy of the game or its assets for redistribution.</li>
-            <li><i class="fas fa-circle-check" aria-hidden="true"></i> <strong>Amount:</strong> we use only what's needed to make a tip understandable, not full game content.</li>
-            <li><i class="fas fa-circle-check" aria-hidden="true"></i> <strong>Effect:</strong> Rana eSports doesn't compete with or replace Free Fire in any way.</li>
-          </ul>
-          <p>Fair use is a legal defence, not a guarantee — it's assessed case by case, and we can't promise it will apply to every image in every jurisdiction. If a rights holder believes any content should come down, we will act on it promptly: email <a href="mailto:rana.esports.help@gmail.com">rana.esports.help@gmail.com</a>.</p>
-        </div>
-
-        <div class="legal-block">
-          <h3><i class="fas fa-gamepad" aria-hidden="true"></i> No Hacks, Cheats, or Modifications</h3>
-          <p>Rana eSports does not create, distribute, or link to hacks, cheats, mods, aimbots, ESP, wallhacks, injectors, or any tool that modifies Free Fire or gives an unfair advantage. Every feature is a companion tool that runs alongside the official game — chat, voice, team-finding, and strategy planning. Using third-party cheats in Free Fire itself can get your account permanently banned by Garena; we strongly advise against it.</p>
-          <p>Rana eSports is built by an active competitive Free Fire player, not by strangers. We have zero tolerance for hack creators and hack sellers — our goal is to help genuine players learn the game the right way: map awareness, rotations, positioning, and squad coordination.</p>
-        </div>
-
-        <div class="legal-block legal-highlight">
-          <h3><i class="fas fa-id-badge" aria-hidden="true"></i> Your Free Fire ID Is 100% Safe</h3>
-          <p>During sign-up we ask for your Free Fire in-game name (IGN) and UID. These are used <strong>only</strong> to display your identity to other players inside Team Finder and squad features — so teammates know who they're playing with. We never use your IGN or UID to log in to, access, modify, or interact with your Free Fire account in any way, and we never share or sell this information to anyone. Adding your IGN/UID to Rana eSports has zero effect on your Free Fire account, your rank, or your standing with Garena.</p>
-        </div>
-
-        <div class="legal-block">
-          <h3><i class="fas fa-user-shield" aria-hidden="true"></i> Responsible Gaming</h3>
-          <p>Free Fire is rated for players aged 16 and above. We encourage healthy habits — take breaks, stay hydrated, and keep gaming from crowding out school, work, sleep, or family time.</p>
-        </div>
-
-        <div class="legal-block legal-warning">
-          <h3><i class="fas fa-circle-info" aria-hidden="true"></i> Provided As Is</h3>
-          <p>Rana eSports is provided "as is," without warranty of any kind. We work to keep it accurate and safe, but we're not liable for in-game losses, account actions taken by Garena, or device issues arising from use of this companion app.</p>
-        </div>
-      </div>
-
-      <!-- PRIVACY POLICY -->
-      <div class="legal-panel" data-legal-panel="privacy-policy">
-        <p class="legal-updated">Last updated: August 2026</p>
-        <p class="legal-intro">This policy explains what data Rana eSports collects, why, and how it's protected — in plain language.</p>
-
-        <div class="legal-block">
-          <h3><i class="fas fa-database" aria-hidden="true"></i> 1. Information We Collect</h3>
-          <ul class="legal-list">
-            <li><strong>Account info:</strong> mobile number, username, real name, in-game name (IGN), Free Fire UID, role, bio, and an optional avatar.</li>
-            <li><strong>Squad &amp; chat data:</strong> messages, team membership, voice/video call participation, and team-finder cards.</li>
-            <li><strong>Subscription info:</strong> which plan you're on and its expiry date. Card/bank details are handled entirely by our payment gateway — we never see or store them.</li>
-            <li><strong>Device info:</strong> device model, OS version, and a push-notification token (used for alerts and crash diagnostics).</li>
-            <li><strong>Usage &amp; website data:</strong> which features you use most, plus anonymous site analytics (visits, downloads, ratings).</li>
-          </ul>
-          <p><strong>We never collect your Free Fire account password, full payment card details, or your device contacts/call logs.</strong></p>
-          <p>Your in-game name (IGN) and Free Fire UID are used only to show your identity to other players inside Team Finder and squad features, so genuine teammates can find and recognize you. We never use this information to log in to, modify, or take any action on your Free Fire account, and we never sell or share it with advertisers or unrelated third parties.</p>
-        </div>
-
-        <div class="legal-block">
-          <h3><i class="fas fa-shield-cat" aria-hidden="true"></i> 2. Permissions We Request &amp; Why</h3>
-          <ul class="legal-list">
-            <li><i class="fas fa-bell" aria-hidden="true"></i> <strong>Notifications</strong> — messages, calls, and plan updates.</li>
-            <li><i class="fas fa-camera" aria-hidden="true"></i> <strong>Camera</strong> — profile photo and video calls.</li>
-            <li><i class="fas fa-microphone" aria-hidden="true"></i> <strong>Microphone</strong> — voice and video calls with your squad.</li>
-            <li><i class="fas fa-display" aria-hidden="true"></i> <strong>Screen share</strong> — only while you're actively sharing in a call.</li>
-            <li><i class="fas fa-images" aria-hidden="true"></i> <strong>Gallery / photos</strong> — avatar and saved assets (plan-dependent).</li>
-          </ul>
-          <p>Every permission is requested only when needed, with an on-screen explanation first. Denying one never crashes the app — it only locks that single feature.</p>
-        </div>
-
-        <div class="legal-block">
-          <h3><i class="fas fa-microphone-lines" aria-hidden="true"></i> 3. Voice &amp; Screen Share</h3>
-          <p>Voice calls and screen sharing run through our real-time communication provider and are not recorded or stored on our servers.</p>
-        </div>
-
-        <div class="legal-block">
-          <h3><i class="fas fa-people-arrows" aria-hidden="true"></i> 4. Isolation Between Users</h3>
-          <p>Every account's chat, notifications, saved team-finder cards, and search history are private and enforced both in the app and on our servers. Only what you choose to make public — username, avatar, IGN, role, and bio — is visible to others via profile search.</p>
-        </div>
-
-        <div class="legal-block">
-          <h3><i class="fas fa-server" aria-hidden="true"></i> 5. Infrastructure We Rely On</h3>
-          <p>Rana eSports runs on secure, industry-standard cloud infrastructure for core functions such as account login, real-time messaging, media storage, voice/video calls, and payment processing. Each service only receives the minimum data it needs to perform that one function, under its own strict data-protection terms, and none of them are permitted to use your data for advertising or resell it.</p>
-          <p><strong>We never sell, rent, or trade your personal data.</strong></p>
-        </div>
-
-        <div class="legal-block">
-          <h3><i class="fas fa-table-list" aria-hidden="true"></i> 6. Data Safety Summary</h3>
-          <table class="legal-table">
-            <tr><th>Data type</th><th>Collected?</th><th>Shared outside Rana eSports?</th></tr>
-            <tr><td>Name / Username / IGN</td><td>Yes</td><td>No</td></tr>
-            <tr><td>Phone number</td><td>Yes</td><td>No</td></tr>
-            <tr><td>Photos (avatar/uploads)</td><td>Yes</td><td>No — securely stored only</td></tr>
-            <tr><td>Messages</td><td>Yes</td><td>No</td></tr>
-            <tr><td>Voice/video call data</td><td>Not stored</td><td>No — live transit only, never recorded</td></tr>
-            <tr><td>Payment details</td><td>No — handled securely outside our systems</td><td>No</td></tr>
-            <tr><td>Device / crash data</td><td>Yes</td><td>No</td></tr>
-          </table>
-        </div>
-
-        <div class="legal-block">
-          <h3><i class="fas fa-lock" aria-hidden="true"></i> 7. Data Security</h3>
-          <p>We use HTTPS/TLS encryption for data in transit and access-controlled cloud storage at rest. No online service is 100% secure, but we work continuously to protect your information.</p>
-        </div>
-
-        <div class="legal-block">
-          <h3><i class="fas fa-child-reaching" aria-hidden="true"></i> 8. Children's Privacy</h3>
-          <p>Rana eSports is intended for users aged 16 and above. Players between 16 and 17 should use the app with a parent or guardian's permission; players aged 18 and above may use it independently. We do not knowingly create accounts for anyone below our platform's minimum age.</p>
-        </div>
-
-        <div class="legal-block">
-          <h3><i class="fas fa-user-gear" aria-hidden="true"></i> 9. Your Rights</h3>
-          <ul class="legal-list">
-            <li><strong>Access:</strong> request a copy of your data anytime.</li>
-            <li><strong>Delete:</strong> request full deletion of your account and data — see "Account &amp; Data Deletion".</li>
-            <li><strong>Update:</strong> edit your profile and preferences directly inside the app.</li>
-            <li><strong>Opt-out:</strong> disable notifications from device settings anytime.</li>
-          </ul>
-          <p>To exercise any of these rights, email <a href="mailto:rana.esports.help@gmail.com">rana.esports.help@gmail.com</a>.</p>
-        </div>
-
-        <div class="legal-block">
-          <h3><i class="fas fa-rotate" aria-hidden="true"></i> 10. Updates To This Policy</h3>
-          <p>We may update this policy from time to time. Major changes will be announced inside the app and on this page. Continued use of Rana eSports means you accept the latest version.</p>
-        </div>
-      </div>
-
-      <!-- DATA DELETION -->
-      <div class="legal-panel" data-legal-panel="data-deletion">
-        <p class="legal-updated">Last updated: August 2026</p>
-
-        <div class="legal-block legal-info">
-          <h3><i class="fas fa-circle-info" aria-hidden="true"></i> How To Request Deletion</h3>
-          <p>You can request permanent deletion of your Rana eSports account and all associated data without reinstalling the app. Email <a href="mailto:rana.esports.help@gmail.com">rana.esports.help@gmail.com</a> from your registered contact with:</p>
-          <ul class="legal-list">
-            <li><i class="fas fa-chevron-right" aria-hidden="true"></i> Your registered mobile number</li>
-            <li><i class="fas fa-chevron-right" aria-hidden="true"></i> Your username</li>
-            <li><i class="fas fa-chevron-right" aria-hidden="true"></i> The subject line "Account Deletion Request"</li>
-          </ul>
-        </div>
-        <div class="legal-block">
-          <h3><i class="fas fa-list-check" aria-hidden="true"></i> What Gets Deleted</h3>
-          <p>Once verified, we permanently delete your profile (name, username, IGN, UID, role, bio, avatar), your chat and team messages, your team-finder cards, your notifications, and your subscription history.</p>
-        </div>
-        <div class="legal-block">
-          <h3><i class="fas fa-hourglass-half" aria-hidden="true"></i> Timeline &amp; Exceptions</h3>
-          <p>Deletion completes within 30 days of a verified request. We may retain minimal transaction records where required by law (for example, billing records for tax purposes) for the legally required period, after which they too are deleted.</p>
-        </div>
-      </div>
-
-      <!-- TERMS -->
-      <div class="legal-panel" data-legal-panel="terms">
-        <p class="legal-updated">Last updated: August 2026</p>
-        <p class="legal-intro">By downloading or using Rana eSports, you agree to these terms. They exist to keep the community fair, safe, and toxic-free.</p>
-
-        <div class="legal-block">
-          <h3><i class="fas fa-handshake" aria-hidden="true"></i> 1. Acceptance of Terms</h3>
-          <p>By creating an account, downloading the APK, or using any feature of Rana eSports, you confirm you've read and agreed to these Terms, our Privacy Policy, and our Disclaimer.</p>
-        </div>
-        <div class="legal-block">
-          <h3><i class="fas fa-id-card" aria-hidden="true"></i> 2. Eligibility &amp; One Account Per Person</h3>
-          <p><p>You must be at least 16 years old to use Rana eSports. <strong>However, to purchase any VIP subscription (Standard, Premium, or Ultra Pro), you must be 18 years of age or older, or have explicit parental consent.</strong></p>, please use it with a parent or guardian's permission; if you're 18 or above, you may use it independently. Each mobile number and username may only be used for one personal account.</p>
-        </div>
-        <div class="legal-block">
-          <h3><i class="fas fa-user-lock" aria-hidden="true"></i> 3. Account Security</h3>
-          <ul class="legal-list">
-            <li>Keep your password private — never share it with anyone, including admins.</li>
-            <li>Your mobile number is permanently tied to your account and can't be changed by you or by us.</li>
-            <li>You're responsible for everything that happens on your account.</li>
-            <li>Notify us immediately at <a href="mailto:rana.esports.help@gmail.com">rana.esports.help@gmail.com</a> if your account is compromised.</li>
-          </ul>
-        </div>
-        <div class="legal-block">
-          <h3><i class="fas fa-headset" aria-hidden="true"></i> 4. Support &amp; Response Times</h3>
-          <p>Need your account deleted, your password reset, help cancelling a membership, or a refund? You can reach us two ways:</p>
-          <ul class="legal-list">
-            <li><i class="fas fa-envelope" aria-hidden="true"></i> Email <a href="mailto:rana.esports.help@gmail.com">rana.esports.help@gmail.com</a></li>
-            <li><i class="fas fa-comment-dots" aria-hidden="true"></i> The in-app Help Desk, where you can chat directly with our admin team</li>
-          </ul>
-          <p>We aim to send a first reply within <strong>5 hours</strong> and fully resolve most requests within <strong>24 hours</strong>.</p>
-        </div>
-
-        <div class="legal-block">
-          <h3><i class="fas fa-crown" aria-hidden="true"></i> 5. Subscription Plans &amp; Billing</h3>
-          <ul class="legal-list">
-            <li>Every new account starts on the free Basic plan for life.</li>
-            <li>Standard, Premium, and Ultra Pro are paid, recurring plans billed through our payment gateway.</li>
-            <li><li style="color: #22D67B; font-weight: bold;">All premium plans are valid for exactly 30 days and DO NOT auto-renew. You pay once for a 30-day pass.</li></li>
-            <li>Cancel anytime — your plan stays active until the period you've paid for ends, then reverts to Basic.</li>
-          </ul>
-        </div>
-        <div class="legal-block">
-          <h3><i class="fas fa-ban" aria-hidden="true"></i> 6. Strictly Prohibited Behaviour</h3>
-          <p>These result in an immediate, permanent account ban:</p>
-          <ul class="legal-list">
-            <li>Hacks, cheats, scripts, modded APKs, aimbots, or auto-headshot tools.</li>
-            <li>Harassment, hate speech, or bullying in chat or voice rooms.</li>
-            <li>Sharing sexually explicit, violent, or illegal content.</li>
-            <li>Spamming, scamming, phishing, or advertising unrelated services.</li>
-            <li>Impersonating pro players, creators, or Rana eSports staff.</li>
-            <li>Buying, selling, or trading Free Fire accounts or in-game items through our platform.</li>
-            <li>Using Team Finder for anything other than finding teammates.</li>
-          </ul>
-        </div>
-        <div class="legal-block">
-          <h3><i class="fas fa-microphone-slash" aria-hidden="true"></i> 7. Voice Chat Rules</h3>
-          <p>No ear-splitting sounds or spam, no recording others without permission, no inappropriate content over screen share. Respect every teammate, even after a tough loss.</p>
-        </div>
-        <div class="legal-block">
-          <h3><i class="fas fa-user-shield" aria-hidden="true"></i> 8. Moderation Rights</h3>
-          <p>Our team may warn, mute, restrict, or disable an account for violating these terms. Admin announcements are official and can't be edited or deleted by users.</p>
-        </div>
-        <div class="legal-block">
-          <h3><i class="fas fa-copyright" aria-hidden="true"></i> 9. Intellectual Property</h3>
-          <p>Original content inside Rana eSports — logo, UI design, code, guides, tutorials — belongs to Rana eSports. You may not copy, modify, or redistribute it without written permission. Free Fire-related trademarks belong to Garena (see Disclaimer).</p>
-        </div>
-        <div class="legal-block">
-          <h3><i class="fas fa-gavel" aria-hidden="true"></i> 10. Bans, Suspensions &amp; Appeals</h3>
-          <p>If you believe a ban was a mistake, appeal within 7 days at <a href="mailto:rana.esports.help@gmail.com">rana.esports.help@gmail.com</a>. Our decision is final.</p>
-        </div>
-        <div class="legal-block">
-          <h3><i class="fas fa-tools" aria-hidden="true"></i> 11. App Updates &amp; Availability</h3>
-          <p>We may update, modify, or discontinue any feature to improve security and performance. We don't guarantee 100% uptime, but we aim to keep the squad online.</p>
-        </div>
-        <div class="legal-block">
-          <h3><i class="fas fa-balance-scale" aria-hidden="true"></i> 12. Limitation of Liability</h3>
-          <p>Rana eSports is provided "as is." We're not responsible for in-game losses, ranking changes, account actions on Free Fire, or indirect damages from using our app.</p>
-        </div>
-        <div class="legal-block">
-          <h3><i class="fas fa-earth-asia" aria-hidden="true"></i> 13. Governing Law</h3>
-          <p>These terms are governed by the laws of India. Disputes are resolved through the courts of the appropriate jurisdiction.</p>
-        </div>
-      </div>
-
-      <!-- REFUND -->
-      <div class="legal-panel" data-legal-panel="refund">
-        <p class="legal-updated">Last updated: August 2026</p>
-        <p class="legal-intro">The Basic plan and core features of Rana eSports are completely free. This policy covers our paid Standard, Premium, and Ultra Pro subscriptions.</p>
-
-        <div class="legal-block">
-          <h3><i class="fas fa-gift" aria-hidden="true"></i> 1. Free Features</h3>
-          <p>Chat, Team Chat, Team Finder (general), and the Help Desk are free on the Basic plan — there's nothing to refund for free features.</p>
-        </div>
-        <div class="legal-block">
-          <h3><i class="fas fa-credit-card" aria-hidden="true"></i> 2. Subscription Purchases</h3>
-          <ul class="legal-list">
-            <li>You may request a refund within 3 days of purchase.</li>
-            <li>The plan's paid features must be largely unused during that window.</li>
-            <li>Refunds are processed to the original payment method only.</li>
-            <li>Processing time: 5–10 business days after approval.</li>
-            <li>Subscriptions auto-renew — cancel before the renewal date to avoid the next charge; cancelling alone doesn't refund the current period.</li>
-          </ul>
-        </div>
-        <div class="legal-block">
-          <h3><i class="fas fa-circle-xmark" aria-hidden="true"></i> 3. Non-Refundable Cases</h3>
-          <ul class="legal-list">
-            <li>Plans that have already been meaningfully used.</li>
-            <li>Accounts disabled for violating the Terms &amp; Conditions.</li>
-            <li>Requests made after the 3-day window.</li>
-          </ul>
-        </div>
-        <div class="legal-block">
-          <h3><i class="fas fa-paper-plane" aria-hidden="true"></i> 4. How To Request A Refund</h3>
-          <p>Email <a href="mailto:rana.esports.help@gmail.com">rana.esports.help@gmail.com</a>, or use the in-app Help Desk, with your registered mobile number, username, payment reference, and reason. We aim to send a first reply within 5 hours and resolve most requests within 24 hours.</p>
-        </div>
-        <div class="legal-block">
-          <h3><i class="fas fa-shield-virus" aria-hidden="true"></i> 5. Chargebacks &amp; Fraud</h3>
-          <p>Filing a chargeback without contacting us first may result in account suspension. Please reach out to our team first — we'll always try to make it right.</p>
-        </div>
-      </div>
-
-    </div>
-  </aside>
 
   <!-- ===================================================================
        REVIEW MODAL — hidden by default, opens from the "Rate Rana eSports"
@@ -826,6 +599,6 @@
     </div>
   </div>
 
-  <script src="script.js?v=3" defer></script>
+  <script src="script.js?v=6" defer></script>
 </body>
 </html>

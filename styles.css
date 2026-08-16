@@ -476,48 +476,10 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 }
 .back-to-top.show { opacity: 1; pointer-events: all; }
 
-/* ===== 17. LEGAL DRAWER (hidden by default, opens from Sidebar/Footer only) ===== */
-.legal-overlay {
-  position: fixed; inset: 0; background: rgba(2, 2, 4, 0.85);
-  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
-  z-index: 1290; opacity: 0; pointer-events: none; transition: opacity 0.35s ease;
-}
-.legal-overlay.active { opacity: 1; pointer-events: all; }
-
-.legal-drawer {
-  position: fixed; top: 0; right: 0; height: 100vh; width: min(560px, 100vw);
-  background: var(--bg-deep); border-left: var(--border-glow); z-index: 1300;
-  display: flex; flex-direction: column;
-  transform: translateX(100%); transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.legal-drawer.open { transform: translateX(0); box-shadow: -20px 0 60px rgba(0,0,0,0.8); }
-
-.legal-drawer-header {
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 22px 24px; border-bottom: var(--border-dim); flex-shrink: 0;
-}
-.legal-drawer-header h2 { font-family: var(--font-display); font-size: 1.1rem; text-transform: uppercase; color: var(--text-pure); }
-.legal-close { background: none; border: none; color: var(--text-mid); font-size: 1.2rem; padding: 4px; }
-.legal-close:hover { color: var(--gold-primary); }
-
-.legal-tabs {
-  display: flex; gap: 6px; padding: 14px 20px; overflow-x: auto; flex-shrink: 0;
-  border-bottom: var(--border-dim); scrollbar-width: none;
-}
-.legal-tabs::-webkit-scrollbar { display: none; }
-.legal-tab {
-  flex-shrink: 0; background: var(--bg-card); border: var(--border-dim); color: var(--text-mid);
-  padding: 8px 14px; border-radius: 100px; font-family: var(--font-nav); font-weight: 600;
-  font-size: 0.8rem; white-space: nowrap; transition: var(--transition-fast);
-}
-.legal-tab:hover { color: var(--text-pure); }
-.legal-tab.active { background: var(--gold-gradient); color: #000; border-color: transparent; }
-
-.legal-body { flex: 1; overflow-y: auto; padding: 24px; }
-.legal-panel { display: none; }
-.legal-panel.active { display: block; animation: legalFadeIn 0.3s ease; }
-@keyframes legalFadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
-
+/* ===== 17. LEGAL / STANDALONE CONTENT BLOCKS (shared by disclaimer.html,
+   privacy-policy.html, data-deletion.html, terms.html, refund.html,
+   contact.html) — same visual language as the old in-page drawer, now
+   rendered as normal page content instead of a slide-out panel. ===== */
 .legal-updated { font-size: 0.78rem; color: var(--text-low); margin-bottom: 18px; text-transform: uppercase; letter-spacing: 1px; font-family: var(--font-nav); }
 .legal-intro { font-size: 0.95rem; color: var(--text-high); margin-bottom: 22px; }
 
@@ -554,8 +516,6 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   .rating-summary-left { text-align: center; }
   .btn-rate-us { justify-content: center; width: 100%; }
   .rating-summary .avg-number { font-size: 2.2rem; }
-  .legal-drawer { width: 100%; }
-  .legal-body { padding: 18px; }
 }
 
 /* ===== 19. RESPONSIVE — TABLET & UP (768px+) ===== */
@@ -563,10 +523,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   .contact-grid { max-width: 900px; }
 }
 
-/* ===== 20. RESPONSIVE — DESKTOP & LAPTOP (1024px+) =====
-   A visibly different composition from mobile: split hero with a phone
-   mock, inline nav quick-links, and a wider legal drawer with side-by-side
-   tab layout. */
+/* ===== 20. RESPONSIVE — DESKTOP & LAPTOP (1024px+) ===== */
 @media (min-width: 1024px) {
   .nav-quicklinks { display: flex; }
 
@@ -580,10 +537,6 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   @keyframes heroPhoneFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-14px); } }
 
   .rating-summary { padding: 34px 40px; }
-
-  .legal-drawer { width: min(680px, 60vw); }
-  .legal-tabs { padding: 18px 28px; }
-  .legal-body { padding: 32px 36px; }
 }
 
 @media (min-width: 1440px) {
@@ -603,6 +556,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 /* ===== PRICING SECTION VIP STYLES ===== */
 .pricing-section { padding: 80px 20px; background: var(--bg-pitch); width: 100%; border-top: var(--border-dim); }
 .pricing-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 24px; max-width: 1200px; margin: 0 auto; }
+.pricing-grid[hidden] { display: none !important; }
 .pricing-card { position: relative; background: var(--bg-card); border: 1.5px solid var(--border-dim); border-radius: 28px; padding: 32px 24px; width: 280px; transition: var(--transition-normal); }
 .pricing-card:hover { transform: translateY(-8px); }
 .card-badge-icon { position: absolute; top: 20px; right: 20px; font-size: 1.4rem; }
@@ -649,3 +603,203 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 #adVideoPlayer { width: 100%; height: 100%; object-fit: cover; }
 .ad-progress-bar { position: absolute; bottom: 0; left: 0; width: 100%; height: 4px; background: rgba(255,255,255,0.2); }
 .ad-progress-fill { height: 100%; width: 0%; background: #FFD700; transition: width 1s linear; }
+
+/* ==========================================================================
+   21. NEW — STANDALONE PAGE LAYOUT
+   Used by: disclaimer.html, privacy-policy.html, data-deletion.html,
+   terms.html, refund.html, contact.html
+   These pages no longer live inside the sliding legal-drawer — they are
+   full pages that share this exact navbar + footer + card styling so the
+   look is identical on mobile and desktop.
+   ========================================================================== */
+.nav-back-link {
+  display: inline-flex; align-items: center; gap: 8px;
+  color: var(--text-mid); text-decoration: none; font-family: var(--font-nav);
+  font-weight: 600; font-size: 0.9rem; transition: var(--transition-fast);
+}
+.nav-back-link:hover { color: var(--gold-primary); }
+
+.standalone-page {
+  max-width: 760px; margin: 0 auto;
+  padding: 110px 20px 60px;
+  min-height: 55vh;
+}
+.standalone-header { text-align: center; margin-bottom: 32px; }
+.standalone-header .section-eyebrow { margin-bottom: 8px; }
+.standalone-header .section-title { margin: 4px 0 10px; }
+.standalone-header .legal-updated { margin-bottom: 0; }
+
+.standalone-content .legal-block:last-child { margin-bottom: 0; }
+
+.back-to-home-link {
+  display: inline-flex; align-items: center; gap: 8px; margin-top: 24px;
+  color: var(--gold-primary); text-decoration: none; font-family: var(--font-nav);
+  font-weight: 700; font-size: 0.9rem;
+}
+.back-to-home-link:hover { text-decoration: underline; }
+
+/* Contact page reuses .contact-grid / .contact-card, just needs top spacing */
+.standalone-page .contact-grid { margin-top: 4px; }
+
+/* Highlighted copy-ready message box (used on data-deletion.html for the
+   "send this to admin / email" template) */
+.delete-message-box {
+  background: var(--bg-pitch);
+  border: 1.5px dashed rgba(255, 215, 0, 0.4);
+  border-radius: var(--radius-sm);
+  padding: 16px 18px;
+  margin: 14px 0;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  line-height: 1.7;
+  color: var(--text-high);
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+.delete-message-box strong { color: var(--gold-primary); }
+.delete-message-label {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-family: var(--font-nav); font-weight: 700; font-size: 0.72rem;
+  text-transform: uppercase; letter-spacing: 1px; color: var(--gold-primary);
+  margin-bottom: 8px;
+}
+.delete-steps { counter-reset: delete-step; list-style: none; margin-bottom: 12px; }
+.delete-steps li {
+  position: relative; padding-left: 34px; margin-bottom: 14px;
+  color: var(--text-mid); font-size: 0.87rem; line-height: 1.55;
+}
+.delete-steps li::before {
+  counter-increment: delete-step; content: counter(delete-step);
+  position: absolute; left: 0; top: 0; width: 24px; height: 24px;
+  background: var(--gold-gradient); color: #000; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-display); font-weight: 800; font-size: 0.78rem;
+}
+.delete-steps li strong { color: var(--text-pure); }
+.timeline-strip {
+  display: flex; flex-wrap: wrap; gap: 12px; margin: 14px 0;
+}
+.timeline-chip {
+  flex: 1; min-width: 140px; background: var(--bg-pitch); border: var(--border-dim);
+  border-radius: var(--radius-sm); padding: 14px 16px; text-align: center;
+}
+.timeline-chip .timeline-num {
+  display: block; font-family: var(--font-mono); font-weight: 700;
+  font-size: 1.3rem; color: var(--gold-primary); margin-bottom: 4px;
+}
+.timeline-chip .timeline-label {
+  font-family: var(--font-nav); font-size: 0.75rem; text-transform: uppercase;
+  letter-spacing: 0.5px; color: var(--text-mid);
+}
+
+/* ===== 22. COPY-TO-CLIPBOARD MESSAGE BOX (data-deletion.html / refund.html) ===== */
+.message-box-header {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  flex-wrap: wrap; margin-bottom: 10px;
+}
+.copy-btn {
+  display: inline-flex; align-items: center; gap: 7px; flex-shrink: 0;
+  background: var(--gold-gradient); color: #000; border: none;
+  padding: 8px 16px; border-radius: 100px; font-family: var(--font-nav);
+  font-weight: 700; font-size: 0.8rem; letter-spacing: 0.3px;
+  box-shadow: 0 4px 14px var(--gold-glow); transition: var(--transition-fast);
+  position: relative; overflow: hidden;
+}
+.copy-btn:hover { transform: translateY(-1px); box-shadow: 0 6px 18px rgba(255,215,0,0.5); }
+.copy-btn.copied { background: linear-gradient(135deg, #6CFFA0, #22D67B); box-shadow: 0 4px 14px rgba(34,214,123,0.4); }
+.copy-btn:disabled { cursor: default; }
+
+.delete-message-box, .refund-message-box {
+  background: var(--bg-pitch);
+  border: 1.5px dashed rgba(255, 215, 0, 0.4);
+  border-radius: var(--radius-sm);
+  padding: 16px 18px;
+  margin: 14px 0;
+}
+.message-box-text {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  line-height: 1.75;
+  color: var(--text-high);
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+.delete-message-label {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-family: var(--font-nav); font-weight: 700; font-size: 0.72rem;
+  text-transform: uppercase; letter-spacing: 1px; color: var(--gold-primary);
+}
+
+/* Requirement checklist used before the copy-message boxes */
+.requirement-list { list-style: none; margin-bottom: 12px; }
+.requirement-list li {
+  display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px;
+  color: var(--text-mid); font-size: 0.87rem; line-height: 1.5;
+}
+.requirement-list li i {
+  color: #000; background: var(--gold-gradient); border-radius: 50%;
+  width: 20px; height: 20px; min-width: 20px; display: flex; align-items: center;
+  justify-content: center; font-size: 0.68rem; margin-top: 1px;
+}
+
+/* Eligible / not-eligible chip row, used on refund.html */
+.eligibility-row { display: grid; grid-template-columns: 1fr; gap: 12px; margin: 14px 0; }
+@media (min-width: 640px) { .eligibility-row { grid-template-columns: 1fr 1fr; } }
+.eligibility-card {
+  border-radius: var(--radius-sm); padding: 16px 18px; border: var(--border-dim); background: var(--bg-pitch);
+}
+.eligibility-card.eligible { border-left: 3px solid var(--accent-green); }
+.eligibility-card.not-eligible { border-left: 3px solid var(--accent-red); }
+.eligibility-card h4 {
+  font-family: var(--font-nav); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.5px;
+  margin-bottom: 8px; display: flex; align-items: center; gap: 8px;
+}
+.eligibility-card.eligible h4 { color: var(--accent-green); }
+.eligibility-card.not-eligible h4 { color: var(--accent-red); }
+.eligibility-card ul { list-style: none; }
+.eligibility-card li { color: var(--text-mid); font-size: 0.82rem; margin-bottom: 6px; padding-left: 14px; position: relative; }
+.eligibility-card li::before { content: '•'; position: absolute; left: 0; color: var(--text-low); }
+
+/* ===== 23. PRICING CARD CAROUSELS (India ₹ / Other Countries US$) =====
+   Two independent auto-scrolling Swiper carousels — replaces the old
+   click-to-toggle currency tabs. Cards centre themselves, auto-rotate
+   right-to-left holding ~1s per card, loop endlessly, and remain fully
+   swipeable by finger/mouse at any time. */
+.pricing-currency-label {
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  font-family: var(--font-display); font-size: 0.95rem; font-weight: 800;
+  text-transform: uppercase; letter-spacing: 1.5px; color: var(--text-pure);
+  margin: 0 auto 20px; max-width: 1200px; padding: 0 20px;
+}
+.pricing-currency-label:not(:first-of-type) { margin-top: 52px; }
+.pricing-currency-label i { color: var(--gold-primary); font-size: 0.9rem; }
+
+.pricingSwiperIndia, .pricingSwiperGlobal {
+  width: 100%; padding: 20px 0 44px !important;
+}
+.pricingSwiperIndia .swiper-slide, .pricingSwiperGlobal .swiper-slide {
+  width: 280px; height: auto; display: flex; align-items: stretch;
+}
+.pricingSwiperIndia .swiper-slide .pricing-card,
+.pricingSwiperGlobal .swiper-slide .pricing-card {
+  width: 100%;
+}
+.pricingSwiperIndia .swiper-pagination-bullet,
+.pricingSwiperGlobal .swiper-pagination-bullet {
+  background: var(--text-low); opacity: 0.6;
+}
+.pricingSwiperIndia .swiper-pagination-bullet-active,
+.pricingSwiperGlobal .swiper-pagination-bullet-active {
+  background: var(--gold-primary); opacity: 1;
+}
+@media (min-width: 1024px) {
+  .pricing-currency-label { font-size: 1.1rem; }
+}
+.currency-note {
+  max-width: 640px; margin: 24px auto 0; text-align: center; color: var(--text-low);
+  font-size: 0.8rem; line-height: 1.6; padding: 0 20px;
+}
+
+@media (min-width: 1024px) {
+  .standalone-page { padding: 140px 40px 90px; }
+}
