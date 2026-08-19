@@ -12,18 +12,20 @@
 
   <script>
     const urlParams = new URLSearchParams(window.location.search);
-    const orderId = urlParams.get('order_id');
+    // Cashfree apna 'order_id' bhejta hai; PayPal 'token' bhejta hai jo hi order id hai
+    const orderId = urlParams.get('order_id') || urlParams.get('token');
     const planId = urlParams.get('plan_id');
+    const gateway = urlParams.get('gateway') || (urlParams.get('token') ? 'paypal' : 'cashfree');
 
     if (orderId && planId) {
-      const deepLink = 'ranaesports://payment-return?order_id=' + encodeURIComponent(orderId) + '&plan_id=' + encodeURIComponent(planId);
+      const deepLink = 'ranaesports://payment-return?order_id=' + encodeURIComponent(orderId) +
+        '&plan_id=' + encodeURIComponent(planId) +
+        '&gateway=' + encodeURIComponent(gateway);
       const fallback = document.getElementById('fallbackLink');
       fallback.href = deepLink;
 
-      // Auto-redirect turant try karo
       window.location.href = deepLink;
 
-      // Agar 1.5 second mein app na khule, fallback button dikhao
       setTimeout(function() {
         document.getElementById('status').innerText = 'App automatically nahi khula? Neeche tap karo:';
         fallback.style.display = 'inline-block';
