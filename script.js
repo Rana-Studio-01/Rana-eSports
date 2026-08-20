@@ -97,19 +97,19 @@ document.addEventListener('DOMContentLoaded', () => {
     el.textContent = new Date().getFullYear();
   });
 
-  // ===== 3B. URL HASH -> REDIRECT OLD LEGAL-DRAWER / OLD .HTML LINKS
-  // Payment-gateway KYC forms, old bookmarks, and old .html links all
-  // used to point at #disclaimer, disclaimer.html, etc. Those pages now
-  // live at clean folder URLs (e.g. /disclaimer/), so forward every old
-  // reference there automatically instead of 404-ing. =====
+  // ===== 3B. OLD "#disclaimer" STYLE HASH LINKS -> FLAT .HTML PAGE
+  // Some old payment-gateway KYC forms / bookmarks point at
+  // index.html#disclaimer, #privacy-policy, etc. This site's structure is
+  // flat (disclaimer.html, privacy-policy.html, ...), so forward those
+  // old hash links to the matching flat file instead of doing nothing. =====
   (function handleLegalHashOnLoad() {
     const LEGAL_PAGE_MAP = {
-      'disclaimer': '/disclaimer/',
-      'privacy-policy': '/privacy-policy/',
-      'data-deletion': '/data-deletion/',
-      'terms': '/terms/',
-      'refund': '/refund/',
-      'contact': '/contact/',
+      'disclaimer': 'disclaimer.html',
+      'privacy-policy': 'privacy-policy.html',
+      'data-deletion': 'data-deletion.html',
+      'terms': 'terms.html',
+      'refund': 'refund.html',
+      'contact': 'contact.html',
       'contactUs': '#contact'
     };
     const hash = window.location.hash.replace('#', '');
@@ -130,17 +130,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   })();
 
-  // ===== 3C. OLD .HTML BOOKMARKS -> CLEAN FOLDER URL
-  // If someone still has /disclaimer.html bookmarked (old version of the
-  // site), silently redirect to the new clean /disclaimer/ URL so the
-  // address bar never shows ".html" again. =====
-  (function redirectOldHtmlUrls() {
-    const path = window.location.pathname;
-    const match = path.match(/\/(disclaimer|privacy-policy|data-deletion|terms|refund|contact)\.html$/i);
-    if (match) {
-      window.location.replace('/' + match[1] + '/' + window.location.search + window.location.hash);
-    }
-  })();
+  // NOTE: there is intentionally NO ".html -> folder URL" redirect here.
+  // This site uses flat files (disclaimer.html, refund.html, etc, all at
+  // the root — no subfolders), so a page must never redirect itself away
+  // from its own real, working .html URL. That redirect existed in an
+  // earlier version of this file and was the cause of every legal page
+  //404-ing in production — it has been removed for good.
 
   // ===== 5. UPDATE BANNER SWIPER =====
   if (document.querySelector('.updateSwiper') && window.Swiper) {
