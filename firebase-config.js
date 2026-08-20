@@ -20,14 +20,10 @@ const ranaDB = firebase.database();
 const COUNTERS_REF = ranaDB.ref("stats/counters");
 const REVIEWS_REF = ranaDB.ref("reviews");
 
-/* How many reviews are visible before "Read More" is needed. */
 const RANA_REVIEW_PREVIEW_COUNT = 10;
 let ranaShowAllReviews = false;
 let ranaReviewsCache = [];
 
-/* -------- 3. VISITOR COUNTER --------
-   Counts once per browser tab session (sessionStorage guard) so a refresh
-   or scroll doesn't inflate the number. */
 function ranaCountVisitor() {
   try {
     if (sessionStorage.getItem("rana_visit_counted")) return;
@@ -38,8 +34,6 @@ function ranaCountVisitor() {
   }
 }
 
-/* -------- 4. DOWNLOAD COUNTER --------
-   Call this from any download button's click handler. */
 function ranaCountDownload() {
   try {
     COUNTERS_REF.child("downloads").set(firebase.database.ServerValue.increment(1));
@@ -48,9 +42,6 @@ function ranaCountDownload() {
   }
 }
 
-/* -------- 5. LIVE COUNTER DISPLAY --------
-   Listens in real time and fills any element with [data-rana-stat="downloads"]
-   or [data-rana-stat="visitors"]. */
 function ranaWatchCounters() {
   COUNTERS_REF.on("value", (snap) => {
     const data = snap.val() || {};
@@ -71,9 +62,6 @@ function ranaFormatCount(n) {
   return String(n);
 }
 
-/* -------- 6. RATING & REVIEW SYSTEM --------
-   Pushes { rating (1-5 int), text, name, role, createdAt } to /reviews.
-   Reviews are immutable once created (see Realtime Database rules). */
 function ranaSubmitReview({ rating, text, email, role }) {
   const cleanRating = Math.max(1, Math.min(5, Math.round(Number(rating))));
   const cleanText = String(text || "").trim().slice(0, 300);
@@ -82,10 +70,8 @@ function ranaSubmitReview({ rating, text, email, role }) {
 
   if (!cleanEmail) return Promise.reject(new Error("Email is required"));
 
-  // Firebase key mein email use karne ke liye symbols remove karne padte hain
   const emailKey = cleanEmail.replace(/[.#$\[\]]/g, '_');
 
-  // .set() se existing rating update ho jayegi agar usi email se dobara aayi (1 email = 1 rating)
   return REVIEWS_REF.child(emailKey).set({
     rating: cleanRating,
     text: cleanText,
@@ -94,19 +80,14 @@ function ranaSubmitReview({ rating, text, email, role }) {
     createdAt: firebase.database.ServerValue.TIMESTAMP
   });
 }
-/* Live-listens to the latest reviews and the running average, and renders
-   into #ranaReviewList / #ranaAvgRating / #ranaRatingCount if present.
-   Push keys sort chronologically, so limitToLast(50) + reverse gives us
-   "newest first" without needing a createdAt index. Only the first
-   RANA_REVIEW_PREVIEW_COUNT reviews show by default; "Read More" reveals
-   the rest that were fetched (up to 50). */
+
 function ranaWatchReviews() {
   REVIEWS_REF.limitToLast(50).on("value", (snap) => {
     const reviews = [];
     snap.forEach((child) => {
               if (child.val()) reviews.push(child.val());
             });
-            reviews.reverse(); // newest first
+            reviews.reverse();
             ranaReviewsCache = reviews;
 
             const avgEl = document.getElementById("ranaAvgRating");
@@ -116,7 +97,6 @@ function ranaWatchReviews() {
             const totalRatingsEl = document.getElementById("ranaTotalRatingsStat");
             if (totalRatingsEl) totalRatingsEl.textContent = ranaFormatCount(reviews.length);
             if (reviews.length) {
-              // Safety added: Convert to Number and handle missing ratings
               const avg = reviews.reduce((sum, r) => sum + (r && r.rating ? Number(r.rating) : 5), 0) / reviews.length;
       if (avgEl) avgEl.textContent = avg.toFixed(1);
       if (statEl) statEl.textContent = avg.toFixed(1);
@@ -133,8 +113,6 @@ function ranaWatchReviews() {
   }, (err) => console.warn("Rana Esports: review listener failed", err));
 }
 
-/* Renders the review list respecting the top-10 / show-all toggle, and
-   shows or hides the "Read More" button as needed. */
 function ranaRenderReviewList() {
   const listEl = document.getElementById("ranaReviewList");
   const readMoreBtn = document.getElementById("reviewReadMoreBtn");
@@ -158,7 +136,6 @@ function ranaRenderReviewList() {
   }
 }
 
-/* Toggled by the "Read More Reviews" button in script.js. */
 function ranaToggleReviewView() {
   ranaShowAllReviews = !ranaShowAllReviews;
   ranaRenderReviewList();
@@ -180,24 +157,22 @@ function maskEmailAddress(email) {
   if (!email) return "Anonymous";
   const parts = email.split("@");
   if (parts.length !== 2) return email;
-  
+
   const namePart = parts[0];
   const domain = parts[1];
-  
-  // Agar email chhoti hai toh simple masking
+
   if (namePart.length <= 3) return namePart.substring(0, 1) + "***@" + domain;
-  
-  // Requirement ke hisaab se masking: Shuru ke 3 words + ***** + last ke 2 words
+
   return namePart.substring(0, 3) + "********" + "@" + domain;
 }
 
 function ranaRenderReviewCard(r) {
-  if (!r) return ""; 
+  if (!r) return "";
   const safeText = ranaEscapeHTML(r.text || "");
   const rawEmail = r.email || "";
   const maskedEmail = ranaEscapeHTML(maskEmailAddress(rawEmail));
   const safeRole = ranaEscapeHTML(r.role || "");
-  const ratingValue = r.rating ? Number(r.rating) : 5; 
+  const ratingValue = r.rating ? Number(r.rating) : 5;
   return `
     <div class="review-card">
       <div class="review-card-top">
@@ -214,7 +189,6 @@ function ranaEscapeHTML(str) {
   return div.innerHTML;
 }
 
-/* -------- 7. BOOT -------- */
 document.addEventListener("DOMContentLoaded", () => {
   ranaCountVisitor();
   ranaWatchCounters();

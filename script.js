@@ -53,8 +53,6 @@ document.addEventListener('DOMContentLoaded', () => {
   hamburgerBtn?.addEventListener('click', openSidebar);
   sidebarClose?.addEventListener('click', closeSidebar);
   sidebarOverlay?.addEventListener('click', closeSidebar);
-  // In-page anchor links (and the legal page links, which now navigate
-  // away to their own .html files) close the sidebar on click.
   document.querySelectorAll('.sidebar-link[href]').forEach((link) => link.addEventListener('click', closeSidebar));
 
   // ===== 3. REVIEW MODAL =====
@@ -92,23 +90,31 @@ document.addEventListener('DOMContentLoaded', () => {
     else if (sidebar?.classList.contains('open')) closeSidebar();
   });
 
-  // ===== 3B. URL HASH -> REDIRECT OLD LEGAL-DRAWER LINKS (payment gateway
-  // KYC links used to point at #disclaimer, #privacy-policy, etc. Those
-  // sections now live on their own pages, so forward old links there
-  // automatically instead of 404-ing or doing nothing.) =====
+  // ===== 3A. FOOTER AUTO-YEAR =====
+  // Copyright line always shows the correct current year without needing
+  // a manual edit every January.
+  document.querySelectorAll('#footerYear').forEach((el) => {
+    el.textContent = new Date().getFullYear();
+  });
+
+  // ===== 3B. URL HASH -> REDIRECT OLD LEGAL-DRAWER / OLD .HTML LINKS
+  // Payment-gateway KYC forms, old bookmarks, and old .html links all
+  // used to point at #disclaimer, disclaimer.html, etc. Those pages now
+  // live at clean folder URLs (e.g. /disclaimer/), so forward every old
+  // reference there automatically instead of 404-ing. =====
   (function handleLegalHashOnLoad() {
     const LEGAL_PAGE_MAP = {
-      'disclaimer': 'disclaimer.html',
-      'privacy-policy': 'privacy-policy.html',
-      'data-deletion': 'data-deletion.html',
-      'terms': 'terms.html',
-      'refund': 'refund.html'
+      'disclaimer': '/disclaimer/',
+      'privacy-policy': '/privacy-policy/',
+      'data-deletion': '/data-deletion/',
+      'terms': '/terms/',
+      'refund': '/refund/',
+      'contact': '/contact/',
+      'contactUs': '#contact'
     };
     const hash = window.location.hash.replace('#', '');
     if (!hash) return;
-    if (LEGAL_PAGE_MAP[hash]) {
-      window.location.replace(LEGAL_PAGE_MAP[hash]);
-    } else if (hash === 'contactUs') {
+    if (hash === 'contactUs') {
       const contactSection = document.getElementById('contact');
       if (contactSection) {
         setTimeout(() => {
@@ -117,6 +123,22 @@ document.addEventListener('DOMContentLoaded', () => {
           window.scrollTo({ top: destY, behavior: 'smooth' });
         }, 300);
       }
+      return;
+    }
+    if (LEGAL_PAGE_MAP[hash]) {
+      window.location.replace(LEGAL_PAGE_MAP[hash]);
+    }
+  })();
+
+  // ===== 3C. OLD .HTML BOOKMARKS -> CLEAN FOLDER URL
+  // If someone still has /disclaimer.html bookmarked (old version of the
+  // site), silently redirect to the new clean /disclaimer/ URL so the
+  // address bar never shows ".html" again. =====
+  (function redirectOldHtmlUrls() {
+    const path = window.location.pathname;
+    const match = path.match(/\/(disclaimer|privacy-policy|data-deletion|terms|refund|contact)\.html$/i);
+    if (match) {
+      window.location.replace('/' + match[1] + '/' + window.location.search + window.location.hash);
     }
   })();
 
@@ -197,7 +219,7 @@ document.addEventListener('DOMContentLoaded', () => {
   sections.forEach((section) => sectionObserver.observe(section));
 
   // ===== 9. RIPPLE CLICK EFFECT =====
-  const rippleTargets = document.querySelectorAll('.download-btn, .nav-download-btn-small, .contact-card, .btn-secondary, .btn-rate-us, .review-readmore');
+  const rippleTargets = document.querySelectorAll('.download-btn, .nav-download-btn-small, .contact-card, .btn-secondary, .btn-rate-us, .review-readmore, .need-help-btn');
   rippleTargets.forEach((btn) => {
     btn.addEventListener('click', function (e) {
       const ripple = document.createElement('span');
@@ -287,8 +309,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { passive: true });
   }
 
-  // ===== 12. SMOOTH ANCHOR SCROLL (in-page section links only — legal
-  // links and contact.html link now navigate as normal hrefs) =====
+  // ===== 12. SMOOTH ANCHOR SCROLL (in-page section links only) =====
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener('click', function (e) {
       const targetSelector = this.getAttribute('href');
@@ -377,7 +398,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-    // ===== 15. READ MORE REVIEWS =====
+  // ===== 15. READ MORE REVIEWS =====
   const readMoreBtn = document.getElementById('reviewReadMoreBtn');
   readMoreBtn?.addEventListener('click', () => {
     if (typeof ranaToggleReviewView === 'function') ranaToggleReviewView();
@@ -405,7 +426,6 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.classList.add('no-scroll');
 
         adVideoPlayer.muted = false;
-
         adVideoPlayer.currentTime = 0;
         adVideoPlayer.play().catch(err => {
             console.log("Autoplay error:", err);
@@ -447,9 +467,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ===== 17. COPY-TO-CLIPBOARD BUTTONS =====
-  // Used on data-deletion.html and refund.html so users can copy the
-  // ready-made request message with one tap and paste it into the Help
-  // Desk chat or an email to the admin.
   document.querySelectorAll('[data-copy-target]').forEach((btn) => {
     btn.addEventListener('click', () => {
       const target = document.getElementById(btn.dataset.copyTarget);
@@ -494,9 +511,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ===== 18. PRICING CARD CAROUSELS (India ₹ / Other Countries $) =====
-  // Auto-scrolls right-to-left, holds each card ~1s, loops endlessly,
-  // and stays fully swipeable by finger/mouse (pauses autoplay briefly
-  // on interaction, then resumes).
   if (document.querySelector('.pricingSwiperIndia') && window.Swiper) {
     new Swiper('.pricingSwiperIndia', {
       effect: 'coverflow',
@@ -562,14 +576,14 @@ window.onYouTubeIframeAPIReady = function () {
   'use strict';
   try {
     const engVids = [
-      { id: 'playerEng1', vid: '5F9_qyL2ngA' },
-      { id: 'playerEng2', vid: 'Rg2jCzljzRE' },
-      { id: 'playerEng3', vid: '5F9_qyL2ngA' }
+      { id: 'playerEng1', vid: '27IXVJABctU' },
+      { id: 'playerEng2', vid: 'TFQ_56hlpXI' },
+      { id: 'playerEng3', vid: '0pusgEaofyg' }
     ];
     const hinVids = [
-      { id: 'playerHin1', vid: 'Rg2jCzljzRE' },
-      { id: 'playerHin2', vid: '5F9_qyL2ngA' },
-      { id: 'playerHin3', vid: 'Rg2jCzljzRE' }
+      { id: 'playerHin1', vid: 'QNzIcTyEFqw' },
+      { id: 'playerHin2', vid: 'NB-A3emWN9Y' },
+      { id: 'playerHin3', vid: '0pusgEaofyg' }
     ];
 
     [...engVids, ...hinVids].forEach(video => {

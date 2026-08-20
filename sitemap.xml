@@ -6,32 +6,32 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://ranaesp.online/disclaimer</loc>
+    <loc>https://ranaesp.online/disclaimer/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
-    <loc>https://ranaesp.online/privacy-policy</loc>
+    <loc>https://ranaesp.online/privacy-policy/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
-    <loc>https://ranaesp.online/data-deletion</loc>
+    <loc>https://ranaesp.online/data-deletion/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
-    <loc>https://ranaesp.online/terms</loc>
+    <loc>https://ranaesp.online/terms/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
-    <loc>https://ranaesp.online/refund</loc>
+    <loc>https://ranaesp.online/refund/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
-    <loc>https://ranaesp.online/contact</loc>
+    <loc>https://ranaesp.online/contact/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>

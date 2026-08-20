@@ -450,6 +450,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 @media (min-width: 768px) { .footer-top { grid-template-columns: 2fr repeat(3, 1fr); } }
 .footer-brand .footer-logo { font-family: var(--font-display); font-size: 1.3rem; font-weight: 900; letter-spacing: 1.5px; color: var(--text-pure); display: block; margin-bottom: 12px; }
 .footer-brand p { color: var(--text-mid); font-size: 0.9rem; max-width: 280px; }
+.footer-tagline { color: var(--text-low); font-size: 0.8rem; margin-top: 10px; font-family: var(--font-nav); letter-spacing: 0.3px; }
 .footer-links h4 { font-family: var(--font-display); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-pure); margin-bottom: 16px; }
 .footer-links ul { list-style: none; }
 .footer-links li { margin-bottom: 10px; }
@@ -463,8 +464,20 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .footer-socials a:hover { color: #000; background: var(--gold-primary); border-color: var(--gold-primary); }
 .footer-disclaimer { max-width: 1100px; margin: 0 auto 24px; padding: 16px 20px; background: var(--bg-pitch); border: var(--border-dim); border-radius: var(--radius-sm); }
 .footer-disclaimer p { font-size: 0.78rem; color: var(--text-low); line-height: 1.5; }
-.footer-bottom { border-top: var(--border-dim); padding-top: 20px; text-align: center; }
+.footer-address { max-width: 1100px; margin: 0 auto 20px; text-align: center; color: var(--text-low); font-size: 0.8rem; }
+.footer-bottom { border-top: var(--border-dim); padding-top: 20px; text-align: center; max-width: 1100px; margin: 0 auto; }
 .footer-bottom p { font-size: 0.78rem; color: var(--text-low); }
+.footer-bottom-row { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+@media (min-width: 640px) {
+  .footer-bottom-row { flex-direction: row; justify-content: space-between; text-align: left; }
+}
+.footer-meta { color: var(--text-low); font-size: 0.75rem; font-family: var(--font-mono); letter-spacing: 0.3px; }
+.footer-made-in-india { display: inline-flex; align-items: center; gap: 6px; color: var(--text-low); font-size: 0.78rem; font-family: var(--font-nav); }
+.footer-made-in-india .flag-strip { display: inline-flex; width: 18px; height: 12px; border-radius: 2px; overflow: hidden; box-shadow: 0 0 0 1px rgba(255,255,255,0.08); }
+.footer-made-in-india .flag-strip span { flex: 1; }
+.footer-made-in-india .flag-strip span:nth-child(1) { background: #FF9933; }
+.footer-made-in-india .flag-strip span:nth-child(2) { background: #FFFFFF; }
+.footer-made-in-india .flag-strip span:nth-child(3) { background: #138808; }
 
 /* ===== 16. BACK-TO-TOP ===== */
 .back-to-top {
@@ -476,10 +489,39 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 }
 .back-to-top.show { opacity: 1; pointer-events: all; }
 
-/* ===== 17. LEGAL / STANDALONE CONTENT BLOCKS (shared by disclaimer.html,
-   privacy-policy.html, data-deletion.html, terms.html, refund.html,
-   contact.html) — same visual language as the old in-page drawer, now
-   rendered as normal page content instead of a slide-out panel. ===== */
+/* ===== 16B. FLOATING "NEED HELP" BUTTON (site-wide, single instance) =====
+   Sits above the back-to-top button on the opposite side by default so
+   the two never collide; on very small screens back-to-top moves out of
+   the way while help stays anchored bottom-left. */
+.need-help-btn {
+  position: fixed; left: 20px; bottom: 20px; z-index: 998;
+  display: inline-flex; align-items: center; gap: 10px;
+  background: var(--bg-card); border: 1.5px solid rgba(255, 215, 0, 0.3);
+  color: var(--text-pure); text-decoration: none;
+  font-family: var(--font-nav); font-weight: 700; font-size: 0.85rem; letter-spacing: 0.3px;
+  padding: 12px 18px 12px 14px; border-radius: 100px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.5), 0 0 0 0 var(--gold-glow);
+  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+  transition: var(--transition-fast);
+  animation: helpPulse 3s ease-in-out infinite;
+}
+.need-help-btn i { color: var(--gold-primary); font-size: 1rem; }
+.need-help-btn:hover { transform: translateY(-3px); border-color: var(--gold-primary); box-shadow: 0 12px 30px rgba(255,215,0,0.25); }
+@keyframes helpPulse {
+  0%, 100% { box-shadow: 0 8px 24px rgba(0,0,0,0.5), 0 0 0 0 rgba(255,215,0,0.25); }
+  50% { box-shadow: 0 8px 24px rgba(0,0,0,0.5), 0 0 0 8px rgba(255,215,0,0); }
+}
+@media (max-width: 480px) {
+  .need-help-btn { left: 14px; bottom: 14px; padding: 11px 16px 11px 12px; font-size: 0.8rem; }
+  .need-help-btn span { display: none; }
+  .need-help-btn { width: 46px; height: 46px; justify-content: center; padding: 0; border-radius: 50%; }
+  .need-help-btn i { font-size: 1.1rem; }
+}
+
+/* ===== 17. LEGAL / STANDALONE CONTENT BLOCKS (shared by disclaimer,
+   privacy-policy, data-deletion, terms, refund, contact pages) — same
+   visual language as the old in-page drawer, now rendered as normal
+   page content instead of a slide-out panel. ===== */
 .legal-updated { font-size: 0.78rem; color: var(--text-low); margin-bottom: 18px; text-transform: uppercase; letter-spacing: 1px; font-family: var(--font-nav); }
 .legal-intro { font-size: 0.95rem; color: var(--text-high); margin-bottom: 22px; }
 
@@ -605,12 +647,10 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .ad-progress-fill { height: 100%; width: 0%; background: #FFD700; transition: width 1s linear; }
 
 /* ==========================================================================
-   21. NEW — STANDALONE PAGE LAYOUT
-   Used by: disclaimer.html, privacy-policy.html, data-deletion.html,
-   terms.html, refund.html, contact.html
-   These pages no longer live inside the sliding legal-drawer — they are
-   full pages that share this exact navbar + footer + card styling so the
-   look is identical on mobile and desktop.
+   21. STANDALONE PAGE LAYOUT
+   Used by: disclaimer/, privacy-policy/, data-deletion/, terms/, refund/,
+   contact/ (each its own folder with an index.html, so URLs show
+   /disclaimer/ instead of /disclaimer.html)
    ========================================================================== */
 .nav-back-link {
   display: inline-flex; align-items: center; gap: 8px;
@@ -641,7 +681,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 /* Contact page reuses .contact-grid / .contact-card, just needs top spacing */
 .standalone-page .contact-grid { margin-top: 4px; }
 
-/* Highlighted copy-ready message box (used on data-deletion.html for the
+/* Highlighted copy-ready message box (used on data-deletion for the
    "send this to admin / email" template) */
 .delete-message-box {
   background: var(--bg-pitch);
@@ -692,7 +732,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   letter-spacing: 0.5px; color: var(--text-mid);
 }
 
-/* ===== 22. COPY-TO-CLIPBOARD MESSAGE BOX (data-deletion.html / refund.html) ===== */
+/* ===== 22. COPY-TO-CLIPBOARD MESSAGE BOX (data-deletion / refund) ===== */
 .message-box-header {
   display: flex; align-items: center; justify-content: space-between; gap: 12px;
   flex-wrap: wrap; margin-bottom: 10px;
@@ -742,7 +782,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   justify-content: center; font-size: 0.68rem; margin-top: 1px;
 }
 
-/* Eligible / not-eligible chip row, used on refund.html */
+/* Eligible / not-eligible chip row */
 .eligibility-row { display: grid; grid-template-columns: 1fr; gap: 12px; margin: 14px 0; }
 @media (min-width: 640px) { .eligibility-row { grid-template-columns: 1fr 1fr; } }
 .eligibility-card {
@@ -760,11 +800,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .eligibility-card li { color: var(--text-mid); font-size: 0.82rem; margin-bottom: 6px; padding-left: 14px; position: relative; }
 .eligibility-card li::before { content: '•'; position: absolute; left: 0; color: var(--text-low); }
 
-/* ===== 23. PRICING CARD CAROUSELS (India ₹ / Other Countries US$) =====
-   Two independent auto-scrolling Swiper carousels — replaces the old
-   click-to-toggle currency tabs. Cards centre themselves, auto-rotate
-   right-to-left holding ~1s per card, loop endlessly, and remain fully
-   swipeable by finger/mouse at any time. */
+/* ===== 23. PRICING CARD CAROUSELS (India ₹ / Other Countries US$) ===== */
 .pricing-currency-label {
   display: flex; align-items: center; justify-content: center; gap: 10px;
   font-family: var(--font-display); font-size: 0.95rem; font-weight: 800;
@@ -802,4 +838,19 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 
 @media (min-width: 1024px) {
   .standalone-page { padding: 140px 40px 90px; }
+}
+
+/* ===== 24. PAGE-LOAD REVEAL (subtle, respects reduced-motion) ===== */
+.navbar, .hero-badge, .hero-title, .hero-subtitle, .download-btn, .hero-stats {
+  animation: pageFadeUp 0.7s var(--easing-premium) both;
+}
+.hero-badge { animation-delay: 0.05s; }
+.hero-title { animation-delay: 0.12s; }
+.hero-subtitle { animation-delay: 0.2s; }
+.download-btn { animation-delay: 0.28s; }
+.hero-stats { animation-delay: 0.36s; }
+.navbar { animation-delay: 0s; }
+@keyframes pageFadeUp {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
 }
